@@ -9,26 +9,33 @@ export const menu: CoreMenu[] = [
     icon: 'home',
     url: 'home'
   },
-  {
-    id: 'sample',
-    title: 'Sample',
-    translate: 'MENU.SAMPLE',
-    type: 'item',
-    icon: 'file',
-    url: 'sample'
-  },
+  // {
+  //   id: 'sample',
+  //   title: 'Sample',
+  //   translate: 'MENU.SAMPLE',
+  //   type: 'item',
+  //   icon: 'file',
+  //   url: 'sample'
+  // },
   {
     id: 'types',
     title: 'Types',
     type: 'item',
-    icon: 'file',
+    icon: 'bar-chart-2',
     url: 'types'
   },
   {
     id: 'locations',
     title: 'Locations',
     type: 'item',
-    icon: 'file',
+    icon: 'map-pin',
     url: 'locations'
+  },
+  {
+    id: 'amenities',
+    title: 'Amenities',
+    type: 'item',
+    icon: 'plus-square',
+    url: 'amenities'
   }
 ]

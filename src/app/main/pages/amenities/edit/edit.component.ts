@@ -6,6 +6,8 @@ import {ToastrService} from "ngx-toastr";
 import {AmenitiesService} from "../amenities.service";
 import {takeUntil} from "rxjs/operators";
 import {Breadcrumb} from "../../../../layout/components/content-header/breadcrumb/breadcrumb.component";
+import {FileUploader} from "ng2-file-upload";
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-edit-location',
@@ -26,12 +28,22 @@ export class EditComponent implements OnInit {
   // Private
   private _unsubscribeAll: Subject<any>;
   private readonly MODEL_NAME = 'Amenity';
+  amenityImage;
+  uploader: FileUploader = new FileUploader({
+    isHTML5: true
+  });
+  newAmenityForm: FormGroup;
+
   constructor(private _activatedRoute: ActivatedRoute,
               private _modelService: AmenitiesService,
               private router: Router,
+              private fb: FormBuilder,
               private toastr: ToastrService) {
     this._unsubscribeAll = new Subject();
+    this.newAmenityForm = this.fb.group({amenityImage: [null]})
+
   }
+
 // Public Methods
   // -----------------------------------------------------------------------------------------------------
 
@@ -51,9 +63,6 @@ export class EditComponent implements OnInit {
   }
 
 
-
-
-
   toastrSuccess(title, massage) {
     this.toastr.success(massage, title, {
       toastClass: 'toast ngx-toastr',
@@ -61,7 +70,7 @@ export class EditComponent implements OnInit {
     });
   }
 
-  renderData(){
+  renderData() {
     this._modelService.getById(this.id).pipe(takeUntil(this._unsubscribeAll)).subscribe(response => {
       this.currentRow = response;
       console.log(this.id);
@@ -86,7 +95,7 @@ export class EditComponent implements OnInit {
         {
           name: `${this.MODEL_NAME}`,
           isLink: true,
-          link:'/amenities'
+          link: '/amenities'
         },
         {
           name: 'Edit',
@@ -109,5 +118,26 @@ export class EditComponent implements OnInit {
     // Unsubscribe from all subscriptions
     this._unsubscribeAll.next();
     this._unsubscribeAll.complete();
+  }
+
+  updateImage(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      let reader = new FileReader();
+
+      reader.onload = (event: any) => {
+        this.currentRow.data.image.image_path = event.target.result;
+      };
+      const file = (event.target as HTMLInputElement).files[0];
+      this.newAmenityForm.patchValue({
+        amenityImage: file
+      });
+      this.newAmenityForm.get('amenityImage').updateValueAndValidity();
+      this.amenityImage = this.newAmenityForm.get('amenityImage').value;
+      this._modelService.updateImage(this.id, this.amenityImage).subscribe(()=>{
+        this.toastrSuccess(`${this.MODEL_NAME} updated`, `${this.MODEL_NAME} image updated success`);
+      });
+
+      reader.readAsDataURL(event.target.files[0]);
+    }
   }
 }

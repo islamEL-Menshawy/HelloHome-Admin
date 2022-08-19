@@ -29,12 +29,10 @@ export class AmenitiesService {
   }
 
   public add(data: AmenityRequest): Observable<AmenityResponse> {
-    console.log(data);
     const formData: any = new FormData();
     for (let key of Object.keys(data)) {
       formData.append(key, data[key]);
     }
-
     return this._httpClient.post<AmenityResponse>(`${this.API_URL}`, formData)
         .pipe(tap(() => this.fetch().subscribe()));
   }
@@ -53,6 +51,13 @@ export class AmenitiesService {
   public update(id, category: AmenityRequest): Observable<AmenityRequest> {
     let url = `${this.API_URL}/${id}`;
     return this._httpClient.put<AmenityRequest>(url, category);
+  }
+
+  public updateImage(id, image): Observable<void> {
+    const formData: any = new FormData();
+    formData.append('amenity_image', image);
+    return this._httpClient.post<void>(`${this.API_URL}/update-image/${id}`, formData)
+        .pipe(tap(() => this.fetch().subscribe()));
   }
 
   public updateStatus(id): Observable<void> {

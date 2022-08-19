@@ -46,11 +46,6 @@ export class AddComponent implements OnInit {
    * @param form
    */
   submit(form) {
-    // console.log(this.amenityTitle);
-    // if (this.amenityTitle == '' || this.amenityImage == ''){
-    //   this.toastrError("error", "all fields is required");
-    //   return 0;
-    // }
     if (form.valid){
       this.amenityRequest = form.value;
       this.amenityRequest.amenity_image = this.newAmenityForm.get('amenityImage').value;
@@ -58,32 +53,6 @@ export class AddComponent implements OnInit {
           this.toastrSuccess(`Add new ${this.MODEL_NAME}`, `New ${this.MODEL_NAME} added successfully`)
       })
     }
-
-    // this.amenityRequest.title_en = "hello";
-    // this.amenityRequest.amenity_image = this.newAmenityForm.get('amenityImage').value;
-    // this.amenityRequest.amenity_image = "hfhfh";
-
-    // console.log(this.amenityRequest.title_en);
-    // this._modelService.add(this.amenityRequest).subscribe(()=>{
-    //   this.toastrSuccess(`Add new ${this.MODEL_NAME}`, `New ${this.MODEL_NAME} added successfully`)
-    // })
-
-    // this.userData.avatar = this.newUserForm.get('amenityImage').value;
-    // this._modelService.add(this.)
-    // this._userService.add(this.userData).pipe(takeUntil(this._unsubscribeAll)).subscribe(() => {
-    //   this.toastrSuccess("Add new user", "New user added successfully")
-    // });
-    // console.log();
-    // console.log(this.amenityImage);
-    // if (form.valid) {
-    //   this.typeDate = form.value;
-    //   console.log(this.typeDate);
-    //   this._typeService.add(this.typeDate).subscribe(()=>{
-    //     this.toastrSuccess("Add new Type", "New type added successfully")
-    //   });
-    //
-    //   this.typeName = ' ';
-    // }
   }
 
   // Success
