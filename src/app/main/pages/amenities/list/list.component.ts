@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {TypesResponse} from "../Types";
+import {AmenitiesResponse} from "../Types";
 import {Subject} from "rxjs";
 import {AmenitiesService} from "../amenities.service";
 import {CoreSidebarService} from "@core/components/core-sidebar/core-sidebar.service";
@@ -21,18 +21,18 @@ export class ListComponent implements OnInit {
 
   // Public
   public sidebarToggleRef = false;
-  public itemsResponse: TypesResponse;
+  public itemsResponse: AmenitiesResponse;
   public selectedOption = 10;
   public ColumnMode = ColumnMode;
   public temp = [];
   public searchValue = '';
-  public typesToUpdate: TypesResponse = null;
+  public typesToUpdate: AmenitiesResponse = null;
   public breadcrumbDefault: Breadcrumb;
 
   // Private
-  private tempData: TypesResponse = null;
+  private tempData: AmenitiesResponse = null;
   private _unsubscribeAll: Subject<void>;
-  private readonly MODEL_NAME = "Type";
+  private readonly MODEL_NAME = "Amenity";
 
   constructor(
       private _modalService: AmenitiesService,
@@ -49,7 +49,7 @@ export class ListComponent implements OnInit {
     // this._modalService.fetch().subscribe(()=>{
     console.log(event.target.value)
       const val = event.target.value.toLowerCase();
-      let data : TypesResponse = {} as TypesResponse;
+      let data : AmenitiesResponse = {} as AmenitiesResponse;
 
       // Filter Our Data & Update The Rows
       data.data = this.itemsResponse.data.filter(function (d) {
@@ -64,8 +64,17 @@ export class ListComponent implements OnInit {
     this._coreSidebarService.getSidebarRegistry(name).toggleOpen();
   }
 
-  fireDeleteModel(id, typeName) {
+  fireDeleteModel(id, typeName, numberOfUnites) {
+      if (numberOfUnites != 0){
+        Swal.fire({
+          title: 'Error',
+          text: `Can't delete ${typeName} ${this.MODEL_NAME} is related to ${numberOfUnites} unites`,
 
+          icon: 'error'
+
+        });
+        return 0;
+      }
 
       Swal.fire({
         title: 'Are you sure?',
@@ -124,7 +133,7 @@ export class ListComponent implements OnInit {
           link: '/'
         },
         {
-          name: 'Types',
+          name: `${this.MODEL_NAME}s`,
           isLink: false
         }
       ]

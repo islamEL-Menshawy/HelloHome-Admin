@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {TypeRequest, TypeResponse} from "../Types";
+import {AmenityResponse, AmenityRequest} from "../Types";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subject} from "rxjs";
 import {ToastrService} from "ngx-toastr";
@@ -17,15 +17,15 @@ export class EditComponent implements OnInit {
 
   // Public
   public rows;
-  public currentRow: TypeResponse;
+  public currentRow: AmenityResponse;
   public id;
-  public dataToUpdate: TypeRequest;
+  public dataToUpdate: AmenityRequest;
   public breadcrumbDefault: Breadcrumb;
 
 
   // Private
   private _unsubscribeAll: Subject<any>;
-  private readonly MODEL_NAME = 'Type';
+  private readonly MODEL_NAME = 'Amenity';
   constructor(private _activatedRoute: ActivatedRoute,
               private _modelService: AmenitiesService,
               private router: Router,
@@ -86,7 +86,7 @@ export class EditComponent implements OnInit {
         {
           name: `${this.MODEL_NAME}`,
           isLink: true,
-          link:'/types'
+          link:'/amenities'
         },
         {
           name: 'Edit',

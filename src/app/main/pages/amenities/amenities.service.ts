@@ -28,9 +28,14 @@ export class AmenitiesService {
         }));
   }
 
-  public add(type: AmenityRequest): Observable<AmenityResponse> {
-    // console.log(type);
-    return this._httpClient.post<AmenityResponse>(`${this.API_URL}`, type)
+  public add(data: AmenityRequest): Observable<AmenityResponse> {
+    console.log(data);
+    const formData: any = new FormData();
+    for (let key of Object.keys(data)) {
+      formData.append(key, data[key]);
+    }
+
+    return this._httpClient.post<AmenityResponse>(`${this.API_URL}`, formData)
         .pipe(tap(() => this.fetch().subscribe()));
   }
 

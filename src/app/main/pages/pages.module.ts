@@ -12,6 +12,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import {TypesModule} from "./types/types.module";
 import {LocationsModule} from "./locations/locations.module";
+import {AmenitiesModule} from "./amenities/amenities.module";
 
 @NgModule({
   declarations: [],
@@ -25,7 +26,8 @@ import {LocationsModule} from "./locations/locations.module";
     AuthenticationModule,
     MiscellaneousModule,
     TypesModule,
-    LocationsModule
+    LocationsModule,
+      AmenitiesModule
   ],
 
   providers: []

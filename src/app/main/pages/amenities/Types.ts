@@ -35,5 +35,5 @@ export interface AmenityResponse {
 }
 export interface AmenityRequest{
     "title_en": string,
-    "amenity_image": string
+    "amenity_image";
 }

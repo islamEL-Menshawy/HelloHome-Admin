@@ -14,14 +14,14 @@ import {CorePipesModule} from "@core/pipes/pipes.module";
 import {ToastrModule} from "ngx-toastr";
 import {SweetAlert2Module} from "@sweetalert2/ngx-sweetalert2";
 import {AmenitiesService} from "./amenities.service";
-import { NewTypeSidebarComponent } from './new-type-sidebar/new-type-sidebar.component';
+import { AddComponent } from './add/add.component';
 import {BreadcrumbModule} from "../../../layout/components/content-header/breadcrumb/breadcrumb.module";
 import { EditComponent } from './edit/edit.component';
 
 // Routing
 const routes : Routes = [
   {
-    path: 'types',
+    path: 'amenities',
     children: [
         {
             path:'',
@@ -29,6 +29,11 @@ const routes : Routes = [
             resolve: {
                 dummy: AmenitiesService
             },
+            data: { animation: 'list' }
+        },
+        {
+            path: 'create',
+            component: AddComponent,
             data: { animation: 'list' }
         },
         {
@@ -43,7 +48,7 @@ const routes : Routes = [
 @NgModule({
   declarations: [
     ListComponent,
-    NewTypeSidebarComponent,
+    AddComponent,
     EditComponent
   ],
     imports: [
