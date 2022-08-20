@@ -13,9 +13,12 @@ import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
 import {TypesModule} from "./types/types.module";
 import {LocationsModule} from "./locations/locations.module";
 import {AmenitiesModule} from "./amenities/amenities.module";
+import {CompoundsModule} from "./compounds/compounds.module";
 
 @NgModule({
-  declarations: [],
+  declarations: [
+
+  ],
   imports: [
     CommonModule,
     CoreCommonModule,
@@ -27,7 +30,8 @@ import {AmenitiesModule} from "./amenities/amenities.module";
     MiscellaneousModule,
     TypesModule,
     LocationsModule,
-      AmenitiesModule
+    AmenitiesModule,
+    CompoundsModule
   ],
 
   providers: []
