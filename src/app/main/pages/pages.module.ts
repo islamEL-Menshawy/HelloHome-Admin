@@ -14,6 +14,7 @@ import {TypesModule} from "./types/types.module";
 import {LocationsModule} from "./locations/locations.module";
 import {AmenitiesModule} from "./amenities/amenities.module";
 import {CompoundsModule} from "./compounds/compounds.module";
+import {UnitesModule} from "./unites/unites.module";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {CompoundsModule} from "./compounds/compounds.module";
     TypesModule,
     LocationsModule,
     AmenitiesModule,
-    CompoundsModule
+    CompoundsModule,
+    UnitesModule
   ],
 
   providers: []

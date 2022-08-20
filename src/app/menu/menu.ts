@@ -44,5 +44,12 @@ export const menu: CoreMenu[] = [
     type: 'item',
     icon: 'grid',
     url: 'compounds'
+  },
+  {
+    id: 'units',
+    title: 'Units',
+    type: 'item',
+    icon: 'grid',
+    url: 'units'
   }
 ]

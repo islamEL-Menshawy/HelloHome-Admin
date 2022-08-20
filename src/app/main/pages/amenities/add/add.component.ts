@@ -2,7 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Subject} from "rxjs";
 import {ToastrService} from "ngx-toastr";
 import {AmenitiesService} from "../amenities.service";
-import {AmenityRequest, AmenityResponse} from "../Types";
+import {AmenityRequest} from "../Types";
 import {Breadcrumb} from "../../../../layout/components/content-header/breadcrumb/breadcrumb.component";
 import {FileUploader} from "ng2-file-upload";
 import {FormBuilder, FormGroup} from "@angular/forms";

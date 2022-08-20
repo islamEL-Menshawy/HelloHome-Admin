@@ -1,4 +1,4 @@
-export interface LocationsResponse {
+export interface LocationsResponse{
     "success": boolean,
     "message": string,
     "data": {
