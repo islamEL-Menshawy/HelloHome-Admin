@@ -42,7 +42,7 @@ export const menu: CoreMenu[] = [
     id: 'compounds',
     title: 'Compounds',
     type: 'item',
-    icon: 'plus-square',
+    icon: 'grid',
     url: 'compounds'
   }
 ]

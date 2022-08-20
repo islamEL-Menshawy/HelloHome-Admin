@@ -68,6 +68,14 @@
                             <div class="badge badge-info">{{ sub }}</div>
                         </ng-template>
                     </ngx-datatable-column>
+                    <ngx-datatable-column name="Status" prop="is_active" [width]="100">
+                        <ng-template let-row="row" let-status="value"  ngx-datatable-cell-template>
+                            <div class="custom-control custom-control-success custom-switch">
+                                <input type="checkbox" [checked]="status" (change)="updateStatus(row.id)" class="custom-control-input" id="customSwitch{{row.id}}" />
+                                <label class="custom-control-label" for="customSwitch{{row.id}}"></label>
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
 
                     <ngx-datatable-column name="Last Update" prop="last_modify" [width]="200"></ngx-datatable-column>
                     <ngx-datatable-column name="Actions" [width]="40" [sortable]="false">

@@ -4,7 +4,6 @@ import {AmenityRequest} from "../../amenities/Types";
 import {FileUploader} from "ng2-file-upload";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Subject} from "rxjs";
-import {AmenitiesService} from "../../amenities/amenities.service";
 import {ToastrService} from "ngx-toastr";
 import {CompoundRequest} from "../Types";
 import {CompoundsService} from "../compounds.service";
