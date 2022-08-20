@@ -86,7 +86,7 @@ export class EditComponent implements OnInit {
         {
           name: `${this.MODEL_NAME}s`,
           isLink: true,
-          link:'/location'
+          link:'/locations'
         },
         {
           name: 'Edit',

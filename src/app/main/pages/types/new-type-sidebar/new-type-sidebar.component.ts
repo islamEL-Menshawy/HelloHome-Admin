@@ -38,7 +38,7 @@ export class NewTypeSidebarComponent implements OnDestroy {
       this._typeService.add(this.typeDate).subscribe(()=>{
         this.toastrSuccess("Add new Type", "New type added successfully")
       });
-      this.toggleSidebar('add');
+      this.toggleSidebar('new-type-sidebar');
       this.typeName = ' ';
     }
   }
