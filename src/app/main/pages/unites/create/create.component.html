@@ -1,0 +1,319 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <!-- users edit start -->
+        <section class="app-user-edit">
+            <!-- app-breadcrumb component -->
+            <app-breadcrumb [breadcrumb]="breadcrumbDefault"></app-breadcrumb>
+            <!--/ app-breadcrumb component -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- Account Tab starts -->
+                    <div class="tab-pane active" id="account" aria-labelledby="account-tab" role="tabpanel" >
+
+                        <!-- users edit account form start -->
+                        <form class="form-validate" (ngSubmit)="(addNew.form.valid)" #addNew="ngForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h1>Basic Data</h1>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="bed_number">Bedroom Number</label>
+                                        <input
+                                                type="number"
+                                                id="bed_number"
+                                                class="form-control"
+                                                name="bed_number"
+                                                [(ngModel)]="bed_number"
+                                                [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="bathroom_number">Bathroom Number</label>
+                                        <input
+                                                type="number"
+                                                id="bathroom_number"
+                                                class="form-control"
+                                                name="bathroom_number"
+                                                [(ngModel)]="bathroom_number"
+                                                [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="area">Area</label>
+                                        <input
+                                                type="number"
+                                                id="area"
+                                                class="form-control"
+                                                name="area"
+                                                [(ngModel)]="area"
+                                                [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <input
+                                                type="number"
+                                                id="price"
+                                                class="form-control"
+                                                name="price"
+                                                [(ngModel)]="price"
+                                                [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="form-group">
+                                        <div class="custom-control custom-switch">
+                                            <p class="mb-50">Youtube</p>
+                                            <input
+                                                    type="checkbox"
+                                                    class="custom-control-input"
+                                                    id="customSwitch10"
+                                                    name="is_youtube"
+                                                    [(ngModel)]="is_youtube"
+                                                    [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                    #UserNameRef="ngModel"
+                                                     />
+                                            <label class="custom-control-label" for="customSwitch10">
+                                                <span class="switch-icon-left"><i data-feather="check"></i></span>
+                                                <span class="switch-icon-right"><i data-feather="x"></i></span>
+                                            </label>
+                                        </div>
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="video_path">Video Source</label>
+                                        <input
+                                                type="{{is_youtube ? 'text': 'file'}}"
+                                                id="video_path"
+                                                class="form-control"
+                                                name="video_path"
+                                                [(ngModel)]="video_path"
+                                                [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="location">Location URL</label>
+                                        <input
+                                                type="url"
+                                                id="location"
+                                                class="form-control"
+                                                name="location"
+                                                [(ngModel)]="location"
+                                                [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="location_id">Select Location</label>
+                                        <select
+                                                name="location_id"
+                                                id="location_id"
+                                                class="form-control"
+                                                [(ngModel)]="location_id"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        >
+                                            <option *ngFor="let location of locationList.data" [value]="location.id">
+                                                {{ location.title_en }}
+                                            </option>
+                                        </select>
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="compound_id">Select Compound</label>
+                                        <select
+                                                name="compound_id"
+                                                id="compound_id"
+                                                class="form-control"
+                                                [(ngModel)]="compound_id"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        >
+                                            <option *ngFor="let compound of compoundList.data" [value]="compound.id">
+                                                {{ compound.title_en }}
+                                            </option>
+                                        </select>
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="type_id">Select Type</label>
+                                        <select
+                                                name="type_id"
+                                                id="type_id"
+                                                class="form-control"
+                                                [(ngModel)]="type_id"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        >
+                                            <option *ngFor="let type of typeList.data" [value]="type.id">
+                                                {{ type.title_en }}
+                                            </option>
+                                        </select>
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <br>
+                                <div class="col-md-12">
+                                    <hr>
+                                    <h1>Amenity</h1>
+                                </div>
+                                <br>
+                                <div class="col-md-4" *ngFor="let item of amenityList.data">
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input (change)="addOrRemove(item.id)"  type="checkbox" [value]="item.id" class="custom-control-input" id="customCheck{{item.id}}" />
+                                            <label class="custom-control-label" for="customCheck{{item.id}}">{{item.title_en}}</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br>
+                                <div class="col-md-12">
+                                    <hr>
+                                    <h1>Unit Images</h1>
+
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="media-body mt-50">
+
+                                        <div class="col-12 d-flex mt-1 px-0">
+                                            <label class="btn btn-primary mr-75 mb-0" for="change-picture">
+                                                <span class="d-none d-sm-block">Upload Images</span>
+                                                <input
+                                                        class="form-control"
+                                                        type="file"
+                                                        id="change-picture"
+                                                        hidden
+                                                        multiple
+                                                        accept="image/png, image/jpeg, image/jpg"
+                                                        (change)="uploadImage($event)"
+                                                />
+                                                <span class="d-block d-sm-none">
+                            <i class="mr-0" data-feather="edit"></i>
+                          </span>
+                                            </label>
+                                            <button class="btn btn-outline-secondary d-block d-sm-none">
+                                                <i class="mr-0" data-feather="trash-2"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <div *ngFor="let image of image_url" class="col-md-6">
+                                    <img class="img-fluid"  src="{{image}}" >
+<!--                                    <button (click)="removeImage(image)" class="btn btn-primary mr-75 mb-0">Remove Image</button>-->
+                                </div>
+
+
+
+
+
+
+                                <div class="col-12 d-flex flex-sm-row flex-column mt-2">
+                                    <button
+                                            type="submit"
+                                            (click)="submit(addNew)"
+                                            class="btn btn-primary mb-1 mb-sm-0 mr-0 mr-sm-1"
+                                            rippleEffect
+                                    >
+                                        Save Unit
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- users edit account form ends -->
+                    </div>
+                    <!-- Account Tab ends -->
+                </div>
+            </div>
+        </section>
+        <!-- users edit ends -->
+    </div>
+</div>

@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { takeUntil } from 'rxjs/operators';
+import {takeUntil, tap} from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { CoreConfigService } from '@core/services/config.service';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-auth-login-v2',
@@ -32,6 +33,7 @@ export class AuthLoginV2Component implements OnInit {
    */
   constructor(
     private _coreConfigService: CoreConfigService,
+    private _http: HttpClient,
     private _formBuilder: FormBuilder,
     private _route: ActivatedRoute,
     private _router: Router
@@ -75,6 +77,13 @@ export class AuthLoginV2Component implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
+    console.log(this.loginForm.value);
+    this._http.post<void>(`http://127.0.0.1:8000/api/login`, this.loginForm.value).subscribe((res:any)=>{
+      console.log(res);
+        localStorage.setItem('tokeKey' , res.data.token);
+        localStorage.setItem('userName' , res.data.name);
+    }
+    );
 
     // Login
     this.loading = true;
