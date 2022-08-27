@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   hmr: false,
-  apiUrl: 'http://127.0.0.1:8000/api'
+  // apiUrl: 'https://hellohome.directorstudio.me/api'
+  apiUrl: 'http://localhost:8000/api'
+
 };
 
 /*

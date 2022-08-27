@@ -52,7 +52,11 @@ export class UnitesService {
             .pipe(tap(() => this.fetch().subscribe()));
     }
 
-
+    public delete(id: number): Observable<void> {
+        let url = `${this.API_URL}/${id}`;
+        return this._httpClient.delete<void>(url)
+            .pipe(tap(() => this.fetch().subscribe()));
+    }
 
     resolve(): Observable<UnitsResponse> | Promise<UnitsResponse> | UnitsResponse {
         return this.fetch();
