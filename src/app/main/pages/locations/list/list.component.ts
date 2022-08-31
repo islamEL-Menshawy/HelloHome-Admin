@@ -58,8 +58,17 @@ export class ListComponent implements OnInit {
     this._coreSidebarService.getSidebarRegistry(name).toggleOpen();
   }
 
-  fireDeleteModel(id, typeName) {
+  fireDeleteModel(id, typeName, numberOfUnites) {
+    if (numberOfUnites != 0){
+      Swal.fire({
+        title: 'Error',
+        text: `Can't delete ${typeName} ${this.MODEL_NAME} is related to ${numberOfUnites} unites`,
 
+        icon: 'error'
+
+      });
+      return 0;
+    }
 
       Swal.fire({
         title: 'Are you sure?',

@@ -74,7 +74,7 @@
                                 <div ngbDropdownMenu>
                                     <a href="javascript:;" routerLink="/types/{{row.id}}/edit" ngbDropdownItem>
                                         <span [data-feather]="'edit'" [size]="16" [class]="'mr-50'"></span> Edit</a>
-                                    <a href="javascript:;" ngbDropdownItem (click)="fireDeleteModel(row.id, row.title_en)"
+                                    <a href="javascript:;" ngbDropdownItem (click)="fireDeleteModel(row.id, row.title_en, row.number_of_unites)"
                                     ><span [data-feather]="'trash'" [size]="16" [class]="'mr-50'"></span> Delete</a
                                     >
                                 </div>

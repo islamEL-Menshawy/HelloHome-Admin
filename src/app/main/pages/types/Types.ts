@@ -28,6 +28,20 @@ export interface TypeResponse{
         "isActive": boolean,
     }
 }
+export interface InstanceTypeResponse{
+
+        "id": number,
+        "title_en": string,
+        "slug_en": string,
+        "title_ar": string,
+        "slug_ar": string,
+        "created_at": string,
+        "updated_at": string,
+        "last_modify": string,
+        "number_of_unites": number,
+        "isActive": boolean,
+
+}
 export interface TypeRequest{
     "title_en": string
 }

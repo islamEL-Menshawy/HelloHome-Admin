@@ -1,7 +1,7 @@
-import {CompoundResponse} from "../compounds/Types";
-import {TypeResponse} from "../types/Types";
-import {LocationResponse} from "../locations/Types";
-import {AmenityResponse} from "../amenities/Types";
+import {CompoundResponse, InstanceCompoundResponse} from "../compounds/Types";
+import {InstanceTypeResponse, TypeResponse} from "../types/Types";
+import {InstanceLocationResponse, LocationResponse} from "../locations/Types";
+import {AmenityResponse, InstanceAmenityResponse} from "../amenities/Types";
 
 export interface UnitsResponse {
     "success": boolean,
@@ -10,6 +10,7 @@ export interface UnitsResponse {
         "id": number,
         "bathroom_number": number,
         "area": number,
+        "bed_number": number,
         "is_youtube": boolean,
         "price": number,
         "video_path": string,
@@ -39,15 +40,18 @@ export interface UnitResponse {
     "data": {
         "id": number,
         "bathroom_number": number,
+        "bed_number": number,
         "area": number,
         "is_youtube": boolean,
+        "location_link":string,
+        "video_link":string,
         "price": number,
         "video_path": string,
         "location_lat": string,
         "location_log": string,
-        "compound": CompoundResponse,
-        "type": TypeResponse,
-        "location": LocationResponse,
+        "compound": InstanceCompoundResponse,
+        "type": InstanceTypeResponse,
+        "location": InstanceLocationResponse,
         "images":
             {
                 "id": number,
@@ -56,7 +60,7 @@ export interface UnitResponse {
                 "created_at": string
             }[]
         ,
-        "amenities": AmenityResponse[],
+        "amenities": InstanceAmenityResponse[],
         "last_modify": string,
         "updated_at": string,
         "created_at": string
@@ -75,4 +79,8 @@ export interface UnitRequest{
     "location_id": number,
     "aminites": any[],
     "images": any[]
+}
+export interface IdsRequest{
+    "unit_id" : number,
+    "image_id": number
 }

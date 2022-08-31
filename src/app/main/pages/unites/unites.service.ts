@@ -3,7 +3,8 @@ import {BehaviorSubject, Observable} from "rxjs";
 import {environment} from "../../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {tap} from "rxjs/operators";
-import {UnitRequest, UnitResponse, UnitsResponse} from "./Types";
+import {IdsRequest, UnitRequest, UnitResponse, UnitsResponse} from "./Types";
+import {AmenityRequest, AmenityResponse} from "../amenities/Types";
 
 @Injectable({
   providedIn: 'root'
@@ -50,6 +51,26 @@ export class UnitesService {
 
         return this._httpClient.post<UnitResponse>(`${this.API_URL}`, formData)
             .pipe(tap(() => this.fetch().subscribe()));
+    }
+    public getById(id): Observable<UnitResponse> {
+        let url = `${this.API_URL}/${id}`;
+        return this._httpClient.get<UnitResponse>(url);
+    }
+
+    public update(id, unit: UnitRequest): Observable<UnitResponse> {
+        let url = `${this.API_URL}/${id}`;
+        return this._httpClient.put<UnitResponse>(url, unit);
+    }
+
+    // public updateImage(id, image): Observable<void> {
+    //     const formData: any = new FormData();
+    //     formData.append('amenity_image', image);
+    //     return this._httpClient.post<void>(`${this.API_URL}/update-image/${id}`, formData)
+    //         .pipe(tap(() => this.fetch().subscribe()));
+    // }
+    public deleteImageFromUnit(ids:IdsRequest): Observable<void> {
+        let url = `${this.API_URL}/delete-image`;
+        return this._httpClient.put<void>(url, ids);
     }
 
     public delete(id: number): Observable<void> {

@@ -181,6 +181,8 @@ export class CreateComponent implements OnInit {
     // }
   }
 
+
+
   addOrRemove(id) {
     if (this.aminites.includes(id)){
       this.aminites = this.removeItemOnce(this.aminites, id);
