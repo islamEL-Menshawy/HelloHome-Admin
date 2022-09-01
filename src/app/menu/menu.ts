@@ -51,5 +51,12 @@ export const menu: CoreMenu[] = [
     type: 'item',
     icon: 'grid',
     url: 'units'
+  },
+  {
+    id: 'slider',
+    title: 'Slider',
+    type: 'item',
+    icon: 'grid',
+    url: 'slider'
   }
 ]

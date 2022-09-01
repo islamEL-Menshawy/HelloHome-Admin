@@ -62,12 +62,14 @@ export class UnitesService {
         return this._httpClient.put<UnitResponse>(url, unit);
     }
 
-    // public updateImage(id, image): Observable<void> {
-    //     const formData: any = new FormData();
-    //     formData.append('amenity_image', image);
-    //     return this._httpClient.post<void>(`${this.API_URL}/update-image/${id}`, formData)
-    //         .pipe(tap(() => this.fetch().subscribe()));
-    // }
+    public updateImage(id, image): Observable<UnitResponse> {
+        const formData: any = new FormData();
+        for (let key of image) {
+            formData.append("images[]", key);
+        }
+        return this._httpClient.post<UnitResponse>(`${this.API_URL}/update-image/${id}`, formData)
+            .pipe(tap(() => this.fetch().subscribe()));
+    }
     public deleteImageFromUnit(ids:IdsRequest): Observable<void> {
         let url = `${this.API_URL}/delete-image`;
         return this._httpClient.put<void>(url, ids);

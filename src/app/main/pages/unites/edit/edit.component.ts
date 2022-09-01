@@ -1,3 +1,4 @@
+import { IdsRequest } from './../Types';
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Breadcrumb} from "../../../../layout/components/content-header/breadcrumb/breadcrumb.component";
 import {Subject} from "rxjs";
@@ -9,6 +10,7 @@ import {ToastrService} from "ngx-toastr";
 import {UnitesService} from "../unites.service";
 import {takeUntil} from "rxjs/operators";
 import {AmenitiesResponse} from "../../amenities/Types";
+import Swal from "sweetalert2";
 import {LocationsResponse} from "../../locations/Types";
 import {TypesResponse} from "../../types/Types";
 import {CompoundsResponse} from "../../compounds/Types";
@@ -35,12 +37,19 @@ export class EditComponent implements OnInit {
   // public type;
   // public com;
   public aminites: number[]=[];
+  public image_url: any[]=[];
+  public images: any[]= [];
+
 
 
   public amenityList: AmenitiesResponse;
   public locationList: LocationsResponse;
   public typeList: TypesResponse;
   public compoundList: CompoundsResponse;
+  public imageRemoved : IdsRequest = {
+    "image_id" : 0,
+    "unit_id":0
+  };
 
   // Private
   private _unsubscribeAll: Subject<any>;
@@ -65,19 +74,15 @@ export class EditComponent implements OnInit {
 
     this.amenityService.fetch().subscribe( (response)=>{
       this.amenityList = response;
-      console.log(this.amenityList)
     });
     this.typeService.fetch().subscribe( (response)=>{
       this.typeList = response;
-      console.log(this.typeList)
     });
     this.compoundService.fetch().subscribe( (response)=>{
       this.compoundList = response;
-      console.log(this.compoundList)
     });
     this.locationService.fetch().subscribe( (response)=>{
       this.locationList = response;
-      console.log(this.locationList)
     });
 
   }
@@ -91,8 +96,6 @@ export class EditComponent implements OnInit {
     if (form.valid) {
       this.dataToUpdate = form.value;
       this.dataToUpdate.aminites = this.aminites;
-      console.log(form.value)
-      console.log(this.dataToUpdate);
       this._modelService.update(this.id, this.dataToUpdate).pipe(takeUntil(this._unsubscribeAll)).subscribe(() => {
         // Success
         this.toastrSuccess(`${this.MODEL_NAME} updated`, `${this.MODEL_NAME}  updated success`);
@@ -110,12 +113,12 @@ export class EditComponent implements OnInit {
   renderData() {
     this._modelService.getById(this.id).pipe(takeUntil(this._unsubscribeAll)).subscribe(response => {
       this.currentRow = response;
-      // console.log(this.id);
       for (const item of response.data.amenities) {
         this.aminites.push(item.id);
       }
-      console.log(this.aminites);
-      console.log(this.currentRow);
+      for (const item of response.data.images) {
+        this.image_url.push(item);
+      }
     });
   }
 
@@ -205,5 +208,57 @@ export class EditComponent implements OnInit {
       arr.splice(index, 1);
     }
     return arr;
+  }
+
+  uploadImage(event){
+      let x = 0;
+      while (event.target.files && event.target.files[x]) {
+        this.images.push(event.target.files[x]);
+        x++;
+      }
+    console.log(this.images);
+      this._modelService.updateImage(this.id, this.images).subscribe((response)=>{
+        this.toastrSuccess("Images Updated", "Images Updated success");
+        // for (const item of response.data.images) {
+        //   this.image_url.push(item);
+        // }
+        this.image_url = response.data.images;
+    });
+  }
+
+  removeImage(image){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: `Are you sure delete this Image`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#7367F0',
+      cancelButtonColor: '#E42728',
+      confirmButtonText: 'Yes, delete it!',
+      customClass: {
+        confirmButton: 'btn btn-primary',
+        cancelButton: 'btn btn-danger ml-1'
+      }
+    }).then((result) => {
+      if (result.value) {
+        this.imageRemoved.image_id = image.id;
+        this.imageRemoved.unit_id = this.id;        
+        this._modelService.deleteImageFromUnit(this.imageRemoved).subscribe(()=>{
+          this.toastrSuccess("Image removed", "Image removed success")
+        });
+        this.removeItemOnce(this.image_url, image);
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire({
+          title: 'Cancelled',
+          text: 'Your are Cancelled :)',
+          icon: 'error',
+          customClass: {
+            confirmButton: 'btn btn-success'
+          }
+        }).then();
+      }
+    });
+    
+    
   }
 }

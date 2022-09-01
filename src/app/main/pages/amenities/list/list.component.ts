@@ -59,9 +59,7 @@ export class ListComponent implements OnInit {
     // });
   }
 
-  toggleSidebar(name): void {
-    this._coreSidebarService.getSidebarRegistry(name).toggleOpen();
-  }
+
 
   fireDeleteModel(id, typeName, numberOfUnites) {
       if (numberOfUnites != 0){

@@ -258,44 +258,38 @@
                                     <h1>Unit Images</h1>
 
                                 </div>
-<!--                                <div class="col-md-12">-->
-<!--                                    <div class="media-body mt-50">-->
+                               <div class="col-md-12">
+                                   <div class="media-body mt-50">
 
-<!--                                        <div class="col-12 d-flex mt-1 px-0">-->
-<!--                                            <label class="btn btn-primary mr-75 mb-0" for="change-picture">-->
-<!--                                                <span class="d-none d-sm-block">Upload Images</span>-->
-<!--                                                <input-->
-<!--                                                        class="form-control"-->
-<!--                                                        type="file"-->
-<!--                                                        id="change-picture"-->
-<!--                                                        hidden-->
-<!--                                                        multiple-->
-<!--                                                        accept="image/png, image/jpeg, image/jpg"-->
-<!--                                                        (change)="uploadImage($event)"-->
-<!--                                                />-->
-<!--                                                <span class="d-block d-sm-none">-->
-<!--                            <i class="mr-0" data-feather="edit"></i>-->
-<!--                          </span>-->
-<!--                                            </label>-->
-<!--                                            <button class="btn btn-outline-secondary d-block d-sm-none">-->
-<!--                                                <i class="mr-0" data-feather="trash-2"></i>-->
-<!--                                            </button>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
+                                       <div class="col-12 d-flex mt-1 px-0">
+                                           <label class="btn btn-primary mr-75 mb-0" for="change-picture">
+                                               <span class="d-none d-sm-block">Upload Images</span>
+                                               <input
+                                                       class="form-control"
+                                                       type="file"
+                                                       id="change-picture"
+                                                       hidden
+                                                       multiple
+                                                       accept="image/png, image/jpeg, image/jpg"
+                                                       (change)="uploadImage($event)"
+                                               />
+                                               <span class="d-block d-sm-none">
+                           <i class="mr-0" data-feather="edit"></i>
+                         </span>
+                                           </label>
+                                           <button class="btn btn-outline-secondary d-block d-sm-none">
+                                               <i class="mr-0" data-feather="trash-2"></i>
+                                           </button>
+                                       </div>
+                                   </div>
+                               </div>
                                 <br>
                                 <br>
                                 <br>
-<!--                                <div *ngFor="let image of image_url" class="col-md-6">-->
-<!--                                    <img class="img-fluid"  src="{{image}}" >-->
-<!--                                    &lt;!&ndash;                                    <button (click)="removeImage(image)" class="btn btn-primary mr-75 mb-0">Remove Image</button>&ndash;&gt;-->
-<!--                                </div>-->
-
-
-
-
-
-
+                               <div *ngFor="let image of image_url" class="col-md-6">
+                                   <img class="img-fluid"  src="{{image.image_path}}" >
+                                    <button style="border-radius:0 ;margin-bottom: 50px !important;" (click)="removeImage(image)" class="btn btn-danger mr-75 mb-0 btn-block">Remove Image</button>
+                               </div>
                                 <div class="col-12 d-flex flex-sm-row flex-column mt-2">
                                     <button
                                             type="submit"
