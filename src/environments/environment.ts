@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   hmr: false,
-  // apiUrl: 'https://hellohome.directorstudio.me/api'
-  apiUrl: 'http://localhost:8000/api'
+  apiUrl: 'https://hhegypt.com/api'
+  // apiUrl: 'http://localhost:8000/api'
 
 };
 
