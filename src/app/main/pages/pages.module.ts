@@ -16,6 +16,7 @@ import {AmenitiesModule} from "./amenities/amenities.module";
 import {CompoundsModule} from "./compounds/compounds.module";
 import {UnitesModule} from "./unites/unites.module";
 import {SliderModule} from "./slider/slider.module";
+import {ContentModule} from "./content/content.module";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {SliderModule} from "./slider/slider.module";
     AmenitiesModule,
     CompoundsModule,
     UnitesModule,
-    SliderModule
+    SliderModule,
+    ContentModule
   ],
 
   providers: []

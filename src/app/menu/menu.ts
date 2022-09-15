@@ -9,14 +9,6 @@ export const menu: CoreMenu[] = [
     icon: 'home',
     url: 'home'
   },
-  // {
-  //   id: 'sample',
-  //   title: 'Sample',
-  //   translate: 'MENU.SAMPLE',
-  //   type: 'item',
-  //   icon: 'file',
-  //   url: 'sample'
-  // },
   {
     id: 'types',
     title: 'Types',
@@ -49,14 +41,29 @@ export const menu: CoreMenu[] = [
     id: 'units',
     title: 'Units',
     type: 'item',
-    icon: 'grid',
+    icon: 'tag',
     url: 'units'
   },
   {
-    id: 'slider',
-    title: 'Slider',
-    type: 'item',
-    icon: 'grid',
-    url: 'slider'
+    id: 'content',
+    title: 'Content Editor',
+    type: 'section',
+    icon: 'image',
+    children: [
+      {
+        id: 'home',
+        title: 'Home Page',
+        type: 'item',
+        icon: 'image',
+        url: 'content/home'
+      },
+      {
+        id: 'slider',
+        title: 'Slider',
+        type: 'item',
+        icon: 'image',
+        url: 'slider'
+      }
+      ]
   }
 ]
