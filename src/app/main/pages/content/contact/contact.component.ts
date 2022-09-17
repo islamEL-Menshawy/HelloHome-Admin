@@ -1,57 +1,54 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Breadcrumb} from "../../../../layout/components/content-header/breadcrumb/breadcrumb.component";
 import {ContentService} from "../content.service";
 import {Router} from "@angular/router";
-import {Breadcrumb} from "../../../../layout/components/content-header/breadcrumb/breadcrumb.component";
 import {ToastrService} from "ngx-toastr";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class HomeComponent implements OnInit {
+export class ContactComponent implements OnInit {
 
   public data:any = {};
   public isCollapsed1 = true;
   public isCollapsed2 = true;
   public isCollapsed3 = true;
   public isCollapsed4 = true;
-  public isDataLoaded = false;
-  public breadcrumbDefault: Breadcrumb;
+  public breadcrumbDefault: Breadcrumb = {
+    links: [
+      {
+        name: 'Home',
+        isLink: true,
+        link: '/'
+      },
+      {
+        name: 'Edit Content',
+        isLink: false
+      },
+      {
+        name: 'Contact Us',
+        isLink: false
+      }
+    ]
+  };
   constructor(private _contentService: ContentService,
               private router: Router,
-              private toastr: ToastrService) { }
+              private toastr: ToastrService) {
+  }
 
   ngOnInit(): void {
     // breadcrumb default
-    this.breadcrumbDefault = {
-      links: [
-        {
-          name: 'Home',
-          isLink: true,
-          link: '/'
-        },
-        {
-          name: 'Edit Content',
-          isLink: false
-        },
-        {
-          name: 'Home',
-          isLink: false
-        }
-      ]
-    };
-    this._contentService.getData('Home').subscribe(response => {
+    this._contentService.getData('Contact Us').subscribe(response => {
       if (response.success){
         this.data = response.data;
-        this.isDataLoaded = true;
       }else {
         this.router.navigate(['/miscellaneous/error']);
       }
     });
   }
-
 
   /**
    * Submit
@@ -61,7 +58,7 @@ export class HomeComponent implements OnInit {
   submit(form) {
     if (form.valid) {
       this._contentService.update(form.value).subscribe();
-      this.toastr.success("Home Page Updated successfully", "Page updated", {
+      this.toastr.success("Contact Page Updated successfully", "Page updated", {
         toastClass: 'toast ngx-toastr',
         closeButton: false
       });
@@ -79,5 +76,4 @@ export class HomeComponent implements OnInit {
       });
     });
   }
-
 }

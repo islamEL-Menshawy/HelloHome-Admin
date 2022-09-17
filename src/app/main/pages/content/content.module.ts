@@ -14,6 +14,10 @@ import {CoreSidebarModule} from "../../../../@core/components";
 import {ToastrModule} from "ngx-toastr";
 import {SweetAlert2Module} from "@sweetalert2/ngx-sweetalert2";
 import {BreadcrumbModule} from "../../../layout/components/content-header/breadcrumb/breadcrumb.module";
+import { AboutComponent } from './about/about.component';
+import { ServicesComponent } from './services/services.component';
+import { ContactComponent } from './contact/contact.component';
+import {AuthGuard} from "../../../auth/helpers";
 
 // Routing
 const routes : Routes = [
@@ -24,13 +28,34 @@ const routes : Routes = [
         path:'home',
         component: HomeComponent,
         data: { animation: 'list' }
+      },
+      {
+        path:'about',
+        component: AboutComponent,
+        data: { animation: 'list' }
+      },
+      {
+        path:'service',
+        component: ServicesComponent,
+        data: { animation: 'list' }
+      },
+      {
+        path:'contact',
+        component: ContactComponent,
+        data: { animation: 'list' }
       }
-    ]}
+    ]
+  ,
+    // canActivate : [AuthGuard]
+  }
 ];
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    AboutComponent,
+    ServicesComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,

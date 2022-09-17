@@ -1,0 +1,940 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <!-- users edit start -->
+        <section class="app-user-edit">
+            <!-- app-breadcrumb component -->
+            <app-breadcrumb [breadcrumb]="breadcrumbDefault"></app-breadcrumb>
+            <!--/ app-breadcrumb component -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- Account Tab starts -->
+                    <div class="tab-pane active" id="account" aria-labelledby="account-tab" role="tabpanel">
+                        <!-- users edit account form start -->
+                        <form class="form-validate" (ngSubmit)="(categoryEdit.form.valid)" #categoryEdit="ngForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="collapse-icon">
+                                        <div class="collapse-default">
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed1 = !isCollapsed1"
+                                                        [attr.aria-expanded]="!isCollapsed1"
+                                                        aria-controls="collapseExample"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Page Banner
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed1">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="service_section_main_title">Banner Title</label>
+                                                                    <input
+                                                                            type="text"
+                                                                            id="service_section_main_title"
+                                                                            class="form-control"
+                                                                            name="service_section_main_title"
+                                                                            [(ngModel)]="data['service_section_main_title']"
+                                                                            #UserNameRef="ngModel"
+                                                                    />
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="service_section_main_sub_title">Banner Sub
+                                                                        title</label>
+                                                                    <input
+                                                                            type="text"
+                                                                            id="service_section_main_sub_title"
+                                                                            class="form-control"
+                                                                            name="service_section_main_sub_title"
+                                                                            [(ngModel)]="data['service_section_main_sub_title']"
+                                                                            #UserNameRef="ngModel"
+                                                                    />
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <img class="img-fluid"
+                                                                     src="{{data['service_section_main_image']}}">
+                                                                <label style="border-radius:0 ;margin-bottom: 50px !important;"
+                                                                       for="service_section_main_image"
+                                                                       class="btn btn-primary mr-75 mb-0 btn-block">
+                                                                    <span>Change Image</span>
+                                                                    <input
+                                                                            class="form-control"
+                                                                            type="file"
+                                                                            id="service_section_main_image"
+                                                                            hidden
+                                                                            multiple
+                                                                            accept="image/png, image/jpeg, image/jpg"
+                                                                            (change)="updateImage($event, 'service_section_main_image')"
+                                                                    />
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed2 = !isCollapsed2"
+                                                        [attr.aria-expanded]="!isCollapsed2"
+                                                        aria-controls="collapseExample1"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Section 1
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed2">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_1_text">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_1_text"
+                                                                                    class="form-control"
+                                                                                    name="service_section_1_text"
+                                                                                    [(ngModel)]="data['service_section_1_text']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_2_text">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_2_text"
+                                                                                    class="form-control"
+                                                                                    name="service_section_2_text"
+                                                                                    [(ngModel)]="data['service_section_2_text']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_1_color">Color</label>
+                                                                            <input
+                                                                                    type="color"
+                                                                                    id="service_section_1_color"
+                                                                                    class="form-control"
+                                                                                    name="service_section_1_color"
+                                                                                    [(ngModel)]="data['service_section_1_color']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_2_color">Color</label>
+                                                                            <input
+                                                                                    type="color"
+                                                                                    id="service_section_2_color"
+                                                                                    class="form-control"
+                                                                                    name="service_section_2_color"
+                                                                                    [(ngModel)]="data['service_section_2_color']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed3 = !isCollapsed3"
+                                                        [attr.aria-expanded]="!isCollapsed3"
+                                                        aria-controls="collapseExample3"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Section 2
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed3">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_3_title">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_3_title"
+                                                                                    class="form-control"
+                                                                                    name="service_section_3_title"
+                                                                                    [(ngModel)]="data['service_section_3_title']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_3_sub_title">Sub Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_3_sub_title"
+                                                                                    class="form-control"
+                                                                                    name="service_section_3_sub_title"
+                                                                                    [(ngModel)]="data['service_section_3_sub_title']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_3_text"
+                                                                                        rows="7"
+                                                                                        name="service_section_3_text"
+                                                                                        [(ngModel)]="data['service_section_3_text']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_4_text_1"
+                                                                                        rows="7"
+                                                                                        name="service_section_4_text_1"
+                                                                                        [(ngModel)]="data['service_section_4_text_1']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_4_text_2"
+                                                                                        rows="7"
+                                                                                        name="service_section_4_text_2"
+                                                                                        [(ngModel)]="data['service_section_4_text_2']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_4_color">Color</label>
+                                                                            <input
+                                                                                    type="color"
+                                                                                    id="service_section_4_color"
+                                                                                    class="form-control"
+                                                                                    name="service_section_4_color"
+                                                                                    [(ngModel)]="data['service_section_4_color']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+<!--                                                                    <div class="col-md-6">-->
+<!--                                                                        <img class="img-fluid"-->
+<!--                                                                             src="{{data['about_section_3_image']}}">-->
+<!--                                                                        <label style="border-radius:0 ;margin-bottom: 50px !important;"-->
+<!--                                                                               for="about_section_3_image"-->
+<!--                                                                               class="btn btn-primary mr-75 mb-0 btn-block">-->
+<!--                                                                            <span>Change Image</span>-->
+<!--                                                                            <input-->
+<!--                                                                                    class="form-control"-->
+<!--                                                                                    type="file"-->
+<!--                                                                                    id="about_section_3_image"-->
+<!--                                                                                    hidden-->
+<!--                                                                                    multiple-->
+<!--                                                                                    accept="image/png, image/jpeg, image/jpg"-->
+<!--                                                                                    (change)="updateImage($event, 'about_section_3_image')"-->
+<!--                                                                            />-->
+<!--                                                                        </label>-->
+<!--                                                                    </div>-->
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed4 = !isCollapsed4"
+                                                        [attr.aria-expanded]="!isCollapsed4"
+                                                        aria-controls="collapseExample4"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Section 3
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed4">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_5_title">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_5_title"
+                                                                                    class="form-control"
+                                                                                    name="service_section_5_title"
+                                                                                    [(ngModel)]="data['service_section_5_title']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_5_text_1"
+                                                                                        rows="7"
+                                                                                        name="service_section_5_text_1"
+                                                                                        [(ngModel)]="data['service_section_5_text_1']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                            
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_5_text_2"
+                                                                                        rows="7"
+                                                                                        name="service_section_5_text_2"
+                                                                                        [(ngModel)]="data['service_section_5_text_2']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                            
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_5_text_3"
+                                                                                        rows="7"
+                                                                                        name="service_section_5_text_3"
+                                                                                        [(ngModel)]="data['service_section_5_text_3']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                            
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed5 = !isCollapsed5"
+                                                        [attr.aria-expanded]="!isCollapsed5"
+                                                        aria-controls="collapseExample5"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Section 4
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed5">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_6_title">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_6_title"
+                                                                                    class="form-control"
+                                                                                    name="service_section_6_title"
+                                                                                    [(ngModel)]="data['service_section_6_title']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_6_text"
+                                                                                        rows="7"
+                                                                                        name="service_section_6_text"
+                                                                                        [(ngModel)]="data['service_section_6_text']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                            
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <img class="img-fluid"
+                                                                             src="{{data['service_section_6_image']}}">
+                                                                        <label style="border-radius:0 ;margin-bottom: 50px !important;"
+                                                                               for="service_section_6_image"
+                                                                               class="btn btn-primary mr-75 mb-0 btn-block">
+                                                                            <span>Change Image</span>
+                                                                            <input
+                                                                                    class="form-control"
+                                                                                    type="file"
+                                                                                    id="service_section_6_image"
+                                                                                    hidden
+                                                                                    multiple
+                                                                                    accept="image/png, image/jpeg, image/jpg"
+                                                                                    (change)="updateImage($event, 'service_section_6_image')"
+                                                                            />
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed6 = !isCollapsed6"
+                                                        [attr.aria-expanded]="!isCollapsed6"
+                                                        aria-controls="collapseExample6"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Section 5
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed6">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_7_text"
+                                                                                        rows="7"
+                                                                                        name="service_section_7_text"
+                                                                                        [(ngModel)]="data['service_section_7_text']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed7 = !isCollapsed7"
+                                                        [attr.aria-expanded]="!isCollapsed7"
+                                                        aria-controls="collapseExample6"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Section 6
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed7">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_8_title">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_8_title"
+                                                                                    class="form-control"
+                                                                                    name="service_section_8_title"
+                                                                                    [(ngModel)]="data['service_section_8_title']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_8_text_1"
+                                                                                        rows="7"
+                                                                                        name="service_section_8_text_1"
+                                                                                        [(ngModel)]="data['service_section_8_text_1']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_8_text_2"
+                                                                                        rows="7"
+                                                                                        name="service_section_8_text_2"
+                                                                                        [(ngModel)]="data['service_section_8_text_2']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed8 = !isCollapsed8"
+                                                        [attr.aria-expanded]="!isCollapsed8"
+                                                        aria-controls="collapseExample8"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Section 7
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed8">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_9_title">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_9_title"
+                                                                                    class="form-control"
+                                                                                    name="service_section_9_title"
+                                                                                    [(ngModel)]="data['service_section_9_title']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_9_color">Color</label>
+                                                                            <input
+                                                                                    type="color"
+                                                                                    id="service_section_9_color"
+                                                                                    class="form-control"
+                                                                                    name="service_section_9_color"
+                                                                                    [(ngModel)]="data['service_section_9_color']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_9_text"
+                                                                                        rows="7"
+                                                                                        name="service_section_9_text"
+                                                                                        [(ngModel)]="data['service_section_9_text']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <img class="img-fluid"
+                                                                             src="{{data['service_section_9_image']}}">
+                                                                        <label style="border-radius:0 ;margin-bottom: 50px !important;"
+                                                                               for="service_section_9_image"
+                                                                               class="btn btn-primary mr-75 mb-0 btn-block">
+                                                                            <span>Change Image</span>
+                                                                            <input
+                                                                                    class="form-control"
+                                                                                    type="file"
+                                                                                    id="service_section_9_image"
+                                                                                    hidden
+                                                                                    multiple
+                                                                                    accept="image/png, image/jpeg, image/jpg"
+                                                                                    (change)="updateImage($event, 'service_section_9_image')"
+                                                                            />
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed9 = !isCollapsed9"
+                                                        [attr.aria-expanded]="!isCollapsed9"
+                                                        aria-controls="collapseExample9"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Section 8
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed9">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_10_text"
+                                                                                        rows="3"
+                                                                                        name="service_section_10_text"
+                                                                                        [(ngModel)]="data['service_section_10_text']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_11_title">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_11_title"
+                                                                                    class="form-control"
+                                                                                    name="service_section_11_title"
+                                                                                    [(ngModel)]="data['service_section_11_title']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_12_title">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_12_title"
+                                                                                    class="form-control"
+                                                                                    name="service_section_12_title"
+                                                                                    [(ngModel)]="data['service_section_12_title']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_13_title">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_13_title"
+                                                                                    class="form-control"
+                                                                                    name="service_section_13_title"
+                                                                                    [(ngModel)]="data['service_section_13_title']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_11_text"
+                                                                                        rows="7"
+                                                                                        name="service_section_3_text"
+                                                                                        [(ngModel)]="data['service_section_11_text']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_12_text"
+                                                                                        rows="7"
+                                                                                        name="service_section_12_text"
+                                                                                        [(ngModel)]="data['service_section_12_text']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_13_text"
+                                                                                        rows="7"
+                                                                                        name="service_section_13_text"
+                                                                                        [(ngModel)]="data['service_section_13_text']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed10 = !isCollapsed10"
+                                                        [attr.aria-expanded]="!isCollapsed10"
+                                                        aria-controls="collapseExample10"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Section 9
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed10">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_14_title">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_14_title"
+                                                                                    class="form-control"
+                                                                                    name="service_section_14_title"
+                                                                                    [(ngModel)]="data['service_section_14_title']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_14_color">Color</label>
+                                                                            <input
+                                                                                    type="color"
+                                                                                    id="service_section_14_color"
+                                                                                    class="form-control"
+                                                                                    name="service_section_14_color"
+                                                                                    [(ngModel)]="data['service_section_14_color']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <img class="img-fluid"
+                                                                             src="{{data['service_section_14_image']}}">
+                                                                        <label style="border-radius:0 ;margin-bottom: 50px !important;"
+                                                                               for="service_section_14_image"
+                                                                               class="btn btn-primary mr-75 mb-0 btn-block">
+                                                                            <span>Change Image</span>
+                                                                            <input
+                                                                                    class="form-control"
+                                                                                    type="file"
+                                                                                    id="service_section_14_image"
+                                                                                    hidden
+                                                                                    multiple
+                                                                                    accept="image/png, image/jpeg, image/jpg"
+                                                                                    (change)="updateImage($event, 'service_section_14_image')"
+                                                                            />
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed11 = !isCollapsed11"
+                                                        [attr.aria-expanded]="!isCollapsed11"
+                                                        aria-controls="collapseExample11"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Section 10
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed11">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_15_title">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_15_title"
+                                                                                    class="form-control"
+                                                                                    name="service_section_15_title"
+                                                                                    [(ngModel)]="data['service_section_15_title']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_15_text">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_15_text"
+                                                                                    class="form-control"
+                                                                                    name="service_section_15_text"
+                                                                                    [(ngModel)]="data['service_section_15_text']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_15_color">Color</label>
+                                                                            <input
+                                                                                    type="color"
+                                                                                    id="service_section_15_color"
+                                                                                    class="form-control"
+                                                                                    name="service_section_15_color"
+                                                                                    [(ngModel)]="data['service_section_15_color']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <img class="img-fluid"
+                                                                             src="{{data['service_section_15_image']}}">
+                                                                        <label style="border-radius:0 ;margin-bottom: 50px !important;"
+                                                                               for="service_section_15_image"
+                                                                               class="btn btn-primary mr-75 mb-0 btn-block">
+                                                                            <span>Change Image</span>
+                                                                            <input
+                                                                                    class="form-control"
+                                                                                    type="file"
+                                                                                    id="service_section_15_image"
+                                                                                    hidden
+                                                                                    multiple
+                                                                                    accept="image/png, image/jpeg, image/jpg"
+                                                                                    (change)="updateImage($event, 'service_section_15_image')"
+                                                                            />
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="col-12 d-flex flex-sm-row flex-column mt-2">
+                                    <button
+                                            type="submit"
+                                            (click)="submit(categoryEdit)"
+                                            class="btn btn-primary mb-1 mb-sm-0 mr-0 mr-sm-1"
+                                            rippleEffect
+                                    >
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- users edit account form ends -->
+                    </div>
+                    <!-- Account Tab ends -->
+                </div>
+            </div>
+        </section>
+        <!-- users edit ends -->
+    </div>
+</div>

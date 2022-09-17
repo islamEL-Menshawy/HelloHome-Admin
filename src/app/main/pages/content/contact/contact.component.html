@@ -1,0 +1,223 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <!-- users edit start -->
+        <section class="app-user-edit">
+            <!-- app-breadcrumb component -->
+            <app-breadcrumb [breadcrumb]="breadcrumbDefault"></app-breadcrumb>
+            <!--/ app-breadcrumb component -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- Account Tab starts -->
+                    <div class="tab-pane active" id="account" aria-labelledby="account-tab" role="tabpanel">
+                        <!-- users edit account form start -->
+                        <form class="form-validate" (ngSubmit)="(categoryEdit.form.valid)" #categoryEdit="ngForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="collapse-icon">
+                                        <div class="collapse-default">
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed1 = !isCollapsed1"
+                                                        [attr.aria-expanded]="!isCollapsed1"
+                                                        aria-controls="collapseExample"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Page Banner
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed1">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="contact_page_title">Banner Title</label>
+                                                                    <input
+                                                                            type="text"
+                                                                            id="contact_page_title"
+                                                                            class="form-control"
+                                                                            name="contact_page_title"
+                                                                            [(ngModel)]="data['contact_page_title']"
+                                                                            #UserNameRef="ngModel"
+                                                                    />
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <img class="img-fluid"
+                                                                     src="{{data['main_image']}}">
+                                                                <label style="border-radius:0 ;margin-bottom: 50px !important;"
+                                                                       for="main_image"
+                                                                       class="btn btn-primary mr-75 mb-0 btn-block">
+                                                                    <span>Change Image</span>
+                                                                    <input
+                                                                            class="form-control"
+                                                                            type="file"
+                                                                            id="main_image"
+                                                                            hidden
+                                                                            multiple
+                                                                            accept="image/png, image/jpeg, image/jpg"
+                                                                            (change)="updateImage($event, 'main_image')"
+                                                                    />
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed2 = !isCollapsed2"
+                                                        [attr.aria-expanded]="!isCollapsed2"
+                                                        aria-controls="collapseExample1"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Section 1
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed2">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="contact_section_1_title">Title</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="contact_section_1_title"
+                                                                                    class="form-control"
+                                                                                    name="contact_section_1_title"
+                                                                                    [(ngModel)]="data['contact_section_1_title']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="contact_section_1_text"
+                                                                                        rows="7"
+                                                                                        name="contact_section_1_text"
+                                                                                        [(ngModel)]="data['contact_section_1_text']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div
+                                                        (click)="isCollapsed3 = !isCollapsed3"
+                                                        [attr.aria-expanded]="!isCollapsed3"
+                                                        aria-controls="collapseExample3"
+                                                        class="card-header collapse-title"
+                                                        data-toggle="collapse"
+                                                >
+                                                    Section 2
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed3">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="contact_address"
+                                                                                        rows="3"
+                                                                                        name="contact_address"
+                                                                                        [(ngModel)]="data['contact_address']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label for="contact_phone_1">Phone 1</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="contact_phone_1"
+                                                                                    class="form-control"
+                                                                                    name="contact_phone_1"
+                                                                                    [(ngModel)]="data['contact_phone_1']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label for="contact_phone_2">Phone 2</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="contact_phone_2"
+                                                                                    class="form-control"
+                                                                                    name="contact_phone_2"
+                                                                                    [(ngModel)]="data['contact_phone_2']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label for="contact_email">E-mail</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="contact_email"
+                                                                                    class="form-control"
+                                                                                    name="contact_email"
+                                                                                    [(ngModel)]="data['contact_email']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="col-12 d-flex flex-sm-row flex-column mt-2">
+                                    <button
+                                            type="submit"
+                                            (click)="submit(categoryEdit)"
+                                            class="btn btn-primary mb-1 mb-sm-0 mr-0 mr-sm-1"
+                                            rippleEffect
+                                    >
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- users edit account form ends -->
+                    </div>
+                    <!-- Account Tab ends -->
+                </div>
+            </div>
+        </section>
+        <!-- users edit ends -->
+    </div>
+</div>

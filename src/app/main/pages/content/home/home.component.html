@@ -1,1 +1,448 @@
-<p>home works!</p>
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <!-- users edit start -->
+        <section class="app-user-edit">
+            <!-- app-breadcrumb component -->
+            <app-breadcrumb [breadcrumb]="breadcrumbDefault"></app-breadcrumb>
+            <!--/ app-breadcrumb component -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- Account Tab starts -->
+                    <div class="tab-pane active" id="account" aria-labelledby="account-tab" role="tabpanel">
+                        <!-- users edit account form start -->
+                        <form class="form-validate" (ngSubmit)="(categoryEdit.form.valid)" #categoryEdit="ngForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="collapse-icon">
+                                        <div class="collapse-default">
+                                            <div class="card">
+                                                <div (click)="isCollapsed1 = !isCollapsed1"
+                                                    [attr.aria-expanded]="!isCollapsed1" aria-controls="collapseExample"
+                                                    class="card-header collapse-title" data-toggle="collapse">
+                                                    Compound Image Slider
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed1">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="compound_slider_title">Compound slider
+                                                                        title</label>
+                                                                    <input type="text" id="compound_slider_title"
+                                                                        class="form-control"
+                                                                        name="compound_slider_title"
+                                                                        [(ngModel)]="data['compound_slider_title']"
+                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                        #UserNameRef="ngModel" />
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div (click)="isCollapsed2 = !isCollapsed2"
+                                                    [attr.aria-expanded]="!isCollapsed2"
+                                                    aria-controls="collapseExample1" class="card-header collapse-title"
+                                                    data-toggle="collapse">
+                                                    Section one
+                                                </div>
+                                                <div [ngbCollapse]="isCollapsed2">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                        for="section_one_title">Section
+                                                                                        one title</label>
+                                                                                    <input type="text"
+                                                                                        id="section_one_title"
+                                                                                        class="form-control"
+                                                                                        name="section_one_title"
+                                                                                        [(ngModel)]="data['section_one_title']"
+                                                                                        #UserNameRef="ngModel" />
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                        for="section_one_link">Section
+                                                                                        one link</label>
+                                                                                    <input type="text"
+                                                                                        id="section_one_link"
+                                                                                        class="form-control"
+                                                                                        name="section_one_link"
+                                                                                        [(ngModel)]="data['section_one_link']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required />
+                                                                                    <span
+                                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        class="invalid-form">
+                                                                                        <small
+                                                                                            class="form-text text-danger"
+                                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                                            field is required!</small>
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                        for="section_one_text_one">Section
+                                                                                        one text</label>
+                                                                                    <input type="text"
+                                                                                        id="section_one_text_one"
+                                                                                        class="form-control"
+                                                                                        name="section_one_text_one"
+                                                                                        [(ngModel)]="data['section_one_text_one']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required />
+                                                                                    <span
+                                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        class="invalid-form">
+                                                                                        <small
+                                                                                            class="form-text text-danger"
+                                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                                            field is required!</small>
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                        for="section_one_text_two">section
+                                                                                        one second text</label>
+                                                                                    <input type="text"
+                                                                                        id="section_one_text_two"
+                                                                                        class="form-control"
+                                                                                        name="section_one_text_two"
+                                                                                        [(ngModel)]="data['section_one_text_two']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required />
+                                                                                    <span
+                                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        class="invalid-form">
+                                                                                        <small
+                                                                                            class="form-text text-danger"
+                                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                                            field is required!</small>
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <img class="img-fluid"
+                                                                                    src="{{data['section_one_image']}}">
+                                                                                <label
+                                                                                    style="border-radius:0 ;margin-bottom: 50px !important;"
+                                                                                    for="section_one_image"
+                                                                                    class="btn btn-primary mr-75 mb-0 btn-block">
+                                                                                    <span>Change Image</span>
+                                                                                    <input class="form-control"
+                                                                                        type="file"
+                                                                                        id="section_one_image" hidden
+                                                                                        multiple
+                                                                                        accept="image/png, image/jpeg, image/jpg"
+                                                                                        (change)="updateImage($event, 'section_one_image')" />
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                        for="section_two_title">Section
+                                                                                        two title</label>
+                                                                                    <input type="text"
+                                                                                        id="section_two_title"
+                                                                                        class="form-control"
+                                                                                        name="section_two_title"
+                                                                                        [(ngModel)]="data['section_two_title']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required />
+                                                                                    <span
+                                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        class="invalid-form">
+                                                                                        <small
+                                                                                            class="form-text text-danger"
+                                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                                            field is required!</small>
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                        for="section_two_link">Section
+                                                                                        two link</label>
+                                                                                    <input type="text"
+                                                                                        id="section_two_link"
+                                                                                        class="form-control"
+                                                                                        name="section_two_link"
+                                                                                        [(ngModel)]="data['section_two_link']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required />
+                                                                                    <span
+                                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        class="invalid-form">
+                                                                                        <small
+                                                                                            class="form-text text-danger"
+                                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                                            field is required!</small>
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                        for="section_two_color">Section
+                                                                                        two color</label>
+                                                                                    <input type="color"
+                                                                                        id="section_two_color"
+                                                                                        class="form-control"
+                                                                                        name="section_two_color"
+                                                                                        [(ngModel)]="data['section_two_color']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required />
+                                                                                    <span
+                                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        class="invalid-form">
+                                                                                        <small
+                                                                                            class="form-text text-danger"
+                                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                                            field is required!</small>
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                        for="section_two_text_one">Section
+                                                                                        two text</label>
+                                                                                    <input type="text"
+                                                                                        id="section_two_text_one"
+                                                                                        class="form-control"
+                                                                                        name="section_two_text_one"
+                                                                                        [(ngModel)]="data['section_two_text_one']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required />
+                                                                                    <span
+                                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        class="invalid-form">
+                                                                                        <small
+                                                                                            class="form-text text-danger"
+                                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                                            field is required!</small>
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                        for="section_two_text_two">Section
+                                                                                        two second text</label>
+                                                                                    <input type="text"
+                                                                                        id="section_two_text_two"
+                                                                                        class="form-control"
+                                                                                        name="section_two_text_two"
+                                                                                        [(ngModel)]="data['section_two_text_two']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required />
+                                                                                    <span
+                                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        class="invalid-form">
+                                                                                        <small
+                                                                                            class="form-text text-danger"
+                                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                                            field is required!</small>
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
+
+
+                                                                            <div class="col-md-12">
+                                                                                <img class="img-fluid"
+                                                                                    src="{{data['section_two_image']}}">
+                                                                                <label
+                                                                                    style="border-radius:0 ;margin-bottom: 50px !important;"
+                                                                                    for="section_two_image"
+                                                                                    class="btn btn-primary mr-75 mb-0 btn-block">
+                                                                                    <span>Change Image</span>
+                                                                                    <input class="form-control"
+                                                                                        type="file"
+                                                                                        id="section_two_image" hidden
+                                                                                        multiple
+                                                                                        accept="image/png, image/jpeg, image/jpg"
+                                                                                        (change)="updateImage($event, 'section_two_image')" />
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div (click)="isCollapsed4 = !isCollapsed4"
+                                                    [attr.aria-expanded]="!isCollapsed4"
+                                                    aria-controls="collapseExample3" class="card-header collapse-title"
+                                                    data-toggle="collapse">
+                                                    Section Two
+                                                </div>
+                                                <div id="collapseExample3" [ngbCollapse]="isCollapsed4">
+                                                    <div class="card">
+                                                        <div class="card-body">
+
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="section_three_link">Section three
+                                                                        link</label>
+                                                                    <input type="text" id="section_three_link"
+                                                                        class="form-control" name="section_three_link"
+                                                                        [(ngModel)]="data['section_three_link']"
+                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                        #UserNameRef="ngModel" required />
+                                                                    <span
+                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                        class="invalid-form">
+                                                                        <small class="form-text text-danger"
+                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                            field is required!</small>
+                                                                    </span>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="section_three_text_one">section three
+                                                                        first text</label>
+                                                                    <input type="text" id="section_three_text_one"
+                                                                        class="form-control"
+                                                                        name="section_three_text_one"
+                                                                        [(ngModel)]="data['section_three_text_one']"
+                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                        #UserNameRef="ngModel" required />
+                                                                    <span
+                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                        class="invalid-form">
+                                                                        <small class="form-text text-danger"
+                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                            field is required!</small>
+                                                                    </span>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="section_three_text_two">section three
+                                                                        second text</label>
+                                                                    <input type="text" id="section_three_text_two"
+                                                                        class="form-control"
+                                                                        name="section_three_text_two"
+                                                                        [(ngModel)]="data['section_three_text_two']"
+                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                        #UserNameRef="ngModel" required />
+                                                                    <span
+                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                        class="invalid-form">
+                                                                        <small class="form-text text-danger"
+                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                            field is required!</small>
+                                                                    </span>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="section_three_color">section three
+                                                                        color</label>
+                                                                    <input type="color" id="section_three_color"
+                                                                        class="form-control" name="section_three_color"
+                                                                        [(ngModel)]="data['section_three_color']"
+                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                        #UserNameRef="ngModel" required />
+                                                                    <span
+                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                        class="invalid-form">
+                                                                        <small class="form-text text-danger"
+                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                            field is required!</small>
+                                                                    </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <img class="img-fluid"
+                                                                    src="{{data['section_three_image']}}">
+                                                                <label
+                                                                    style="border-radius:0 ;margin-bottom: 50px !important;"
+                                                                    for="section_three_image"
+                                                                    class="btn btn-primary mr-75 mb-0 btn-block">
+                                                                    <span>Change Image</span>
+                                                                    <input class="form-control" type="file"
+                                                                        id="section_three_image" hidden multiple
+                                                                        accept="image/png, image/jpeg, image/jpg"
+                                                                        (change)="updateImage($event, 'section_three_image')" />
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <br>
+                                <div class="col-12 d-flex flex-sm-row flex-column mt-2">
+                                    <button type="submit" (click)="submit(categoryEdit)"
+                                        class="btn btn-primary mb-1 mb-sm-0 mr-0 mr-sm-1" rippleEffect>
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- users edit account form ends -->
+                    </div>
+                    <!-- Account Tab ends -->
+                </div>
+            </div>
+        </section>
+        <!-- users edit ends -->
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {ErrorHandler, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,17 +18,20 @@ import { coreConfig } from 'app/app-config';
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
 import { SampleModule } from 'app/main/sample/sample.module';
+import {GlobalErrorHandler} from "./shered/global-error-handler.service";
+import {AuthGuard} from "./auth/helpers";
+import {HeadersInterceptor} from "./interceptor/basicHeaderInterceptor";
 // import {HeadersInterceptor} from "./interceptor/Auth.interseptor";
 
 const appRoutes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./main/pages/pages.module').then(m => m.PagesModule)
+    loadChildren: () => import('./main/pages/pages.module').then(m => m.PagesModule),
   },
   {
     path: '',
     redirectTo: '/home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: '**',
@@ -62,14 +65,14 @@ const appRoutes: Routes = [
     LayoutModule,
     SampleModule
   ],
-  // providers:[
-  //     {
-  //         provide: HTTP_INTERCEPTORS,
-  //         useClass: HeadersInterceptor,
-  //         multi: true,
-  //     },
-      // { provide: ErrorHandler, useClass: GlobalErrorHandler },
-  // ],
+  providers:[
+      {
+          provide: HTTP_INTERCEPTORS,
+          useClass: HeadersInterceptor,
+          multi: true,
+      },
+      { provide: ErrorHandler, useClass: GlobalErrorHandler },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

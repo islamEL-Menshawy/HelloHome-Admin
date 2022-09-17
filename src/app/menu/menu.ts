@@ -54,15 +54,36 @@ export const menu: CoreMenu[] = [
         id: 'home',
         title: 'Home Page',
         type: 'item',
-        icon: 'image',
+        icon: 'home',
         url: 'content/home'
       },
       {
         id: 'slider',
         title: 'Slider',
         type: 'item',
-        icon: 'image',
+        icon: 'columns',
         url: 'slider'
+      },
+      {
+        id: 'about',
+        title: 'About Page',
+        type: 'item',
+        icon: 'command',
+        url: 'content/about'
+      },
+      {
+        id: 'service',
+        title: 'Service Page',
+        type: 'item',
+        icon: 'check-circle',
+        url: 'content/service'
+      },
+      {
+        id: 'contact',
+        title: 'Contact Page',
+        type: 'item',
+        icon: 'codepen',
+        url: 'content/contact'
       }
       ]
   }

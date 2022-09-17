@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { CoreConfigService } from '@core/services/config.service';
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../../../../environments/environment";
 
 @Component({
   selector: 'app-auth-login-v2',
@@ -77,10 +78,9 @@ export class AuthLoginV2Component implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-    console.log(this.loginForm.value);
-    this._http.post<void>(`http://127.0.0.1:8000/api/login`, this.loginForm.value).subscribe((res:any)=>{
-      console.log(res);
-        localStorage.setItem('tokeKey' , res.data.token);
+    this._http.post<void>(`${environment.apiUrl}/login`, this.loginForm.value).subscribe((res:any)=>{
+      this._router.navigate(['/home'])
+        localStorage.setItem('tokenKey' ,'Bearer '+ res.data.token);
         localStorage.setItem('userName' , res.data.name);
     }
     );
@@ -101,6 +101,9 @@ export class AuthLoginV2Component implements OnInit {
    * On init
    */
   ngOnInit(): void {
+    if (localStorage.getItem('tokenKey')){
+      this._router.navigate(['/home']);
+    }
     this.loginForm = this._formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
