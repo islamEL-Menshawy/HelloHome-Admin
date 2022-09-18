@@ -17,11 +17,13 @@ import {AmenitiesService} from "./amenities.service";
 import { AddComponent } from './add/add.component';
 import {BreadcrumbModule} from "../../../layout/components/content-header/breadcrumb/breadcrumb.module";
 import { EditComponent } from './edit/edit.component';
+import {AuthGuard} from "../../../auth/helpers";
 
 // Routing
 const routes : Routes = [
   {
     path: 'amenities',
+    canActivate : [AuthGuard],
     children: [
         {
             path:'',

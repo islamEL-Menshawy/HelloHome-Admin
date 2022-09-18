@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpErrorResponse} from "@angular/common/http";
 import {ToastrService} from "ngx-toastr";
 import {Router} from "@angular/router";
+import {log} from "util";
 
 @Injectable({
   providedIn: 'root'
@@ -12,26 +13,31 @@ export class ErrorHandlerService {
       private toastr: ToastrService,
       private router : Router
   ) { }
-  public handelError(error: HttpErrorResponse) {
-    switch (error.status) {
+  public handelError(errorResponse: HttpErrorResponse) {
+    switch (errorResponse.status) {
       case 422: {
-        console.log(error)
-          this.toastr.error('check form validation','', {
-            toastClass: 'toast ngx-toastr',
-            closeButton: false
-        });
-
+        for (const property in errorResponse.error.errors) {
+          if (errorResponse.error.errors.hasOwnProperty(property)) {
+            const propertyErrors: Array<string> = errorResponse.error.errors[property];
+            propertyErrors.forEach(error => {
+              this.toastr.error(error, errorResponse.error.message, {
+                toastClass: 'toast ngx-toastr',
+                closeButton: false
+              });
+            });
+        }
+        }
         break;
       }
-
       case 401:{
         localStorage.clear();
         location.reload();
       }
-      case 404 :{}
-      case 400:{}
       default: {
-        console.log(error.status)
+        // this.toastr.error("Something Wrong", "Contact Site Administrator", {
+        //   toastClass: 'toast ngx-toastr',
+        //   closeButton: false
+        // });
         break;
       }
     }

@@ -17,11 +17,13 @@ import {LocationsService} from "./locations.service";
 import { NewTypeSidebarComponent } from './new-type-sidebar/new-type-sidebar.component';
 import {BreadcrumbModule} from "../../../layout/components/content-header/breadcrumb/breadcrumb.module";
 import { EditComponent } from './edit/edit.component';
+import {AuthGuard} from "../../../auth/helpers";
 
 // Routing
 const routes : Routes = [
   {
     path: 'locations',
+      canActivate : [AuthGuard],
     children: [
         {
             path:'',

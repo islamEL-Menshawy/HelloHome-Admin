@@ -17,12 +17,14 @@ import {CoreSidebarModule} from "../../../../@core/components";
 import {ToastrModule} from "ngx-toastr";
 import {SweetAlert2Module} from "@sweetalert2/ngx-sweetalert2";
 import {BreadcrumbModule} from "../../../layout/components/content-header/breadcrumb/breadcrumb.module";
+import {AuthGuard} from "../../../auth/helpers";
 
 
 // Routing
 const routes : Routes = [
   {
     path: 'compounds',
+    canActivate : [AuthGuard],
     children: [
       {
         path:'',

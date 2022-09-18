@@ -129,8 +129,8 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label for="video_path">Video Source</label>
-                                        <input
-                                                type="{{is_youtube ? 'text': 'file'}}"
+                                        <input *ngIf="is_youtube"
+                                                type="text"
                                                 id="video_path"
                                                 class="form-control"
                                                 name="video_path"
@@ -138,6 +138,16 @@
                                                 [class.error]="addNew.submitted && UserNameRef.invalid"
                                                 #UserNameRef="ngModel"
                                                 required
+                                        />
+                                        <input  *ngIf="!is_youtube"
+                                               type="file"
+                                               class="form-control"
+                                               name="video_path"
+                                                (change)="setVideo($event)"
+                                               [(ngModel)]="video_path"
+                                               [class.error]="addNew.submitted && UserNameRef.invalid"
+                                               #UserNameRef="ngModel"
+                                               required
                                         />
                                         <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
                           <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
@@ -308,7 +318,7 @@
                                 </div>
                             </div>
                         </form>
-                        <!-- users edit account form ends -->
+                        <!-- users editS account form ends -->
                     </div>
                     <!-- Account Tab ends -->
                 </div>

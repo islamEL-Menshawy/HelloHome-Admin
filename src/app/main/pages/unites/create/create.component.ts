@@ -23,8 +23,25 @@ import {UnitRequest} from "../Types";
 })
 export class CreateComponent implements OnInit {
   public typeName: string;
-  public breadcrumbDefault: Breadcrumb;
   private readonly MODEL_NAME = 'Unit';
+  public breadcrumbDefault: Breadcrumb = {
+    links: [
+      {
+        name: 'Home',
+        isLink: true,
+        link: '/'
+      },
+      {
+        name: `${this.MODEL_NAME}s`,
+        isLink: true,
+        link: '/units'
+      },
+      {
+        name: 'Create',
+        isLink: false
+      }
+    ]
+  };
   public amenityList: AmenitiesResponse;
   public locationList: LocationsResponse;
   public typeList: TypesResponse;
@@ -37,6 +54,7 @@ export class CreateComponent implements OnInit {
   public price: number;
   public is_youtube: boolean = true;
   public video_path: any;
+  public video;
   public location: string;
   public compound_id: number;
   public type_id: number;
@@ -76,11 +94,7 @@ export class CreateComponent implements OnInit {
     });
   }
 
-  /**
-   * Submit
-   *
-   * @param form
-   */
+
   submit(form) {
     if (form.valid){
       // console.log(form.value);
@@ -91,22 +105,17 @@ export class CreateComponent implements OnInit {
         this.dataToSave.is_youtube = 1;
       }else{
         this.dataToSave.is_youtube = 0;
+        this.dataToSave.video_path = this.video;
       }
+
       this._modelService.add(this.dataToSave).subscribe(()=>{
         this.toastr.success(`New ${this.MODEL_NAME} added successfully`, `Add new ${this.MODEL_NAME}`, {
           toastClass: 'toast ngx-toastr',
           closeButton: false
         });
-
       })
     }
   }
-
-
-
-
-
-
   // Success
   toastrSuccess(title, massage) {
     this.toastr.success(massage, title, {
@@ -125,25 +134,7 @@ export class CreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // breadcrumb default
-    this.breadcrumbDefault = {
-      links: [
-        {
-          name: 'Home',
-          isLink: true,
-          link: '/'
-        },
-        {
-          name: `${this.MODEL_NAME}s`,
-          isLink: true,
-          link: '/units'
-        },
-        {
-          name: 'Create',
-          isLink: false
-        }
-      ]
-    };
+
 
 
   }
@@ -161,24 +152,6 @@ export class CreateComponent implements OnInit {
       console.log(event.target.files[x]);
       x++;
     }
-    // if (event.target.files && event.target.files[0]) {
-      // let reader = new FileReader();
-      //
-      // reader.onload = (event: any) => {
-      //   this.image_url = event.target.result;
-      // };
-      //
-      //
-      // this.displayImage = true;
-      //
-      // const file = (event.target as HTMLInputElement).files[0];
-      // this.newAmenityForm.patchValue({
-      //   amenityImage: file
-      // });
-      // this.newAmenityForm.get('amenityImage').updateValueAndValidity();
-
-      // reader.readAsDataURL(event.target.files[0]);
-    // }
   }
 
 
@@ -198,5 +171,18 @@ export class CreateComponent implements OnInit {
       arr.splice(index, 1);
     }
     return arr;
+  }
+
+  setVideo(event) {
+    const file = event.target.files[0];
+    if (file.size < 10959073){
+      this.video = file;
+    }else {
+      this.toastr.error('max file size 10M', 'The given data was invalid.',{
+        toastClass: 'toast ngx-toastr',
+        closeButton: false
+      });
+    }
+
   }
 }
