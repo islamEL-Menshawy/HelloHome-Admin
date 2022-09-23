@@ -20,6 +20,11 @@ export class ContentService {
         .pipe();
   }
 
+  public getSubData($page): Observable<any> {
+    return this._httpClient.get<any>(`${this.API_URL}/data/${$page}`)
+        .pipe();
+  }
+
   public update(data): Observable<any> {
 
     let url = `${this.API_URL}/update`;

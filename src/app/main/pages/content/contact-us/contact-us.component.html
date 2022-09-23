@@ -1,0 +1,55 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <section class="users-list-wrapper">
+            <!-- app-breadcrumb component -->
+            <app-breadcrumb [breadcrumb]="breadcrumbDefault"></app-breadcrumb>
+            <!--/ app-breadcrumb component -->
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="d-flex justify-content-between align-items-center m-1">
+                            <label class="d-flex align-items-center"
+                            >Show
+                                <select class="form-control mx-25" [(ngModel)]="selectedOption">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                                entries</label
+                            >
+                        </div>
+                    </div>
+
+                </div>
+                <ngx-datatable
+                        [rows]="data"
+                        [rowHeight]="50"
+                        class="bootstrap core-bootstrap"
+                        [limit]="selectedOption"
+                        [columnMode]="ColumnMode.force"
+                        [headerHeight]="50"
+                        [footerHeight]="50"
+                        [scrollbarH]="true"
+                >
+                    <ngx-datatable-column name="First Name" prop="firstName" [width]="100"></ngx-datatable-column>
+                    <ngx-datatable-column name="Last Name" prop="lastName" [width]="100"></ngx-datatable-column>
+                    <ngx-datatable-column name="Email" prop="email" [width]="100"></ngx-datatable-column>
+                    <ngx-datatable-column name="Phone Number" prop="phone_number" [width]="100"></ngx-datatable-column>
+                    <ngx-datatable-column name="View Message" [width]="40" [sortable]="false">
+                        <ng-template ngx-datatable-cell-template let-row="row">
+                            <div ngbDropdown container="body">
+                                <button type="button" rippleEffect class="btn btn-outline-primary" [ngbPopover]="row.massage"  placement="bottom"
+                                        popoverTitle="Customer Message" >
+                                    View Message
+                                </button>
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                </ngx-datatable>
+            </div>
+        </section>
+    </div>
+
+
+</div>

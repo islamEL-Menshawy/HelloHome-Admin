@@ -84,6 +84,42 @@ export const menu: CoreMenu[] = [
         type: 'item',
         icon: 'codepen',
         url: 'content/contact'
+      },
+      {
+        id: 'config',
+        title: 'Config',
+        type: 'item',
+        icon: 'cpu',
+        url: 'content/config'
+      }
+      ]
+  },
+  {
+    id: 'site-data',
+    title: 'Site Data',
+    type: 'section',
+    icon: 'image',
+    children: [
+      {
+        id: 'newsletter',
+        title: 'Newsletter',
+        type: 'item',
+        icon: 'voicemail',
+        url: 'site-data/newsletter'
+      },
+      {
+        id: 'contact-us',
+        title: 'Contact Us',
+        type: 'item',
+        icon: 'cast',
+        url: 'site-data/contact'
+      },
+      {
+        id: 'register-interest',
+        title: 'Register Interest',
+        type: 'item',
+        icon: 'award',
+        url: 'site-data/register-interest'
       }
       ]
   }

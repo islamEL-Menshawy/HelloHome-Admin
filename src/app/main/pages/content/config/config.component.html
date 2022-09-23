@@ -1,0 +1,121 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <!-- users edit start -->
+        <section class="app-user-edit">
+            <!-- app-breadcrumb component -->
+            <app-breadcrumb [breadcrumb]="breadcrumbDefault"></app-breadcrumb>
+            <!--/ app-breadcrumb component -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- Account Tab starts -->
+                    <div class="tab-pane active" id="account" aria-labelledby="account-tab" role="tabpanel">
+                        <!-- users edit account form start -->
+                        <form class="form-validate" (ngSubmit)="(categoryEdit.form.valid)" #categoryEdit="ngForm">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="facebook">Facebook</label>
+                                        <input
+                                                type="text"
+                                                id="facebook"
+                                                class="form-control"
+                                                name="facebook"
+                                                [(ngModel)]="data['facebook']"
+                                                #UserNameRef="ngModel"
+                                        />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="youtube">Youtube</label>
+                                        <input
+                                                type="text"
+                                                id="youtube"
+                                                class="form-control"
+                                                name="youtube"
+                                                [(ngModel)]="data['youtube']"
+                                                #UserNameRef="ngModel"
+                                        />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="linkedin">Linkedin</label>
+                                        <input
+                                                type="text"
+                                                id="linkedin"
+                                                class="form-control"
+                                                name="linkedin"
+                                                [(ngModel)]="data['linkedin']"
+                                                #UserNameRef="ngModel"
+                                        />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="instegram">Instagram</label>
+                                        <input
+                                                type="text"
+                                                id="instegram"
+                                                class="form-control"
+                                                name="instegram"
+                                                [(ngModel)]="data['instegram']"
+                                                #UserNameRef="ngModel"
+                                        />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="whatsapp">What's App</label>
+                                        <input
+                                                type="text"
+                                                id="whatsapp"
+                                                class="form-control"
+                                                name="whatsapp"
+                                                [(ngModel)]="data['whatsapp']"
+                                                #UserNameRef="ngModel"
+                                        />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="location">Location</label>
+                                        <input
+                                                type="text"
+                                                id="location"
+                                                class="form-control"
+                                                name="location"
+                                                [(ngModel)]="data['location']"
+                                                #UserNameRef="ngModel"
+                                        />
+                                    </div>
+
+                                </div>
+                                <br>
+                                <div class="col-12 d-flex flex-sm-row flex-column mt-2">
+                                    <button
+                                            type="submit"
+                                            (click)="submit(categoryEdit)"
+                                            class="btn btn-primary mb-1 mb-sm-0 mr-0 mr-sm-1"
+                                            rippleEffect
+                                    >
+                                        Save Changes
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- users edit account form ends -->
+                    </div>
+                    <!-- Account Tab ends -->
+                </div>
+            </div>
+        </section>
+        <!-- users edit ends -->
+    </div>
+</div>

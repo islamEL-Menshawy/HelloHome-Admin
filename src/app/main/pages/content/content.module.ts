@@ -18,6 +18,10 @@ import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import { ContactComponent } from './contact/contact.component';
 import {AuthGuard} from "../../../auth/helpers";
+import { ConfigComponent } from './config/config.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { UnitInteractiveComponent } from './unit-interactive/unit-interactive.component';
 
 // Routing
 const routes : Routes = [
@@ -43,6 +47,38 @@ const routes : Routes = [
         path:'contact',
         component: ContactComponent,
         data: { animation: 'list' }
+      },
+      {
+        path:'config',
+        component: ConfigComponent,
+        data: { animation: 'list' }
+      },
+      {
+        path:'newsletter',
+        component: NewsletterComponent,
+        data: { animation: 'list' }
+      }
+    ]
+  ,
+    canActivate : [AuthGuard]
+  },
+  {
+    path: 'site-data',
+    children: [
+      {
+        path:'newsletter',
+        component: NewsletterComponent,
+        data: { animation: 'list' }
+      },
+      {
+        path:'contact',
+        component: ContactUsComponent,
+        data: { animation: 'list' }
+      },
+      {
+        path:'register-interest',
+        component: UnitInteractiveComponent,
+        data: { animation: 'list' }
       }
     ]
   ,
@@ -55,7 +91,11 @@ const routes : Routes = [
     HomeComponent,
     AboutComponent,
     ServicesComponent,
-    ContactComponent
+    ContactComponent,
+    ConfigComponent,
+    NewsletterComponent,
+    ContactUsComponent,
+    UnitInteractiveComponent
   ],
   imports: [
     CommonModule,

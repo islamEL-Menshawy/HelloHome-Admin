@@ -18,30 +18,30 @@ export class HomeComponent implements OnInit {
   public isCollapsed3 = true;
   public isCollapsed4 = true;
   public isDataLoaded = false;
-  public breadcrumbDefault: Breadcrumb;
+  public breadcrumbDefault: Breadcrumb = {
+    links: [
+      {
+        name: 'Home',
+        isLink: true,
+        link: '/'
+      },
+      {
+        name: 'Edit Content',
+        isLink: false
+      },
+      {
+        name: 'Home',
+        isLink: false
+      }
+    ]
+  };
   constructor(private _contentService: ContentService,
               private router: Router,
               private toastr: ToastrService) { }
 
   ngOnInit(): void {
     // breadcrumb default
-    this.breadcrumbDefault = {
-      links: [
-        {
-          name: 'Home',
-          isLink: true,
-          link: '/'
-        },
-        {
-          name: 'Edit Content',
-          isLink: false
-        },
-        {
-          name: 'Home',
-          isLink: false
-        }
-      ]
-    };
+
     this._contentService.getData('Home').subscribe(response => {
       if (response.success){
         this.data = response.data;

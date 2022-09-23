@@ -5,21 +5,14 @@ import {Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss'],
-  encapsulation:ViewEncapsulation.None
+  selector: 'app-config',
+  templateUrl: './config.component.html',
+  styleUrls: ['./config.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
-export class AboutComponent implements OnInit {
+export class ConfigComponent implements OnInit {
 
   public data:any = {};
-  public isCollapsed1 = true;
-  public isCollapsed2 = true;
-  public isCollapsed3 = true;
-  public isCollapsed4 = true;
-  public isCollapsed5 = true;
-  public isCollapsed6 = true;
-  public isCollapsed7 = true;
   public breadcrumbDefault: Breadcrumb = {
     links: [
       {
@@ -32,7 +25,7 @@ export class AboutComponent implements OnInit {
         isLink: false
       },
       {
-        name: 'About',
+        name: 'Config',
         isLink: false
       }
     ]
@@ -44,7 +37,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     // breadcrumb default
-    this._contentService.getData('About us').subscribe(response => {
+    this._contentService.getData('config').subscribe(response => {
       if (response.success){
         this.data = response.data;
       }else {
@@ -61,24 +54,11 @@ export class AboutComponent implements OnInit {
   submit(form) {
     if (form.valid) {
       this._contentService.update(form.value).subscribe();
-      this.toastr.success("About Page Updated successfully", "Page updated", {
+      this.toastr.success("Config Updated successfully", "Page updated", {
         toastClass: 'toast ngx-toastr',
         closeButton: false
       });
     }
   }
-
-  updateImage(event, title){
-    let image : File = event.target.files[0];
-    this._contentService.updateImage(title, image).subscribe(response =>{
-      console.log(response.data);
-      this.data[title] = response.data;
-      this.toastr.success("Image updated", "Image Updated Successfully",{
-        toastClass: 'toast ngx-toastr',
-        closeButton: false
-      });
-    });
-  }
-
 
 }
