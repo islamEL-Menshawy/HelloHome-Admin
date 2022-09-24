@@ -155,13 +155,17 @@ export class CreateComponent implements OnInit {
 
       this.images.push(event.target.files[x]);
       reader.readAsDataURL(event.target.files[x]);
-      console.log(event.target.files[x]);
       x++;
     }
   }
+  removeImage(image){
+    let index = this.image_url.indexOf(image);
+    this.image_url = this.removeItemOnce(this.image_url, image);
+    this.images = this.removeItemOnce(this.images, this.images[index]);
 
-
-
+    console.log(this.image_url);
+    console.log(this.images);
+  }
   addOrRemove(id) {
     if (this.aminites.includes(id)){
       this.aminites = this.removeItemOnce(this.aminites, id);
