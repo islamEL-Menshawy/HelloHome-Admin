@@ -308,12 +308,17 @@
 
                                 <div class="col-12 d-flex flex-sm-row flex-column mt-2">
                                     <button
+                                            *ngIf="is_active"
                                             type="submit"
                                             (click)="submit(addNew)"
                                             class="btn btn-primary mb-1 mb-sm-0 mr-0 mr-sm-1"
                                             rippleEffect
                                     >
                                         Save Unit
+                                    </button>
+                                    <button *ngIf="!is_active" class="btn btn-outline-primary" type="button" disabled rippleEffect>
+                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                        <span class="sr-only">Loading...</span>
                                     </button>
                                 </div>
                             </div>

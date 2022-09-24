@@ -14,6 +14,7 @@ import {LocationsService} from "../../locations/locations.service";
 import {TypesService} from "../../types/types.service";
 import {CompoundsService} from "../../compounds/compounds.service";
 import {UnitRequest} from "../Types";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create',
@@ -22,6 +23,7 @@ import {UnitRequest} from "../Types";
   encapsulation: ViewEncapsulation.None
 })
 export class CreateComponent implements OnInit {
+  public is_active: boolean = true;
   public typeName: string;
   private readonly MODEL_NAME = 'Unit';
   public breadcrumbDefault: Breadcrumb = {
@@ -77,6 +79,7 @@ export class CreateComponent implements OnInit {
       private typeService: TypesService,
       private compoundService: CompoundsService,
       private fb: FormBuilder,
+      private router: Router,
       private toastr: ToastrService) {
     this.newAmenityForm = this.fb.group({amenityImage: [null]});
 
@@ -107,12 +110,15 @@ export class CreateComponent implements OnInit {
         this.dataToSave.is_youtube = 0;
         this.dataToSave.video_path = this.video;
       }
-
+      this.is_active = false;
       this._modelService.add(this.dataToSave).subscribe(()=>{
+        this.is_active = true;
+        this.router.navigate(['/units']);
         this.toastr.success(`New ${this.MODEL_NAME} added successfully`, `Add new ${this.MODEL_NAME}`, {
           toastClass: 'toast ngx-toastr',
           closeButton: false
         });
+
       })
     }
   }
