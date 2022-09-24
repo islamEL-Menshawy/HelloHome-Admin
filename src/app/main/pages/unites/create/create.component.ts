@@ -51,7 +51,7 @@ export class CreateComponent implements OnInit {
   public area: number;
   public bathroom_number: number;
   public bed_number: number;
-  public price: number;
+  public price: string;
   public is_youtube: boolean = true;
   public video_path: any;
   public video;
