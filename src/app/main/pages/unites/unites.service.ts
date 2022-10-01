@@ -30,17 +30,9 @@ export class UnitesService {
   }
     public add(data: UnitRequest): Observable<UnitResponse> {
         const formData: any = new FormData();
-        formData.append("bed_number",data.bed_number);
-        formData.append("bathroom_number",data.bathroom_number);
-        formData.append("area",data.area);
-        formData.append("price",data.price);
-        formData.append("is_youtube",data.is_youtube);
-        formData.append("video_path",data.video_path);
-        formData.append("location",data.location);
-        formData.append("compound_id",data.compound_id);
-        formData.append("type_id",data.type_id);
-        formData.append("location_id",data.location_id);
-
+        for (let key of Object.keys(data)) {
+            formData.append(key, data[key]);
+        }
 
         for (let key of data.aminites) {
             formData.append("aminites[]", key);

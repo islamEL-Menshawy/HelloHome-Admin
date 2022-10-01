@@ -87,7 +87,7 @@ export const menu: CoreMenu[] = [
       },
       {
         id: 'config',
-        title: 'Config',
+        title: 'Social Media',
         type: 'item',
         icon: 'cpu',
         url: 'content/config'

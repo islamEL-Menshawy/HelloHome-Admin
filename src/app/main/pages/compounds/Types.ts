@@ -11,7 +11,9 @@ export interface CompoundsResponse {
             "created_at": string
         },
         "description_en": string,
+        "location" : string,
         "website": string,
+        "order":number,
         "is_active": boolean,
         "last_modify": string,
         "number_of_unites": number
@@ -34,6 +36,8 @@ export interface CompoundResponse {
         },
         "description_en": string,
         "website": string,
+        "location" : string,
+        "order":number,
         "is_active": boolean,
         "last_modify": string,
         "number_of_unites": number
@@ -52,6 +56,8 @@ export interface InstanceCompoundResponse {
         },
         "description_en": string,
         "website": string,
+        "order":number,
+        "location" : string,
         "is_active": boolean,
         "last_modify": string,
         "number_of_unites": number
@@ -61,6 +67,8 @@ export interface InstanceCompoundResponse {
 export interface CompoundRequest{
     "title_en": string,
     "compound_image",
+    "order":number,
+    "location" : string,
     "description_en": string,
     "website":string
 }

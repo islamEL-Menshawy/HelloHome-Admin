@@ -24,13 +24,7 @@
                                                 [(ngModel)]="first_text"
                                                 [class.error]="addNew.submitted && UserNameRef.invalid"
                                                 #UserNameRef="ngModel"
-                                                required
                                         />
-                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
-                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
-                          >This field is required!</small
-                          >
-                        </span>
                                     </div>
 
                                 </div>
@@ -45,13 +39,8 @@
                                                 [(ngModel)]="second_text"
                                                 [class.error]="addNew.submitted && UserNameRef.invalid"
                                                 #UserNameRef="ngModel"
-                                                required
+
                                         />
-                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
-                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
-                          >This field is required!</small
-                          >
-                        </span>
                                     </div>
 
                                 </div>
@@ -68,11 +57,6 @@
                                                         width="100%"
                                                         alt="User avatar"
                                                 />
-
-                                                <video *ngIf="!is_image"
-                                                        class="users-avatar-shadow  mr-2 my-25 cursor-pointer" controls>
-                                                    <source [src]="slideImage" type="video/*">
-                                                </video>
                                             </div>
                                         </div>
                                     </div>

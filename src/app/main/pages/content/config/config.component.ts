@@ -25,7 +25,7 @@ export class ConfigComponent implements OnInit {
         isLink: false
       },
       {
-        name: 'Config',
+        name: 'Social Media',
         isLink: false
       }
     ]

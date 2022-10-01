@@ -18,6 +18,91 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        <label for="title">Title</label>
+                                        <input
+                                                type="string"
+                                                id="title"
+                                                class="form-control"
+                                                name="title"
+                                                [(ngModel)]="title"
+                                                [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <input
+                                                type="string"
+                                                id="description"
+                                                class="form-control"
+                                                name="description"
+                                                [(ngModel)]="description"
+                                                [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="phone_number">Phone Number</label>
+                                        <input
+                                                type="string"
+                                                id="phone_number"
+                                                class="form-control"
+                                                name="phone_number"
+                                                [(ngModel)]="phone_number"
+                                                [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="order">Order</label>
+                                        <input
+                                                type="number"
+                                                id="order"
+                                                class="form-control"
+                                                name="order"
+                                                [(ngModel)]="order"
+                                                [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
                                         <label for="bed_number">Bedroom Number</label>
                                         <input
                                                 type="number"
@@ -261,7 +346,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <br>
                                 <div class="col-md-12">
                                     <hr>
@@ -300,12 +384,6 @@
                                     <img class="img-fluid"  src="{{image}}" >
                                     <button style="border-radius:0 ;margin-bottom: 50px !important;" (click)="removeImage(image)" class="btn btn-danger mr-75 mb-0 btn-block">Remove Image</button>
                                 </div>
-
-
-
-
-
-
                                 <div class="col-12 d-flex flex-sm-row flex-column mt-2">
                                     <button
                                             *ngIf="is_active"

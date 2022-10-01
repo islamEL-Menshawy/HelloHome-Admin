@@ -60,6 +60,10 @@ export class CreateComponent implements OnInit {
   public location: string;
   public compound_id: number;
   public type_id: number;
+  public title: number;
+  public description: number;
+  public phone_number: number;
+  public order: number;
   public location_id: number;
   public aminites: number[]=[];
   public images: any[]=[];
@@ -100,8 +104,9 @@ export class CreateComponent implements OnInit {
 
   submit(form) {
     if (form.valid){
-      // console.log(form.value);
+      console.log(form.value);
       this.dataToSave = form.value;
+      console.log(this.dataToSave);
       this.dataToSave.aminites = this.aminites;
       this.dataToSave.images = this.images;
       if (this.dataToSave.is_youtube){
@@ -162,9 +167,6 @@ export class CreateComponent implements OnInit {
     let index = this.image_url.indexOf(image);
     this.image_url = this.removeItemOnce(this.image_url, image);
     this.images = this.removeItemOnce(this.images, this.images[index]);
-
-    console.log(this.image_url);
-    console.log(this.images);
   }
   addOrRemove(id) {
     if (this.aminites.includes(id)){

@@ -95,6 +95,11 @@ export class EditComponent implements OnInit {
   submit(form) {
     if (form.valid) {
       this.dataToUpdate = form.value;
+      if (this.dataToUpdate.is_youtube){
+        this.dataToUpdate.is_youtube = 1;
+      }else{
+        this.dataToUpdate.is_youtube = 0;
+      }
       this.dataToUpdate.aminites = this.aminites;
       this._modelService.update(this.id, this.dataToUpdate).pipe(takeUntil(this._unsubscribeAll)).subscribe(() => {
         // Success

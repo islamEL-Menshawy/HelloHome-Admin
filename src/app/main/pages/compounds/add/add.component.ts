@@ -24,6 +24,8 @@ export class AddComponent implements OnInit {
   public website = "";
   public description = "";
   public image_url = "";
+  public order = "";
+  public location = "";
 
   public amenityRequest: CompoundRequest ;
   public displayImage:boolean = false;

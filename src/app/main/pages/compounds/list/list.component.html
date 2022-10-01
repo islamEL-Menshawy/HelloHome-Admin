@@ -68,6 +68,11 @@
                             <div class="badge badge-info">{{ sub }}</div>
                         </ng-template>
                     </ngx-datatable-column>
+                    <ngx-datatable-column name="Order" prop="order" [width]="200">
+                        <ng-template let-sub="value" ngx-datatable-cell-template>
+                            <div class="badge badge-danger">{{ sub }}</div>
+                        </ng-template>
+                    </ngx-datatable-column>
                     <ngx-datatable-column name="Status" prop="is_active" [width]="100">
                         <ng-template let-row="row" let-status="value"  ngx-datatable-cell-template>
                             <div class="custom-control custom-control-success custom-switch">

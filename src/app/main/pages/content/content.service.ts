@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../../../environments/environment";
-import {UnitResponse} from "../unites/Types";
 import {tap} from "rxjs/operators";
+
 
 @Injectable({
   providedIn: 'root'
@@ -26,9 +26,14 @@ export class ContentService {
   }
 
   public update(data): Observable<any> {
-
     let url = `${this.API_URL}/update`;
     return this._httpClient.put<any>(url, { 'data': data});
+  }
+
+  public delete(id: number, type: string): Observable<void> {
+    let url = `${this.API_URL}/delete/${id}/${type}`;
+    return this._httpClient.delete<void>(url)
+        .pipe();
   }
 
   public updateImage(key, image): Observable<any> {

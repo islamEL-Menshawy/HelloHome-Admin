@@ -34,6 +34,68 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="website">Website</label>
+                                        <input
+                                                type="text"
+                                                id="website"
+                                                class="form-control"
+                                                name="website"
+                                                [(ngModel)]="currentRow.data.website"
+                                                [class.error]="compoundEdit.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="compoundEdit.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="location">Location</label>
+                                        <input
+                                                type="text"
+                                                id="location"
+                                                class="form-control"
+                                                name="location"
+                                                [(ngModel)]="currentRow.data.location"
+                                                [class.error]="compoundEdit.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="compoundEdit.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="order">Order</label>
+                                        <input
+                                                type="number"
+                                                id="order"
+                                                class="form-control"
+                                                name="order"
+                                                [(ngModel)]="currentRow.data.order"
+                                                [class.error]="compoundEdit.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="compoundEdit.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
                                     <div class="media mb-2">
 
                                         <img
@@ -67,26 +129,6 @@
                                                 </button>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="website">Website</label>
-                                        <input
-                                                type="text"
-                                                id="website"
-                                                class="form-control"
-                                                name="website"
-                                                [(ngModel)]="currentRow.data.website"
-                                                [class.error]="compoundEdit.submitted && UserNameRef.invalid"
-                                                #UserNameRef="ngModel"
-                                                required
-                                        />
-                                        <span *ngIf="compoundEdit.submitted && UserNameRef.invalid" class="invalid-form">
-                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
-                          >This field is required!</small
-                          >
-                        </span>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

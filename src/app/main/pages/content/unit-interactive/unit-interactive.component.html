@@ -38,19 +38,28 @@
                     <ngx-datatable-column name="View Message" [width]="40" [sortable]="false">
                         <ng-template ngx-datatable-cell-template let-row="row">
                             <div ngbDropdown container="body">
-                                <button type="button" rippleEffect class="btn btn-outline-primary" [ngbPopover]="row.massage"  placement="bottom"
-                                        popoverTitle="Customer Message" >
+                                <button type="button" rippleEffect class="btn btn-outline-primary" (click)="openMassage(row.massage)" >
                                     View Message
                                 </button>
                             </div>
                         </ng-template>
                     </ngx-datatable-column>
+
                     <ngx-datatable-column name="View Unit" [width]="40" [sortable]="false">
                         <ng-template ngx-datatable-cell-template let-row="row">
                             <div ngbDropdown container="body">
                                 <a [href]="row.unit_url" target="_blank"  class="btn btn-outline-primary">
                                     View Unit
                                 </a>
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="Delete" [width]="40" [sortable]="false">
+                        <ng-template ngx-datatable-cell-template let-row="row">
+                            <div ngbDropdown container="body">
+                                <button type="button" rippleEffect class="btn btn-outline-danger" (click)="fireDeleteModel(row.id, 'unit')" >
+                                    Delete
+                                </button>
                             </div>
                         </ng-template>
                     </ngx-datatable-column>
