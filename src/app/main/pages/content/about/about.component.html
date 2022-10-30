@@ -183,6 +183,21 @@
                                                                         </div>
 
                                                                     </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="about_section_download_profile">File</label>
+                                                                            <input
+                                                                                    type="file"
+                                                                                    id="about_section_download_profile"
+                                                                                    class="form-control"
+                                                                                    name="about_section_3_color"
+                                                                                    [(ngModel)]="data['about_section_download_profile']"
+                                                                                    #UserNameRef="ngModel"
+                                                                                    (change)="updateImage($event, 'about_section_download_profile')"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>

@@ -16,8 +16,7 @@
                                 <div class="col-md-12">
                                     <h1>Basic Data</h1>
                                 </div>
-
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="title">Title</label>
                                         <input
@@ -40,13 +39,34 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="description">Description</label>
+                                        <label for="description">Description Right</label>
                                         <input
                                                 type="string"
                                                 id="description"
                                                 class="form-control"
                                                 name="description"
                                                 [(ngModel)]="currentRow.data.description"
+                                                [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="categoryEdit.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="description_left">Description Left</label>
+                                        <input
+                                                type="string"
+                                                id="description_left"
+                                                class="form-control"
+                                                name="description_left"
+                                                [(ngModel)]="currentRow.data.description_left"
                                                 [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                 #UserNameRef="ngModel"
                                                 required

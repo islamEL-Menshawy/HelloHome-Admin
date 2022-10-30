@@ -29,6 +29,7 @@ export class UnitesService {
         }));
   }
     public add(data: UnitRequest): Observable<UnitResponse> {
+        console.log(data);
         const formData: any = new FormData();
         for (let key of Object.keys(data)) {
             formData.append(key, data[key]);

@@ -62,6 +62,7 @@ export class CreateComponent implements OnInit {
   public type_id: number;
   public title: number;
   public description: number;
+  public description_left: number;
   public phone_number: number;
   public order: number;
   public location_id: number;
@@ -104,9 +105,7 @@ export class CreateComponent implements OnInit {
 
   submit(form) {
     if (form.valid){
-      console.log(form.value);
       this.dataToSave = form.value;
-      console.log(this.dataToSave);
       this.dataToSave.aminites = this.aminites;
       this.dataToSave.images = this.images;
       if (this.dataToSave.is_youtube){
