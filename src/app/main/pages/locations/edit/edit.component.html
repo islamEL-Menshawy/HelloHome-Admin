@@ -13,7 +13,7 @@
                         <!-- users edit account form start -->
                         <form class="form-validate" (ngSubmit)="(categoryEdit.form.valid)" #categoryEdit="ngForm">
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="categoryName">Location Name</label>
                                         <input
@@ -22,6 +22,26 @@
                                                 class="form-control"
                                                 name="title_en"
                                                 [(ngModel)]="currentRow.data.title_en"
+                                                [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="categoryEdit.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="categoryNameAR">Location Name AR</label>
+                                        <input
+                                                type="text"
+                                                id="categoryNameAR"
+                                                class="form-control"
+                                                name="title_ar"
+                                                [(ngModel)]="currentRow.data.title_ar"
                                                 [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                 #UserNameRef="ngModel"
                                                 required

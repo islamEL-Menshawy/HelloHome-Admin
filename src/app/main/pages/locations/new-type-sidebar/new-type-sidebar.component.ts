@@ -11,7 +11,8 @@ import {LocationRequest} from "../Types";
 })
 export class NewTypeSidebarComponent implements OnDestroy {
 
-  public locationName: string;
+  public locationNameEN: string;
+  public locationNameAR: string;
   public typeDate: LocationRequest;
 
   private _unsubscribeAll = new Subject();
@@ -39,7 +40,8 @@ export class NewTypeSidebarComponent implements OnDestroy {
         this.toastrSuccess("Add new Type", "New type added successfully")
       });
       this.toggleSidebar('new-location-sidebar');
-      this.locationName = ' ';
+      this.locationNameEN = ' ';
+      this.locationNameAR = ' ';
     }
   }
 
