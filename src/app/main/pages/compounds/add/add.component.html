@@ -15,13 +15,34 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="compoundName">Compound Name</label>
+                                        <label for="compoundName">Compound Name EN</label>
                                         <input
                                                 type="text"
                                                 id="compoundName"
                                                 class="form-control"
                                                 name="title_en"
-                                                [(ngModel)]="amenityTitle"
+                                                [(ngModel)]="amenityTitleEN"
+                                                [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="compoundNameAR">Compound Name AR</label>
+                                        <input
+                                                type="text"
+                                                id="compoundNameAR"
+                                                class="form-control"
+                                                name="title_ar"
+                                                [(ngModel)]="amenityTitleAR"
                                                 [class.error]="addNew.submitted && UserNameRef.invalid"
                                                 #UserNameRef="ngModel"
                                                 required
@@ -78,6 +99,44 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        <label for="description">Description EN</label>
+                                        <textarea
+                                                [(ngModel)]="descriptionEN"
+                                                [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                class="form-control" name="description_en"
+                                                id="description" rows="3"
+                                                placeholder="Textarea"></textarea>
+
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="descriptionAR">Description AR</label>
+                                        <textarea
+                                                [(ngModel)]="descriptionAR"
+                                                [class.error]="addNew.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                class="form-control" name="description_ar" id="descriptionAR" rows="3" placeholder="Textarea"></textarea>
+
+                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
                                         <label for="order">Order</label>
                                         <input
                                                 type="number"
@@ -97,6 +156,7 @@
                                     </div>
 
                                 </div>
+
                                 <div class="col-md-6">
 
                                     <div class="media mb-2">
@@ -135,24 +195,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="description">Description</label>
-                                        <textarea
-                                                [(ngModel)]="description"
-                                                [class.error]="addNew.submitted && UserNameRef.invalid"
-                                                #UserNameRef="ngModel"
-                                                class="form-control" name="description_en" id="description" rows="3" placeholder="Textarea"></textarea>
 
-                                        <span *ngIf="addNew.submitted && UserNameRef.invalid" class="invalid-form">
-                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
-                          >This field is required!</small
-                          >
-                        </span>
-                                    </div>
-
-
-                                </div>
                                 <div class="col-12 d-flex flex-sm-row flex-column mt-2">
                                     <button
                                             type="submit"

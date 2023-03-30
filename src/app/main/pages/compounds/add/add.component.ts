@@ -16,13 +16,14 @@ import {CompoundsService} from "../compounds.service";
 })
 export class AddComponent implements OnInit {
 
-  public typeName: string;
   public breadcrumbDefault: Breadcrumb;
   private readonly MODEL_NAME = 'Compound';
 
-  public amenityTitle = "";
+  public amenityTitleEN = "";
+  public amenityTitleAR = "";
   public website = "";
-  public description = "";
+  public descriptionEN = "";
+  public descriptionAR = "";
   public image_url = "";
   public order = "";
   public location = "";

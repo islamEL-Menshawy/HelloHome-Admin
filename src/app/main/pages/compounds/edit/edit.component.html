@@ -15,7 +15,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="categoryName">Compound Name</label>
+                                        <label for="categoryName">Compound Name EN</label>
                                         <input
                                                 type="text"
                                                 id="categoryName"
@@ -26,6 +26,58 @@
                                                 #UserNameRef="ngModel"
                                                 required
                                         />
+                                        <span *ngIf="compoundEdit.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="categoryNameAR">Compound Name AR</label>
+                                        <input
+                                                type="text"
+                                                id="categoryNameAR"
+                                                class="form-control"
+                                                name="title_ar"
+                                                [(ngModel)]="currentRow.data.title_ar"
+                                                [class.error]="compoundEdit.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="compoundEdit.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="description">Description AR</label>
+                                        <textarea
+                                                [(ngModel)]="currentRow.data.description_en"
+                                                [class.error]="compoundEdit.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                class="form-control" name="description_en" id="description" rows="3" placeholder="Textarea"></textarea>
+
+                                        <span *ngIf="compoundEdit.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="descriptionAR">Description AR</label>
+                                        <textarea
+                                                [(ngModel)]="currentRow.data.description_ar"
+                                                [class.error]="compoundEdit.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                class="form-control" name="description_ar" id="descriptionAR" rows="3" placeholder="Textarea"></textarea>
+
                                         <span *ngIf="compoundEdit.submitted && UserNameRef.invalid" class="invalid-form">
                           <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
                           >This field is required!</small
@@ -131,23 +183,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="description">Description</label>
-                                        <textarea
-                                                [(ngModel)]="currentRow.data.description_en"
-                                                [class.error]="compoundEdit.submitted && UserNameRef.invalid"
-                                                #UserNameRef="ngModel"
-                                                name="description_en"
-                                                class="form-control" name="description_en" id="description" rows="3" placeholder="Textarea"></textarea>
 
-                                        <span *ngIf="compoundEdit.submitted && UserNameRef.invalid" class="invalid-form">
-                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
-                          >This field is required!</small
-                          >
-                        </span>
-                                    </div>
-                                </div>
                                 <div class="col-12 d-flex flex-sm-row flex-column mt-2">
                                     <button
                                             type="submit"
