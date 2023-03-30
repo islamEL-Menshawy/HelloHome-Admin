@@ -24,7 +24,6 @@ import {Router} from "@angular/router";
 })
 export class CreateComponent implements OnInit {
   public is_active: boolean = true;
-  public typeName: string;
   private readonly MODEL_NAME = 'Unit';
   public breadcrumbDefault: Breadcrumb = {
     links: [
@@ -60,9 +59,12 @@ export class CreateComponent implements OnInit {
   public location: string;
   public compound_id: number;
   public type_id: number;
-  public title: number;
-  public description: number;
-  public description_left: number;
+  public titleEN: number;
+  public titleAR: number;
+  public descriptionEN: number;
+  public descriptionAR: number;
+  public description_leftEN: number;
+  public description_leftAR: number;
   public phone_number: number;
   public order: number;
   public location_id: number;
