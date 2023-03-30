@@ -50,7 +50,8 @@
                         [footerHeight]="50"
                         [scrollbarH]="true"
                 >
-                    <ngx-datatable-column name="Type Name" prop="title_en" [width]="200"></ngx-datatable-column>
+                    <ngx-datatable-column name="Type Name en" prop="title_en" [width]="200"></ngx-datatable-column>
+                    <ngx-datatable-column name="Type Name ar" prop="title_ar" [width]="200"></ngx-datatable-column>
                     <ngx-datatable-column name="Number of units" prop="number_of_unites" [width]="200">
                         <ng-template let-sub="value" ngx-datatable-cell-template>
                             <div class="badge badge-info">{{ sub }}</div>

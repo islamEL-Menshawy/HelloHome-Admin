@@ -11,7 +11,8 @@ import {TypeRequest} from "../Types";
 })
 export class NewTypeSidebarComponent implements OnDestroy {
 
-  public typeName: string;
+  public typeNameEN: string;
+  public typeNameAR: string;
   public typeDate: TypeRequest;
 
   private _unsubscribeAll = new Subject();
@@ -39,7 +40,8 @@ export class NewTypeSidebarComponent implements OnDestroy {
         this.toastrSuccess("Add new Type", "New type added successfully")
       });
       this.toggleSidebar('new-type-sidebar');
-      this.typeName = ' ';
+      this.typeNameEN = ' ';
+      this.typeNameAR = ' ';
     }
   }
 
