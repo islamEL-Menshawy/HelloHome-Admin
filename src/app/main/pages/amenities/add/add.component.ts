@@ -18,7 +18,8 @@ export class AddComponent implements OnInit {
   public typeName: string;
   public breadcrumbDefault: Breadcrumb;
   private readonly MODEL_NAME = 'Amenity';
-  public amenityTitle = "";
+  public amenityTitleEN = "";
+  public amenityTitleAR = "";
   public image_url = "";
   public amenityRequest: AmenityRequest ;
   public displayImage:boolean = false;

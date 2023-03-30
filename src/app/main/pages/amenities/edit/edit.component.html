@@ -15,13 +15,33 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="categoryName">Type Name</label>
+                                        <label for="categoryNameEN">Type Name EN</label>
                                         <input
                                                 type="text"
-                                                id="categoryName"
+                                                id="categoryNameEN"
                                                 class="form-control"
                                                 name="title_en"
                                                 [(ngModel)]="currentRow.data.title_en"
+                                                [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                #UserNameRef="ngModel"
+                                                required
+                                        />
+                                        <span *ngIf="categoryEdit.submitted && UserNameRef.invalid" class="invalid-form">
+                          <small class="form-text text-danger" *ngIf="UserNameRef.errors.required"
+                          >This field is required!</small
+                          >
+                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="categoryNameAR">Type Name AR</label>
+                                        <input
+                                                type="text"
+                                                id="categoryNameAR"
+                                                class="form-control"
+                                                name="title_ar"
+                                                [(ngModel)]="currentRow.data.title_ar"
                                                 [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                 #UserNameRef="ngModel"
                                                 required
