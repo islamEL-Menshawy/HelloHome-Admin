@@ -27,11 +27,24 @@
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
                                                                     <label for="compound_slider_title">Compound slider
-                                                                        title</label>
+                                                                        title EN</label>
                                                                     <input type="text" id="compound_slider_title"
                                                                         class="form-control"
-                                                                        name="compound_slider_title"
-                                                                        [(ngModel)]="data['compound_slider_title']"
+                                                                        name="compound_slider_title_en"
+                                                                        [(ngModel)]="data['compound_slider_title_en']"
+                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                        #UserNameRef="ngModel" />
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="compound_slider_title">Compound slider
+                                                                        title AR</label>
+                                                                    <input type="text" id="compound_slider_titleAR"
+                                                                        class="form-control"
+                                                                        name="compound_slider_title_ar"
+                                                                        [(ngModel)]="data['compound_slider_title_ar']"
                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                         #UserNameRef="ngModel" />
                                                                 </div>
@@ -59,16 +72,32 @@
                                                                                 <div class="form-group">
                                                                                     <label
                                                                                         for="section_one_title">Section
-                                                                                        one title</label>
+                                                                                        one title EN</label>
                                                                                     <input type="text"
                                                                                         id="section_one_title"
                                                                                         class="form-control"
-                                                                                        name="section_one_title"
-                                                                                        [(ngModel)]="data['section_one_title']"
+                                                                                        name="section_one_title_en"
+                                                                                        [(ngModel)]="data['section_one_title_en']"
                                                                                         #UserNameRef="ngModel" />
                                                                                 </div>
 
                                                                             </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                            for="section_one_title">Section
+                                                                                        one title AR</label>
+                                                                                    <input type="text"
+                                                                                           id="section_one_titleAR"
+                                                                                           class="form-control"
+                                                                                           name="section_one_title_ar"
+                                                                                           [(ngModel)]="data['section_one_title_ar']"
+                                                                                           #UserNameRef="ngModel" />
+                                                                                </div>
+
+                                                                            </div>
+
+
                                                                             <div class="col-md-12">
                                                                                 <div class="form-group">
                                                                                     <label
@@ -97,12 +126,12 @@
                                                                                 <div class="form-group">
                                                                                     <label
                                                                                         for="section_one_text_one">Section
-                                                                                        one text</label>
+                                                                                        one text EN</label>
                                                                                     <input type="text"
                                                                                         id="section_one_text_one"
                                                                                         class="form-control"
-                                                                                        name="section_one_text_one"
-                                                                                        [(ngModel)]="data['section_one_text_one']"
+                                                                                        name="section_one_text_one_en"
+                                                                                        [(ngModel)]="data['section_one_text_one_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required />
@@ -120,13 +149,37 @@
                                                                             <div class="col-md-12">
                                                                                 <div class="form-group">
                                                                                     <label
+                                                                                            for="section_one_text_oneAR">Section
+                                                                                        one text AR</label>
+                                                                                    <input type="text"
+                                                                                           id="section_one_text_oneAR"
+                                                                                           class="form-control"
+                                                                                           name="section_one_text_one_ar"
+                                                                                           [(ngModel)]="data['section_one_text_one_ar']"
+                                                                                           [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                           #UserNameRef="ngModel"
+                                                                                           required />
+                                                                                    <span
+                                                                                            *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                            class="invalid-form">
+                                                                                        <small
+                                                                                                class="form-text text-danger"
+                                                                                                *ngIf="UserNameRef.errors.required">This
+                                                                                            field is required!</small>
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label
                                                                                         for="section_one_text_two">section
-                                                                                        one second text</label>
+                                                                                        one second text EN</label>
                                                                                     <input type="text"
                                                                                         id="section_one_text_two"
                                                                                         class="form-control"
-                                                                                        name="section_one_text_two"
-                                                                                        [(ngModel)]="data['section_one_text_two']"
+                                                                                        name="section_one_text_two_en"
+                                                                                        [(ngModel)]="data['section_one_text_two_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required />
@@ -136,6 +189,30 @@
                                                                                         <small
                                                                                             class="form-text text-danger"
                                                                                             *ngIf="UserNameRef.errors.required">This
+                                                                                            field is required!</small>
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                            for="section_one_text_twoAR">section
+                                                                                        one second text AR</label>
+                                                                                    <input type="text"
+                                                                                           id="section_one_text_twoAR"
+                                                                                           class="form-control"
+                                                                                           name="section_one_text_two_ar"
+                                                                                           [(ngModel)]="data['section_one_text_two_ar']"
+                                                                                           [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                           #UserNameRef="ngModel"
+                                                                                           required />
+                                                                                    <span
+                                                                                            *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                            class="invalid-form">
+                                                                                        <small
+                                                                                                class="form-text text-danger"
+                                                                                                *ngIf="UserNameRef.errors.required">This
                                                                                             field is required!</small>
                                                                                     </span>
                                                                                 </div>
@@ -160,18 +237,19 @@
                                                                         </div>
                                                                     </div>
 
+
                                                                     <div class="col-md-6">
                                                                         <div class="row">
                                                                             <div class="col-md-12">
                                                                                 <div class="form-group">
                                                                                     <label
                                                                                         for="section_two_title">Section
-                                                                                        two title</label>
+                                                                                        two title EN</label>
                                                                                     <input type="text"
                                                                                         id="section_two_title"
                                                                                         class="form-control"
-                                                                                        name="section_two_title"
-                                                                                        [(ngModel)]="data['section_two_title']"
+                                                                                        name="section_two_title_en"
+                                                                                        [(ngModel)]="data['section_two_title_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required />
@@ -181,6 +259,30 @@
                                                                                         <small
                                                                                             class="form-text text-danger"
                                                                                             *ngIf="UserNameRef.errors.required">This
+                                                                                            field is required!</small>
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                            for="section_two_titleAR">Section
+                                                                                        two title AR</label>
+                                                                                    <input type="text"
+                                                                                           id="section_two_titleAR"
+                                                                                           class="form-control"
+                                                                                           name="section_two_title_ar"
+                                                                                           [(ngModel)]="data['section_two_title_ar']"
+                                                                                           [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                           #UserNameRef="ngModel"
+                                                                                           required />
+                                                                                    <span
+                                                                                            *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                            class="invalid-form">
+                                                                                        <small
+                                                                                                class="form-text text-danger"
+                                                                                                *ngIf="UserNameRef.errors.required">This
                                                                                             field is required!</small>
                                                                                     </span>
                                                                                 </div>
@@ -240,12 +342,12 @@
                                                                                 <div class="form-group">
                                                                                     <label
                                                                                         for="section_two_text_one">Section
-                                                                                        two text</label>
+                                                                                        two text EN</label>
                                                                                     <input type="text"
                                                                                         id="section_two_text_one"
                                                                                         class="form-control"
-                                                                                        name="section_two_text_one"
-                                                                                        [(ngModel)]="data['section_two_text_one']"
+                                                                                        name="section_two_text_one_en"
+                                                                                        [(ngModel)]="data['section_two_text_one_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required />
@@ -260,17 +362,41 @@
                                                                                 </div>
 
                                                                             </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                            for="section_two_text_oneAR">Section
+                                                                                        two text AR</label>
+                                                                                    <input type="text"
+                                                                                           id="section_two_text_oneAR"
+                                                                                           class="form-control"
+                                                                                           name="section_two_text_one_ar"
+                                                                                           [(ngModel)]="data['section_two_text_one_ar']"
+                                                                                           [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                           #UserNameRef="ngModel"
+                                                                                           required />
+                                                                                    <span
+                                                                                            *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                            class="invalid-form">
+                                                                                        <small
+                                                                                                class="form-text text-danger"
+                                                                                                *ngIf="UserNameRef.errors.required">This
+                                                                                            field is required!</small>
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
 
                                                                             <div class="col-md-12">
                                                                                 <div class="form-group">
                                                                                     <label
                                                                                         for="section_two_text_two">Section
-                                                                                        two second text</label>
+                                                                                        two second text EN</label>
                                                                                     <input type="text"
                                                                                         id="section_two_text_two"
                                                                                         class="form-control"
-                                                                                        name="section_two_text_two"
-                                                                                        [(ngModel)]="data['section_two_text_two']"
+                                                                                        name="section_two_text_two_en"
+                                                                                        [(ngModel)]="data['section_two_text_two_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required />
@@ -280,6 +406,30 @@
                                                                                         <small
                                                                                             class="form-text text-danger"
                                                                                             *ngIf="UserNameRef.errors.required">This
+                                                                                            field is required!</small>
+                                                                                    </span>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="col-md-12">
+                                                                                <div class="form-group">
+                                                                                    <label
+                                                                                            for="section_two_text_twoAR">Section
+                                                                                        two second text AR</label>
+                                                                                    <input type="text"
+                                                                                           id="section_two_text_twoAR"
+                                                                                           class="form-control"
+                                                                                           name="section_two_text_two_ar"
+                                                                                           [(ngModel)]="data['section_two_text_two_ar']"
+                                                                                           [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                           #UserNameRef="ngModel"
+                                                                                           required />
+                                                                                    <span
+                                                                                            *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                            class="invalid-form">
+                                                                                        <small
+                                                                                                class="form-text text-danger"
+                                                                                                *ngIf="UserNameRef.errors.required">This
                                                                                             field is required!</small>
                                                                                     </span>
                                                                                 </div>
@@ -347,11 +497,52 @@
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
                                                                     <label for="section_three_text_one">section three
-                                                                        first text</label>
+                                                                        first text EN</label>
                                                                     <input type="text" id="section_three_text_one"
                                                                         class="form-control"
-                                                                        name="section_three_text_one"
-                                                                        [(ngModel)]="data['section_three_text_one']"
+                                                                        name="section_three_text_one_en"
+                                                                        [(ngModel)]="data['section_three_text_one_en']"
+                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                        #UserNameRef="ngModel" required />
+                                                                    <span
+                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                        class="invalid-form">
+                                                                        <small class="form-text text-danger"
+                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                            field is required!</small>
+                                                                    </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="section_three_text_oneAR">section three
+                                                                        first text AR</label>
+                                                                    <input type="text" id="section_three_text_oneAR"
+                                                                           class="form-control"
+                                                                           name="section_three_text_one_ar"
+                                                                           [(ngModel)]="data['section_three_text_one_ar']"
+                                                                           [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                           #UserNameRef="ngModel" required />
+                                                                    <span
+                                                                            *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                            class="invalid-form">
+                                                                        <small class="form-text text-danger"
+                                                                               *ngIf="UserNameRef.errors.required">This
+                                                                            field is required!</small>
+                                                                    </span>
+                                                                </div>
+
+                                                            </div>
+
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="section_three_text_two">section three
+                                                                        second text EN</label>
+                                                                    <input type="text" id="section_three_text_two"
+                                                                        class="form-control"
+                                                                        name="section_three_text_two_en"
+                                                                        [(ngModel)]="data['section_three_text_two_en']"
                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                         #UserNameRef="ngModel" required />
                                                                     <span
@@ -367,19 +558,19 @@
 
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <label for="section_three_text_two">section three
-                                                                        second text</label>
-                                                                    <input type="text" id="section_three_text_two"
-                                                                        class="form-control"
-                                                                        name="section_three_text_two"
-                                                                        [(ngModel)]="data['section_three_text_two']"
-                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
-                                                                        #UserNameRef="ngModel" required />
+                                                                    <label for="section_three_text_twoAR">section three
+                                                                        second text AR</label>
+                                                                    <input type="text" id="section_three_text_twoAR"
+                                                                           class="form-control"
+                                                                           name="section_three_text_two_ar"
+                                                                           [(ngModel)]="data['section_three_text_two_ar']"
+                                                                           [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                           #UserNameRef="ngModel" required />
                                                                     <span
-                                                                        *ngIf="categoryEdit.submitted && UserNameRef.invalid"
-                                                                        class="invalid-form">
+                                                                            *ngIf="categoryEdit.submitted && UserNameRef.invalid"
+                                                                            class="invalid-form">
                                                                         <small class="form-text text-danger"
-                                                                            *ngIf="UserNameRef.errors.required">This
+                                                                               *ngIf="UserNameRef.errors.required">This
                                                                             field is required!</small>
                                                                     </span>
                                                                 </div>
