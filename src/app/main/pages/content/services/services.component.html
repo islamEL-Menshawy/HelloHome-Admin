@@ -30,13 +30,27 @@
                                                         <div class="card-body">
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
-                                                                    <label for="service_section_main_title">Banner Title</label>
+                                                                    <label for="service_section_main_title">Banner Title EN</label>
                                                                     <input
                                                                             type="text"
                                                                             id="service_section_main_title"
                                                                             class="form-control"
-                                                                            name="service_section_main_title"
-                                                                            [(ngModel)]="data['service_section_main_title']"
+                                                                            name="service_section_main_title_en"
+                                                                            [(ngModel)]="data['service_section_main_title_en']"
+                                                                            #UserNameRef="ngModel"
+                                                                    />
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="service_section_main_titleAR">Banner Title AR</label>
+                                                                    <input
+                                                                            type="text"
+                                                                            id="service_section_main_titleAR"
+                                                                            class="form-control"
+                                                                            name="service_section_main_title_ar"
+                                                                            [(ngModel)]="data['service_section_main_title_ar']"
                                                                             #UserNameRef="ngModel"
                                                                     />
                                                                 </div>
@@ -45,13 +59,28 @@
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
                                                                     <label for="service_section_main_sub_title">Banner Sub
-                                                                        title</label>
+                                                                        title EN</label>
                                                                     <input
                                                                             type="text"
                                                                             id="service_section_main_sub_title"
                                                                             class="form-control"
-                                                                            name="service_section_main_sub_title"
-                                                                            [(ngModel)]="data['service_section_main_sub_title']"
+                                                                            name="service_section_main_sub_title_en"
+                                                                            [(ngModel)]="data['service_section_main_sub_title_en']"
+                                                                            #UserNameRef="ngModel"
+                                                                    />
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label for="service_section_main_sub_titleAR">Banner Sub
+                                                                        title AR</label>
+                                                                    <input
+                                                                            type="text"
+                                                                            id="service_section_main_sub_titleAR"
+                                                                            class="form-control"
+                                                                            name="service_section_main_sub_title_ar"
+                                                                            [(ngModel)]="data['service_section_main_sub_title_ar']"
                                                                             #UserNameRef="ngModel"
                                                                     />
                                                                 </div>
@@ -96,13 +125,13 @@
                                                                 <div class="row">
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_1_text">Title</label>
+                                                                            <label for="service_section_1_text">Title right EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_1_text"
                                                                                     class="form-control"
-                                                                                    name="service_section_1_text"
-                                                                                    [(ngModel)]="data['service_section_1_text']"
+                                                                                    name="service_section_1_text_en"
+                                                                                    [(ngModel)]="data['service_section_1_text_en']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
                                                                         </div>
@@ -110,18 +139,50 @@
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_2_text">Title</label>
+                                                                            <label for="service_section_2_text">Title left EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_2_text"
                                                                                     class="form-control"
-                                                                                    name="service_section_2_text"
-                                                                                    [(ngModel)]="data['service_section_2_text']"
+                                                                                    name="service_section_2_text_en"
+                                                                                    [(ngModel)]="data['service_section_2_text_en']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
                                                                         </div>
 
                                                                     </div>
+
+
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_1_textAR">Title right AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_1_textAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_1_text_ar"
+                                                                                    [(ngModel)]="data['service_section_1_text_ar']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_2_textAR">Title left AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_2_textAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_2_text_ar"
+                                                                                    [(ngModel)]="data['service_section_2_text_ar']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+
+
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
                                                                             <label for="service_section_1_color">Color</label>
@@ -174,13 +235,13 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_3_title">Title</label>
+                                                                            <label for="service_section_3_title">Title EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_3_title"
                                                                                     class="form-control"
-                                                                                    name="service_section_3_title"
-                                                                                    [(ngModel)]="data['service_section_3_title']"
+                                                                                    name="service_section_3_title_en"
+                                                                                    [(ngModel)]="data['service_section_3_title_en']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
                                                                         </div>
@@ -188,13 +249,41 @@
                                                                     </div>
                                                                     <div class="col-md-12">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_3_sub_title">Sub Title</label>
+                                                                            <label for="service_section_3_titleAR">Title AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_3_titleAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_3_title_ar"
+                                                                                    [(ngModel)]="data['service_section_3_title_ar']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_3_sub_title">Sub Title EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_3_sub_title"
                                                                                     class="form-control"
-                                                                                    name="service_section_3_sub_title"
-                                                                                    [(ngModel)]="data['service_section_3_sub_title']"
+                                                                                    name="service_section_3_sub_title_en"
+                                                                                    [(ngModel)]="data['service_section_3_sub_title_en']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_3_sub_titleAR">Sub Title AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_3_sub_titleAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_3_sub_title_ar"
+                                                                                    [(ngModel)]="data['service_section_3_sub_title_ar']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
                                                                         </div>
@@ -203,12 +292,31 @@
                                                                     <div class="col-md-12">
                                                                         <div class="form-group">
                                                                             <fieldset class="form-group">
+                                                                                <label for="service_section_3_text">Content 1 EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_3_text"
                                                                                         rows="7"
-                                                                                        name="service_section_3_text"
-                                                                                        [(ngModel)]="data['service_section_3_text']"
+                                                                                        name="service_section_3_text_en"
+                                                                                        [(ngModel)]="data['service_section_3_text_en']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_3_textAR">Content 1 AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_3_textAR"
+                                                                                        rows="7"
+                                                                                        name="service_section_3_text_ar"
+                                                                                        [(ngModel)]="data['service_section_3_text_ar']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
@@ -221,12 +329,13 @@
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
                                                                             <fieldset class="form-group">
+                                                                                <label for="service_section_3_textAR">Content 2 EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_4_text_1"
                                                                                         rows="7"
-                                                                                        name="service_section_4_text_1"
-                                                                                        [(ngModel)]="data['service_section_4_text_1']"
+                                                                                        name="service_section_4_text_1_en"
+                                                                                        [(ngModel)]="data['service_section_4_text_1_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
@@ -238,12 +347,50 @@
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
                                                                             <fieldset class="form-group">
+                                                                                <label for="service_section_3_textAR">Content 3 EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_4_text_2"
                                                                                         rows="7"
-                                                                                        name="service_section_4_text_2"
-                                                                                        [(ngModel)]="data['service_section_4_text_2']"
+                                                                                        name="service_section_4_text_2_en"
+                                                                                        [(ngModel)]="data['service_section_4_text_2_en']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_4_text_1AR">Content 2 AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_4_text_1AR"
+                                                                                        rows="7"
+                                                                                        name="service_section_4_text_1_ar"
+                                                                                        [(ngModel)]="data['service_section_4_text_1_ar']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_4_text_2AR">Content 3 AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_4_text_2AR"
+                                                                                        rows="7"
+                                                                                        name="service_section_4_text_2_ar"
+                                                                                        [(ngModel)]="data['service_section_4_text_2_ar']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
@@ -308,13 +455,27 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_5_title">Title</label>
+                                                                            <label for="service_section_5_title">Title EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_5_title"
                                                                                     class="form-control"
-                                                                                    name="service_section_5_title"
-                                                                                    [(ngModel)]="data['service_section_5_title']"
+                                                                                    name="service_section_5_title_en"
+                                                                                    [(ngModel)]="data['service_section_5_title_en']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_5_titleAR">Title AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_5_titleAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_5_title_ar"
+                                                                                    [(ngModel)]="data['service_section_5_title_ar']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
                                                                         </div>
@@ -323,12 +484,13 @@
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
                                                                             <fieldset class="form-group">
+                                                                                <label for="service_section_5_text_1">Text 1 EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_5_text_1"
                                                                                         rows="7"
-                                                                                        name="service_section_5_text_1"
-                                                                                        [(ngModel)]="data['service_section_5_text_1']"
+                                                                                        name="service_section_5_text_1_en"
+                                                                                        [(ngModel)]="data['service_section_5_text_1_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
@@ -341,12 +503,13 @@
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
                                                                             <fieldset class="form-group">
+                                                                                <label for="service_section_5_text_2">Text 2 EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_5_text_2"
                                                                                         rows="7"
-                                                                                        name="service_section_5_text_2"
-                                                                                        [(ngModel)]="data['service_section_5_text_2']"
+                                                                                        name="service_section_5_text_2_en"
+                                                                                        [(ngModel)]="data['service_section_5_text_2_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
@@ -359,18 +522,77 @@
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
                                                                             <fieldset class="form-group">
+                                                                                <label for="service_section_5_text_3">Text 3 EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_5_text_3"
                                                                                         rows="7"
-                                                                                        name="service_section_5_text_3"
-                                                                                        [(ngModel)]="data['service_section_5_text_3']"
+                                                                                        name="service_section_5_text_3_en"
+                                                                                        [(ngModel)]="data['service_section_5_text_3_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
                                                                                         placeholder="Textarea"></textarea>
                                                                             </fieldset>
                                                                             
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_5_text_1AR">Text 1 AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_5_text_1AR"
+                                                                                        rows="7"
+                                                                                        name="service_section_5_text_1_ar"
+                                                                                        [(ngModel)]="data['service_section_5_text_1_ar']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_5_text_2AR">Text 2 AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_5_text_2AR"
+                                                                                        rows="7"
+                                                                                        name="service_section_5_text_2_ar"
+                                                                                        [(ngModel)]="data['service_section_5_text_2_ar']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_5_text_3AR">Text 3 AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_5_text_3AR"
+                                                                                        rows="7"
+                                                                                        name="service_section_5_text_3_ar"
+                                                                                        [(ngModel)]="data['service_section_5_text_3_ar']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+
                                                                         </div>
 
                                                                     </div>
@@ -397,13 +619,27 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_6_title">Title</label>
+                                                                            <label for="service_section_6_title">Title EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_6_title"
                                                                                     class="form-control"
-                                                                                    name="service_section_6_title"
-                                                                                    [(ngModel)]="data['service_section_6_title']"
+                                                                                    name="service_section_6_title_en"
+                                                                                    [(ngModel)]="data['service_section_6_title_en']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_6_titleAR">Title AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_6_titleAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_6_title_ar"
+                                                                                    [(ngModel)]="data['service_section_6_title_ar']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
                                                                         </div>
@@ -412,18 +648,39 @@
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
                                                                             <fieldset class="form-group">
+                                                                                <label for="service_section_6_text">Text EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_6_text"
                                                                                         rows="7"
-                                                                                        name="service_section_6_text"
-                                                                                        [(ngModel)]="data['service_section_6_text']"
+                                                                                        name="service_section_6_text_en"
+                                                                                        [(ngModel)]="data['service_section_6_text_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
                                                                                         placeholder="Textarea"></textarea>
                                                                             </fieldset>
                                                                             
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_6_textAR">Text AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_6_textAR"
+                                                                                        rows="7"
+                                                                                        name="service_section_6_text_ar"
+                                                                                        [(ngModel)]="data['service_section_6_text_ar']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+
                                                                         </div>
 
                                                                     </div>
@@ -469,12 +726,31 @@
                                                                     <div class="col-md-12">
                                                                         <div class="form-group">
                                                                             <fieldset class="form-group">
+                                                                                <label for="service_section_7_text">Text EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_7_text"
                                                                                         rows="7"
-                                                                                        name="service_section_7_text"
-                                                                                        [(ngModel)]="data['service_section_7_text']"
+                                                                                        name="service_section_7_text_en"
+                                                                                        [(ngModel)]="data['service_section_7_text_en']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_7_textAR">Text AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_7_textAR"
+                                                                                        rows="7"
+                                                                                        name="service_section_7_text_ar"
+                                                                                        [(ngModel)]="data['service_section_7_text_ar']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
@@ -506,13 +782,27 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_8_title">Title</label>
+                                                                            <label for="service_section_8_title">Title EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_8_title"
                                                                                     class="form-control"
-                                                                                    name="service_section_8_title"
-                                                                                    [(ngModel)]="data['service_section_8_title']"
+                                                                                    name="service_section_8_title_en"
+                                                                                    [(ngModel)]="data['service_section_8_title_en']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_8_titleAR">Title AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_8_titleAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_8_title_ar"
+                                                                                    [(ngModel)]="data['service_section_8_title_ar']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
                                                                         </div>
@@ -521,12 +811,13 @@
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
                                                                             <fieldset class="form-group">
+                                                                                <label for="service_section_8_text_1">Text 1 EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_8_text_1"
                                                                                         rows="7"
-                                                                                        name="service_section_8_text_1"
-                                                                                        [(ngModel)]="data['service_section_8_text_1']"
+                                                                                        name="service_section_8_text_1_en"
+                                                                                        [(ngModel)]="data['service_section_8_text_1_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
@@ -538,12 +829,49 @@
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
                                                                             <fieldset class="form-group">
+                                                                                <label for="service_section_8_text_1">Text 2 EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_8_text_2"
                                                                                         rows="7"
-                                                                                        name="service_section_8_text_2"
-                                                                                        [(ngModel)]="data['service_section_8_text_2']"
+                                                                                        name="service_section_8_text_2_en"
+                                                                                        [(ngModel)]="data['service_section_8_text_2_en']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_8_text_1AR">Text 1 AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_8_text_1AR"
+                                                                                        rows="7"
+                                                                                        name="service_section_8_text_1_ar"
+                                                                                        [(ngModel)]="data['service_section_8_text_1_ar']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_8_text_1AR">Text 2 AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_8_text_2AR"
+                                                                                        rows="7"
+                                                                                        name="service_section_8_text_2_ar"
+                                                                                        [(ngModel)]="data['service_section_8_text_2_ar']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
@@ -575,15 +903,66 @@
                                                                 <div class="row">
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_9_title">Title</label>
+                                                                            <label for="service_section_9_title">Title EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_9_title"
                                                                                     class="form-control"
-                                                                                    name="service_section_9_title"
-                                                                                    [(ngModel)]="data['service_section_9_title']"
+                                                                                    name="service_section_9_title_en"
+                                                                                    [(ngModel)]="data['service_section_9_title_en']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_9_titleAR">Title AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_9_titleAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_9_title_ar"
+                                                                                    [(ngModel)]="data['service_section_9_title_ar']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_9_text">Text EN</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_9_text"
+                                                                                        rows="7"
+                                                                                        name="service_section_9_text_en"
+                                                                                        [(ngModel)]="data['service_section_9_text_en']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_9_textAR">Text AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_9_textAR"
+                                                                                        rows="7"
+                                                                                        name="service_section_9_text_ar"
+                                                                                        [(ngModel)]="data['service_section_9_text_ar']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
                                                                         </div>
 
                                                                     </div>
@@ -598,23 +977,6 @@
                                                                                     [(ngModel)]="data['service_section_9_color']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <fieldset class="form-group">
-                                                                                <textarea
-                                                                                        class="form-control"
-                                                                                        id="service_section_9_text"
-                                                                                        rows="7"
-                                                                                        name="service_section_9_text"
-                                                                                        [(ngModel)]="data['service_section_9_text']"
-                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
-                                                                                        #UserNameRef="ngModel"
-                                                                                        required
-                                                                                        placeholder="Textarea"></textarea>
-                                                                            </fieldset>
                                                                         </div>
 
                                                                     </div>
@@ -659,13 +1021,14 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <div class="form-group">
-                                                                            <fieldset class="form-group">
+                                                                            <fieldset class="form-group">                                                                            <label for="service_section_11_title">Title</label>
+                                                                                <label for="service_section_10_text">Section title EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_10_text"
                                                                                         rows="3"
-                                                                                        name="service_section_10_text"
-                                                                                        [(ngModel)]="data['service_section_10_text']"
+                                                                                        name="service_section_10_text_en"
+                                                                                        [(ngModel)]="data['service_section_10_text_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
@@ -674,54 +1037,115 @@
                                                                         </div>
 
                                                                     </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">                                                                            <label for="service_section_11_title">Title</label>
+                                                                                <label for="service_section_10_textAR">Section title AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_10_textAR"
+                                                                                        rows="3"
+                                                                                        name="service_section_10_text_ar"
+                                                                                        [(ngModel)]="data['service_section_10_text_ar']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_11_title">Title</label>
+                                                                            <label for="service_section_11_title">Title 1 EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_11_title"
                                                                                     class="form-control"
-                                                                                    name="service_section_11_title"
-                                                                                    [(ngModel)]="data['service_section_11_title']"
+                                                                                    name="service_section_11_title_en"
+                                                                                    [(ngModel)]="data['service_section_11_title_en']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_12_title">Title</label>
+                                                                            <label for="service_section_12_title">Title 2 EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_12_title"
                                                                                     class="form-control"
-                                                                                    name="service_section_12_title"
-                                                                                    [(ngModel)]="data['service_section_12_title']"
+                                                                                    name="service_section_12_title_en"
+                                                                                    [(ngModel)]="data['service_section_12_title_en']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_13_title">Title</label>
+                                                                            <label for="service_section_13_title">Title 3 EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_13_title"
                                                                                     class="form-control"
-                                                                                    name="service_section_13_title"
-                                                                                    [(ngModel)]="data['service_section_13_title']"
+                                                                                    name="service_section_13_title_en"
+                                                                                    [(ngModel)]="data['service_section_13_title_en']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_11_titleAR">Title 1 AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_11_titleAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_11_title_ar"
+                                                                                    [(ngModel)]="data['service_section_11_title_ar']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
+                                                                            <label for="service_section_12_titleAR">Title 2 AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_12_titleAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_12_title_ar"
+                                                                                    [(ngModel)]="data['service_section_12_title_ar']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_13_titleAR">Title 3 AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_13_titleAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_13_title_ar"
+                                                                                    [(ngModel)]="data['service_section_13_title_ar']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
                                                                             <fieldset class="form-group">
+                                                                                <label for="service_section_11_text">Text 1 EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_11_text"
                                                                                         rows="7"
-                                                                                        name="service_section_3_text"
-                                                                                        [(ngModel)]="data['service_section_11_text']"
+                                                                                        name="service_section_3_text_en"
+                                                                                        [(ngModel)]="data['service_section_11_text_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
@@ -733,12 +1157,13 @@
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
                                                                             <fieldset class="form-group">
+                                                                                <label for="service_section_12_text">Text 2 EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_12_text"
                                                                                         rows="7"
-                                                                                        name="service_section_12_text"
-                                                                                        [(ngModel)]="data['service_section_12_text']"
+                                                                                        name="service_section_12_text_en"
+                                                                                        [(ngModel)]="data['service_section_12_text_en']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
@@ -750,12 +1175,68 @@
                                                                     <div class="col-md-4">
                                                                         <div class="form-group">
                                                                             <fieldset class="form-group">
+                                                                                <label for="service_section_13_text">Text 3 EN</label>
                                                                                 <textarea
                                                                                         class="form-control"
                                                                                         id="service_section_13_text"
                                                                                         rows="7"
-                                                                                        name="service_section_13_text"
-                                                                                        [(ngModel)]="data['service_section_13_text']"
+                                                                                        name="service_section_13_text_en"
+                                                                                        [(ngModel)]="data['service_section_13_text_en']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_11_text">Text 1 AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_11_textAR"
+                                                                                        rows="7"
+                                                                                        name="service_section_3_text_ar"
+                                                                                        [(ngModel)]="data['service_section_11_text_ar']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_12_text">Text 2 AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_12_textAR"
+                                                                                        rows="7"
+                                                                                        name="service_section_12_text_ar"
+                                                                                        [(ngModel)]="data['service_section_12_text_ar']"
+                                                                                        [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                        #UserNameRef="ngModel"
+                                                                                        required
+                                                                                        placeholder="Textarea"></textarea>
+                                                                            </fieldset>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="form-group">
+                                                                            <fieldset class="form-group">
+                                                                                <label for="service_section_13_textAR">Text 3 AR</label>
+                                                                                <textarea
+                                                                                        class="form-control"
+                                                                                        id="service_section_13_textAR"
+                                                                                        rows="7"
+                                                                                        name="service_section_13_text_ar"
+                                                                                        [(ngModel)]="data['service_section_13_text_ar']"
                                                                                         [class.error]="categoryEdit.submitted && UserNameRef.invalid"
                                                                                         #UserNameRef="ngModel"
                                                                                         required
@@ -787,13 +1268,26 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_14_title">Title</label>
+                                                                            <label for="service_section_14_title">Title EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_14_title"
                                                                                     class="form-control"
-                                                                                    name="service_section_14_title"
-                                                                                    [(ngModel)]="data['service_section_14_title']"
+                                                                                    name="service_section_14_title_en"
+                                                                                    [(ngModel)]="data['service_section_14_title_en']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_14_titleAR">Title AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_14_titleAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_14_title_ar"
+                                                                                    [(ngModel)]="data['service_section_14_title_ar']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
                                                                         </div>
@@ -852,26 +1346,52 @@
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_15_title">Title</label>
+                                                                            <label for="service_section_15_title">Title EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_15_title"
                                                                                     class="form-control"
-                                                                                    name="service_section_15_title"
-                                                                                    [(ngModel)]="data['service_section_15_title']"
+                                                                                    name="service_section_15_title_en"
+                                                                                    [(ngModel)]="data['service_section_15_title_en']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-12">
                                                                         <div class="form-group">
-                                                                            <label for="service_section_15_text">Title</label>
+                                                                            <label for="service_section_15_titleAR">Title AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_15_titleAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_15_title_ar"
+                                                                                    [(ngModel)]="data['service_section_15_title_ar']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_15_text">Text EN</label>
                                                                             <input
                                                                                     type="text"
                                                                                     id="service_section_15_text"
                                                                                     class="form-control"
-                                                                                    name="service_section_15_text"
-                                                                                    [(ngModel)]="data['service_section_15_text']"
+                                                                                    name="service_section_15_text_en"
+                                                                                    [(ngModel)]="data['service_section_15_text_en']"
+                                                                                    #UserNameRef="ngModel"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <label for="service_section_15_textAR">Text AR</label>
+                                                                            <input
+                                                                                    type="text"
+                                                                                    id="service_section_15_textAR"
+                                                                                    class="form-control"
+                                                                                    name="service_section_15_text_ar"
+                                                                                    [(ngModel)]="data['service_section_15_text_ar']"
                                                                                     #UserNameRef="ngModel"
                                                                             />
                                                                         </div>
