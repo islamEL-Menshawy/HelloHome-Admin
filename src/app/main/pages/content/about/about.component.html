@@ -1049,15 +1049,15 @@
                                                                                 <label for="about_section_5_text">Text right EN</label>
 
                                                                                 <textarea
-                                                                                                class="form-control"
-                                                                                                id="about_section_5_text"
-                                                                                                rows="7"
-                                                                                                name="about_section_5_text_en"
-                                                                                                [(ngModel)]="data['about_section_5_text_en']"
-                                                                                                [class.error]="categoryEdit.submitted && UserNameRef.invalid"
-                                                                                                #UserNameRef="ngModel"
-                                                                                                required
-                                                                                                placeholder="Textarea"></textarea>
+                                                                                    class="form-control"
+                                                                                    id="about_section_5_text"
+                                                                                    rows="7"
+                                                                                    name="about_section_5_text_en"
+                                                                                    [(ngModel)]="data['about_section_5_text_en']"
+                                                                                    [class.error]="categoryEdit.submitted && UserNameRef.invalid"
+                                                                                    #UserNameRef="ngModel"
+                                                                                    required
+                                                                                    placeholder="Textarea"></textarea>
                                                                             </fieldset>
                                                                             <span *ngIf="categoryEdit.submitted && UserNameRef.invalid"
                                                                                   class="invalid-form">
