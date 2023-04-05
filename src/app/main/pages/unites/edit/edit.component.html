@@ -208,22 +208,31 @@
                                     </div>
 
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="price">Price</label>
+                                        <label for="price">Price EN</label>
                                         <input
                                                 type="text"
                                                 id="price"
                                                 class="form-control"
-                                                name="price"
-                                                [(ngModel)]="currentRow.data.price"
-                                                
-                                                
-                                                required
-                                        />
-                                        
-                                    </div>
+                                                name="price_en"
+                                                [(ngModel)]="currentRow.data.price_en"
 
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="price">Price AR</label>
+                                        <input
+                                                type="text"
+                                                id="priceAR"
+                                                class="form-control"
+                                                name="price_ar"
+                                                [(ngModel)]="currentRow.data.price_ar"
+
+                                        />
+                                    </div>
                                 </div>
                                 <div class="col-md-1">
                                     <div class="form-group">

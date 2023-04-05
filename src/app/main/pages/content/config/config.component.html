@@ -41,7 +41,7 @@
                                     </div>
 
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="linkedin">Linkedin</label>
                                         <input
@@ -55,7 +55,7 @@
                                     </div>
 
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="instegram">Instagram</label>
                                         <input
@@ -64,6 +64,20 @@
                                                 class="form-control"
                                                 name="instegram"
                                                 [(ngModel)]="data['instegram']"
+                                                #UserNameRef="ngModel"
+                                        />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="tic_tok">Tic-tok</label>
+                                        <input
+                                                type="text"
+                                                id="tic_tok"
+                                                class="form-control"
+                                                name="tiktok"
+                                                [(ngModel)]="data['tiktok']"
                                                 #UserNameRef="ngModel"
                                         />
                                     </div>

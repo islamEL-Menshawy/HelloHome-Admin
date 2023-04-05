@@ -52,7 +52,8 @@ export class CreateComponent implements OnInit {
   public area: number;
   public bathroom_number: number;
   public bed_number: number;
-  public price: string;
+  public price_en: string;
+  public price_ar: string;
   public is_youtube: boolean = true;
   public video_path: any;
   public video;

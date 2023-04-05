@@ -1,32 +1,148 @@
 <div class="content-wrapper container-xxl p-0">
   <div class="content-body">
-    <!-- content-header component -->
-    <app-content-header [contentHeader]="contentHeader"></app-content-header>
-
-    <!-- Basic Alerts start -->
-    <section id="home-page">
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title">Kick start your project 🚀</h4>
+    <div class="row match-height">
+      <!-- Statistics Card -->
+      <div class="col-xl-12 col-md-6 col-12">
+        <div class="card card-statistics">
+          <div class="card-header">
+            <h4 class="card-title">Statistics</h4>
+            <div class="d-flex align-items-center">
+              <p class="card-text font-small-2 mr-25 mb-0">Updated few seconds ago</p>
             </div>
-            <div class="card-body pb-1">
-              <p class="card-text">All the best for your new project.</p>
-              <p class="card-text">
-                Please make sure to read our
-                <a
-                  href="https://pixinvent.com/demo/vuexy-angular-admin-dashboard-template/documentation/"
-                  target="_blank"
-                  >Template Documentation</a
-                >
-                to understand where to go from here and how to use our template.
-              </p>
+          </div>
+          <div class="card-body statistics-body">
+            <div class="row">
+              <div class="col-sm-6 col-xl-2 mb-2 mb-xl-0">
+                <div class="media">
+                  <div class="avatar bg-light-primary mr-2">
+                    <div class="avatar-content">
+                      <i data-feather="user" class="avatar-icon"></i>
+                    </div>
+                  </div>
+                  <div class="media-body my-auto">
+                    <h4 class="font-weight-bolder mb-0">{{ statistics.visitors }}</h4>
+                    <p class="card-text font-small-3 mb-0">Total Visitors</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-2 mb-2 mb-xl-0">
+                <div class="media">
+                  <div class="avatar bg-light-info mr-2">
+                    <div class="avatar-content">
+                      <i data-feather="mail" class="avatar-icon"></i>
+                    </div>
+                  </div>
+                  <div class="media-body my-auto">
+                    <h4 class="font-weight-bolder mb-0">{{ statistics.inbox }}</h4>
+                    <p class="card-text font-small-3 mb-0">Total Inbox</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-2 mb-2 mb-sm-0">
+                <div class="media">
+                  <div class="avatar bg-light-danger mr-2">
+                    <div class="avatar-content">
+                      <i data-feather="box" class="avatar-icon"></i>
+                    </div>
+                  </div>
+                  <div class="media-body my-auto">
+                    <h4 class="font-weight-bolder mb-0">{{ statistics.units }}</h4>
+                    <p class="card-text font-small-3 mb-0">Total Units</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-2">
+                <div class="media">
+                  <div class="avatar bg-light-success mr-2">
+                    <div class="avatar-content">
+                      <i data-feather="award" class="avatar-icon"></i>
+                    </div>
+                  </div>
+                  <div class="media-body my-auto">
+                    <h4 class="font-weight-bolder mb-0">{{ statistics.compound }}</h4>
+                    <p class="card-text font-small-3 mb-0">Total Compound</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-2">
+                <div class="media">
+                  <div class="avatar bg-light-success mr-2">
+                    <div class="avatar-content">
+                      <i data-feather="map-pin" class="avatar-icon"></i>
+                    </div>
+                  </div>
+                  <div class="media-body my-auto">
+                    <h4 class="font-weight-bolder mb-0">{{ statistics.locations }}</h4>
+                    <p class="card-text font-small-3 mb-0">Total Locations</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-xl-2">
+                <div class="media">
+                  <div class="avatar bg-light-success mr-2">
+                    <div class="avatar-content">
+                      <i data-feather="layout" class="avatar-icon"></i>
+                    </div>
+                  </div>
+                  <div class="media-body my-auto">
+                    <h4 class="font-weight-bolder mb-0">{{ statistics.types }}</h4>
+                    <p class="card-text font-small-3 mb-0">Total Types</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Basic Alerts end -->
+      <!--/ Statistics Card -->
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-12">
+        <div class="card">
+          <div class="card-body">
+            <canvas
+                    baseChart
+                    [data]="pieChartData"
+                    [labels]="pieChartLabels"
+                    [chartType]="pieChartType"
+                    [options]="pieChartOptions"
+                    [plugins]="pieChartPlugins"
+                    [legend]="pieChartLegend"
+                    [datasets]="dataset"
+            >
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-12 col-12">
+        <div class="card">
+          <div
+                  class="card-header d-flex justify-content-between align-items-sm-center align-items-start flex-sm-row flex-column"
+          >
+            <div class="header-left">
+              <h4 class="card-title">Monthly Statistics</h4>
+            </div>
+          </div>
+          <div class="card-body">
+            <div id="chartjs-bar-chart">
+              <canvas
+                      baseChart
+                      #barChartRef
+                      height="400"
+                      [datasets]="barChart.datasets"
+                      [labels]="barChart.labels"
+                      [options]="barChart.options"
+                      [legend]="barChart.legend"
+                      [chartType]="barChart.chartType"
+              >
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

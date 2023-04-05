@@ -8,6 +8,7 @@ import { ContentHeaderModule } from 'app/layout/components/content-header/conten
 
 import { SampleComponent } from './sample.component';
 import { HomeComponent } from './home.component';
+import {ChartsModule} from "ng2-charts";
 
 const routes = [
   {
@@ -24,7 +25,7 @@ const routes = [
 
 @NgModule({
   declarations: [SampleComponent, HomeComponent],
-  imports: [RouterModule.forChild(routes), ContentHeaderModule, TranslateModule, CoreCommonModule],
+    imports: [RouterModule.forChild(routes), ContentHeaderModule, TranslateModule, CoreCommonModule, ChartsModule],
   exports: [SampleComponent, HomeComponent]
 })
 export class SampleModule {}
