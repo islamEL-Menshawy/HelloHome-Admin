@@ -9,16 +9,18 @@ import { ContentHeaderModule } from 'app/layout/components/content-header/conten
 import { SampleComponent } from './sample.component';
 import { HomeComponent } from './home.component';
 import {ChartsModule} from "ng2-charts";
+import {AuthGuard} from "../../auth/helpers";
 
 const routes = [
   {
-    path: 'sample',
-    component: SampleComponent,
-    data: { animation: 'sample' }
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
   },
   {
     path: 'home',
     component: HomeComponent,
+    canActivate : [AuthGuard],
     data: { animation: 'home' }
   }
 ];

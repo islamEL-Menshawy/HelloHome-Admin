@@ -28,11 +28,11 @@ const appRoutes: Routes = [
     path: '',
     loadChildren: () => import('./main/pages/pages.module').then(m => m.PagesModule),
   },
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full',
-  },
+  // {
+  //   path: '',
+  //   redirectTo: '/home',
+  //   pathMatch: 'full',
+  // },
   {
     path: '**',
     redirectTo: '/pages/miscellaneous/error' //Error 404 - Page not found
