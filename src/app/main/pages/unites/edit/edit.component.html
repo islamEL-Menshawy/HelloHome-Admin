@@ -52,35 +52,31 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="description">Description Right EN</label>
-                                        <input
-                                                type="string"
-                                                id="description"
-                                                class="form-control"
-                                                name="description_en"
-                                                [(ngModel)]="currentRow.data.description_en"
-                                                
-                                                
-                                                required
-                                        />
-                                        
+                                        <fieldset class="form-group">
+                                            <label for="description">Description Right EN</label>
+                                            <textarea
+                                                    class="form-control"
+                                                    id="description"
+                                                    rows="7"
+                                                    name="description_en"
+                                                    [(ngModel)]="currentRow.data.description_en"
+                                                    placeholder="Textarea"></textarea>
+                                        </fieldset>
                                     </div>
 
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="description_left">Description Left EN</label>
-                                        <input
-                                                type="string"
-                                                id="description_left"
-                                                class="form-control"
-                                                name="description_left_en"
-                                                [(ngModel)]="currentRow.data.description_left_en"
-                                                
-                                                
-                                                required
-                                        />
-                                        
+                                        <fieldset class="form-group">
+                                            <label for="description_left">Description Left EN</label>
+                                            <textarea
+                                                    class="form-control"
+                                                    id="description_left"
+                                                    rows="7"
+                                                    name="description_left_en"
+                                                    [(ngModel)]="currentRow.data.description_left_en"
+                                                    placeholder="Textarea"></textarea>
+                                        </fieldset>
                                     </div>
 
                                 </div>
@@ -88,35 +84,31 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="descriptionAR">Description Right AR</label>
-                                        <input
-                                                type="string"
-                                                id="descriptionAR"
-                                                class="form-control"
-                                                name="description_ar"
-                                                [(ngModel)]="currentRow.data.description_ar"
-                                                
-                                                
-                                                required
-                                        />
-                                        
+                                        <fieldset class="form-group">
+                                            <label for="descriptionAR">Description Right AR</label>
+                                            <textarea
+                                                    class="form-control"
+                                                    id="descriptionAR"
+                                                    rows="7"
+                                                    name="description_ar"
+                                                    [(ngModel)]="currentRow.data.description_ar"
+                                                    placeholder="Textarea"></textarea>
+                                        </fieldset>
                                     </div>
 
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="description_left_AR">Description Left AR</label>
-                                        <input
-                                                type="string"
-                                                id="description_left_AR"
-                                                class="form-control"
-                                                name="description_left_ar"
-                                                [(ngModel)]="currentRow.data.description_left_ar"
-                                                
-                                                
-                                                required
-                                        />
-                                        
+                                        <fieldset class="form-group">
+                                            <label for="description_left_AR">Description Left AR</label>
+                                            <textarea
+                                                    class="form-control"
+                                                    id="description_left_AR"
+                                                    rows="7"
+                                                    name="description_left_ar"
+                                                    [(ngModel)]="currentRow.data.description_left_ar"
+                                                    placeholder="Textarea"></textarea>
+                                        </fieldset>
                                     </div>
 
                                 </div>
@@ -130,9 +122,6 @@
                                                 class="form-control"
                                                 name="phone_number"
                                                 [(ngModel)]="currentRow.data.phone_number"
-                                                
-                                                
-                                                required
                                         />
                                         
                                     </div>
@@ -149,7 +138,7 @@
                                                 [(ngModel)]="currentRow.data.order"
                                                 
                                                 
-                                                required
+
                                         />
                                         
                                     </div>
@@ -168,7 +157,7 @@
                                                 [(ngModel)]="currentRow.data.bed_number"
                                                 
                                                 
-                                                required
+
                                         />
                                         
                                     </div>
@@ -185,7 +174,7 @@
                                                 [(ngModel)]="currentRow.data.bathroom_number"
                                                 
                                                 
-                                                required
+
                                         />
                                         
                                     </div>
@@ -202,7 +191,7 @@
                                                 [(ngModel)]="currentRow.data.area"
                                                 
                                                 
-                                                required
+
                                         />
                                         
                                     </div>
@@ -230,7 +219,6 @@
                                                 class="form-control"
                                                 name="price_ar"
                                                 [(ngModel)]="currentRow.data.price_ar"
-
                                         />
                                     </div>
                                 </div>
@@ -267,7 +255,7 @@
                                                 [(ngModel)]="currentRow.data.video_link"
                                                 
                                                 
-                                                required
+
                                         />
                                         
                                     </div>
@@ -284,7 +272,7 @@
                                                 [(ngModel)]="currentRow.data.location_link"
                                                 
                                                 
-                                                required
+
                                         />
                                         
                                     </div>
@@ -299,7 +287,7 @@
                                                 class="form-control"
                                                 [(ngModel)]="currentRow.data.location.id"
                                                 
-                                                required
+
                                         >
                                             <option *ngFor="let location of locationList.data" [value]="location.id">
                                                 {{ location.title_en }}
@@ -318,7 +306,7 @@
                                                 class="form-control"
                                                 [(ngModel)]="currentRow.data.compound.id"
                                                 
-                                                required
+
                                         >
                                             <option *ngFor="let compound of compoundList.data" [value]="compound.id">
                                                 {{ compound.title_en }}
@@ -336,8 +324,6 @@
                                                 id="type_id"
                                                 class="form-control"
                                                 [(ngModel)]="currentRow.data.type.id"
-                                                
-                                                required
                                         >
                                             <option *ngFor="let type of typeList.data" [value]="type.id">
                                                 {{ type.title_en }}
