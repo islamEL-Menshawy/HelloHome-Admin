@@ -17,6 +17,7 @@ import {CompoundsModule} from "./compounds/compounds.module";
 import {UnitesModule} from "./unites/unites.module";
 import {SliderModule} from "./slider/slider.module";
 import {ContentModule} from "./content/content.module";
+import {NewsModule} from "./news/news.module";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {ContentModule} from "./content/content.module";
     CompoundsModule,
     UnitesModule,
     SliderModule,
-    ContentModule
+    ContentModule,
+    NewsModule
   ],
 
   providers: []

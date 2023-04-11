@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Breadcrumb} from "../../../../layout/components/content-header/breadcrumb/breadcrumb.component";
-import {CompoundRequest} from "../../compounds/Types";
 import {FileUploader} from "ng2-file-upload";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Subject} from "rxjs";
-import {CompoundsService} from "../../compounds/compounds.service";
 import {ToastrService} from "ngx-toastr";
 import {SliderService} from "../slider.service";
 import {SliderRequest} from "../types";

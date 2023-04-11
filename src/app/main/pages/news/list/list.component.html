@@ -1,0 +1,71 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <section class="users-list-wrapper">
+
+            <!-- app-breadcrumb component -->
+            <app-breadcrumb [breadcrumb]="breadcrumbDefault"></app-breadcrumb>
+            <!--/ app-breadcrumb component -->
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="d-flex justify-content-between align-items-center m-1">
+                            <label class="d-flex align-items-center"
+                            >Show
+                                <select class="form-control mx-25" [(ngModel)]="selectedOption">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                                entries</label
+                            >
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 d-flex justify-content-start justify-content-md-end">
+                        <div class="d-flex align-items-center justify-content-end pr-1 pb-1 pb-md-0">
+
+                            <a class="btn btn-primary ml-1" rippleEffect href="javascript:;" routerLink="/news/create"
+                            >
+                                <em data-feather="plus" class="d-sm-none d-inline-block mr-0 mr-sm-1"></em>
+                                <span class="d-none d-sm-inline-block">Add New news</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <ngx-datatable
+                        [rows]="news_data"
+                        [rowHeight]="50"
+                        class="bootstrap core-bootstrap"
+                        [limit]="selectedOption"
+                        [columnMode]="ColumnMode.force"
+                        [headerHeight]="50"
+                        [footerHeight]="50"
+                        [scrollbarH]="true"
+                >
+                    <ngx-datatable-column name="Title" prop="title_en" [width]="500"></ngx-datatable-column>
+                    <ngx-datatable-column name="author" prop="author" [width]="100"></ngx-datatable-column>
+                    <ngx-datatable-column name="publish_date" prop="date" [width]="100"></ngx-datatable-column>
+                    <ngx-datatable-column name="Actions" [width]="40" [sortable]="false">
+                        <ng-template ngx-datatable-cell-template let-row="row">
+                            <div ngbDropdown container="body">
+                                <button ngbDropdownToggle type="button" class="btn icon-btn btn-sm hide-arrow" rippleEffect>
+                                    <span [data-feather]="'more-vertical'" [class]="'cursor-pointer'"></span>
+                                </button>
+                                <div ngbDropdownMenu>
+                                    <a href="javascript:;" routerLink="/news/{{row.id}}/edit" ngbDropdownItem>
+                                        <span [data-feather]="'edit'" [size]="16" [class]="'mr-50'"></span> Edit</a>
+                                    <a href="javascript:;" ngbDropdownItem (click)="fireDeleteModel(row.id)"
+                                    ><span [data-feather]="'trash'" [size]="16" [class]="'mr-50'"></span> Delete</a
+                                    >
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                </ngx-datatable>
+            </div>
+        </section>
+    </div>
+
+
+
+</div>

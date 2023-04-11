@@ -1,0 +1,120 @@
+<div class="content-wrapper container-xxl p-0">
+    <div class="content-body">
+        <!-- users edit start -->
+        <section class="app-user-edit">
+            <!-- app-breadcrumb component -->
+            <app-breadcrumb [breadcrumb]="breadcrumbDefault"></app-breadcrumb>
+            <!--/ app-breadcrumb component -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- Account Tab starts -->
+                    <div class="tab-pane active" id="account" aria-labelledby="account-tab" role="tabpanel" >
+
+                        <!-- users edit account form start -->
+                        <form class="form-validate" (ngSubmit)="(createNews.form.valid)" #createNews="ngForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="title">Title EN</label>
+                                        <input
+                                                type="string"
+                                                id="title"
+                                                class="form-control"
+                                                name="title_en"
+                                                [(ngModel)]="object_to_save.title_en"
+                                        />
+
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="titleAR">Title AR</label>
+                                        <input
+                                                type="string"
+                                                id="titleAR"
+                                                class="form-control"
+                                                name="title_ar"
+                                                [(ngModel)]="object_to_save.title_ar"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="bed_number">Author</label>
+                                        <input
+                                                type="text"
+                                                id="bed_number"
+                                                class="form-control"
+                                                name="author"
+                                                [(ngModel)]="object_to_save.author"
+                                        />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="bathroom_number">Publish date</label>
+                                        <input
+                                                type="date"
+                                                id="bathroom_number"
+                                                class="form-control"
+                                                name="publish_date"
+                                                [(ngModel)]="object_to_save.publish_date"
+                                        />
+
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <img class="img-fluid"
+                                         src="{{object_to_save.image_url}}">
+                                    <label style="border-radius:0 ;margin-bottom: 50px !important;"
+                                           for="about_section_5_image"
+                                           class="btn btn-primary mr-75 mb-0 btn-block">
+                                        <span>Upload Image</span>
+                                        <input
+                                                class="form-control"
+                                                type="file"
+                                                id="about_section_5_image"
+                                                hidden
+                                                multiple
+                                                accept="image/png, image/jpeg, image/jpg"
+                                                (change)="updateImage($event)"
+                                        />
+                                    </label>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Content EN</label>
+                                    <quill-editor [(ngModel)]="object_to_save.content_en" name="content_en"></quill-editor>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Content AR</label>
+                                    <quill-editor [(ngModel)]="object_to_save.content_ar" name="content_ar"></quill-editor>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 d-flex flex-sm-row flex-column mt-2">
+                                    <button
+                                            (click)="submit()"
+                                            type="submit"
+                                            class="btn btn-primary mb-1 mb-sm-0 mr-0 mr-sm-1"
+                                            rippleEffect
+                                    >
+                                        Save News
+                                    </button>
+
+                                </div>
+                            </div>
+                        </form>
+                        <!-- users editS account form ends -->
+                    </div>
+                    <!-- Account Tab ends -->
+                </div>
+            </div>
+        </section>
+        <!-- users edit ends -->
+    </div>
+</div>
