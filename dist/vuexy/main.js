@@ -10309,6 +10309,12 @@ var menu = [{
     icon: 'home',
     url: 'content/home'
   }, {
+    id: 'news',
+    title: 'News',
+    type: 'item',
+    icon: 'cast',
+    url: 'news'
+  }, {
     id: 'slider',
     title: 'Slider',
     type: 'item',
