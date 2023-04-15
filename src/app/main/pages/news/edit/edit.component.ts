@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Breadcrumb} from "../../../../layout/components/content-header/breadcrumb/breadcrumb.component";
 import {NewsService} from "../news.service";
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, FormGroup} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
 import {ActivatedRoute, Router} from "@angular/router";
 import {resolveFileWithPostfixes} from "@angular/compiler-cli/ngcc/src/utils";
@@ -34,6 +34,9 @@ export class EditComponent implements OnInit {
   };
   public object_to_save:any={};
   public id;
+  newNewsForm: FormGroup;
+  newsImage;
+
 
   constructor(
       private newsService:NewsService,
@@ -42,6 +45,8 @@ export class EditComponent implements OnInit {
       private router:Router,
       private _activatedRoute:ActivatedRoute
   ) {
+    this.newNewsForm = this.fb.group({newsImage: [null]})
+
   }
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe(params => {
@@ -55,8 +60,23 @@ export class EditComponent implements OnInit {
     });
   }
 
-  updateImage($event: Event) {
+  updateImage(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      console.log("test");
+      let reader = new FileReader();
 
+      reader.onload = (event: any) => {
+        this.object_to_save.image_url = event.target.result;
+      };
+      const file = (event.target as HTMLInputElement).files[0];
+      this.newsService.updateImage(this.id, file).subscribe(()=>{
+        this.toastr.success('News image updated success', "Success", {
+          toastClass: 'toast ngx-toastr',
+          closeButton: false
+        });
+      });
+      reader.readAsDataURL(event.target.files[0]);
+    }
   }
 
   submit() {

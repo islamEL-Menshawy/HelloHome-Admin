@@ -3,6 +3,7 @@ import {environment} from "../../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {UnitRequest, UnitResponse} from "../unites/Types";
+import {tap} from "rxjs/operators";
 
 
 @Injectable({
@@ -34,6 +35,13 @@ export class NewsService {
   public update(id, unit: any): Observable<any> {
     let url = `${this.API_URL}/${id}`;
     return this._httpClient.put<any>(url, unit);
+  }
+
+  public updateImage(id, image): Observable<void> {
+    const formData: any = new FormData();
+    formData.append('image', image);
+    return this._httpClient.post<void>(`${this.API_URL}/update-image/${id}`, formData)
+        .pipe(tap(() => this.fetch().subscribe()));
   }
 
 
