@@ -399,7 +399,7 @@
                                                                         </div>
 
                                                                     </div>
-                                                                    <div class="col-md-12">
+                                                                    <div class="col-md-6">
                                                                         <div class="form-group">
                                                                             <label for="service_section_4_color">Color</label>
                                                                             <input
@@ -412,6 +412,24 @@
                                                                             />
                                                                         </div>
 
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <img class="img-fluid"
+                                                                             src="{{data['section_4_image']}}">
+                                                                        <label style="border-radius:0 ;margin-bottom: 50px !important;"
+                                                                               for="section_4_image"
+                                                                               class="btn btn-primary mr-75 mb-0 btn-block">
+                                                                            <span>Change Image</span>
+                                                                            <input
+                                                                                    class="form-control"
+                                                                                    type="file"
+                                                                                    id="section_4_image"
+                                                                                    hidden
+                                                                                    multiple
+                                                                                    accept="image/png, image/jpeg, image/jpg"
+                                                                                    (change)="updateImage($event, 'section_4_image')"
+                                                                            />
+                                                                        </label>
                                                                     </div>
 <!--                                                                    <div class="col-md-6">-->
 <!--                                                                        <img class="img-fluid"-->
