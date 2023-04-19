@@ -189,13 +189,8 @@
                                                 class="form-control"
                                                 name="area"
                                                 [(ngModel)]="currentRow.data.area"
-                                                
-                                                
-
                                         />
-                                        
                                     </div>
-
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
@@ -206,7 +201,6 @@
                                                 class="form-control"
                                                 name="price_en"
                                                 [(ngModel)]="currentRow.data.price_en"
-
                                         />
                                     </div>
                                 </div>
@@ -232,8 +226,6 @@
                                                     id="customSwitch10"
                                                     name="is_youtube"
                                                     [(ngModel)]="currentRow.data.is_youtube"
-                                                    
-                                                    
                                             />
                                             <label class="custom-control-label" for="customSwitch10">
                                                 <span class="switch-icon-left"><i data-feather="check"></i></span>
@@ -253,9 +245,6 @@
                                                 class="form-control"
                                                 name="video_path"
                                                 [(ngModel)]="currentRow.data.video_link"
-                                                
-                                                
-
                                         />
                                         
                                     </div>
@@ -270,9 +259,6 @@
                                                 class="form-control"
                                                 name="location"
                                                 [(ngModel)]="currentRow.data.location_link"
-                                                
-                                                
-
                                         />
                                         
                                     </div>
@@ -286,8 +272,6 @@
                                                 id="location_id"
                                                 class="form-control"
                                                 [(ngModel)]="currentRow.data.location.id"
-                                                
-
                                         >
                                             <option *ngFor="let location of locationList.data" [value]="location.id">
                                                 {{ location.title_en }}

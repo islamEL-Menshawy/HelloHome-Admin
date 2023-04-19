@@ -25,8 +25,14 @@
                                                 class="form-control"
                                                 name="title_en"
                                                 [(ngModel)]="titleEN"
+                                                required
+                                                [class.error]="addNew.submitted && TitleEnRef.invalid"
+                                                #TitleEnRef="ngModel"
                                         />
-                                        
+                                        <span *ngIf="addNew.submitted && TitleEnRef.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="TitleEnRef.errors.required">This field is required!</small>
+                                    </span>
+
                                     </div>
 
                                 </div>
@@ -39,7 +45,13 @@
                                                 class="form-control"
                                                 name="title_ar"
                                                 [(ngModel)]="titleAR"
+                                                required
+                                                [class.error]="addNew.submitted && TitleArRef.invalid"
+                                                #TitleArRef="ngModel"
                                         />
+                                        <span *ngIf="addNew.submitted && TitleArRef.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="TitleArRef.errors.required">This field is required!</small>
+                                    </span>
                                         
                                     </div>
 
@@ -55,7 +67,14 @@
                                                     rows="7"
                                                     name="description_en"
                                                     [(ngModel)]="descriptionEN"
-                                                    placeholder="Textarea"></textarea>
+                                                    placeholder="Textarea"
+                                                    required
+                                                    [class.error]="addNew.submitted && DescriptionEnRef.invalid"
+                                                    #DescriptionEnRef="ngModel"
+                                            ></textarea>
+                                            <span *ngIf="addNew.submitted && DescriptionEnRef.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="DescriptionEnRef.errors.required">This field is required!</small>
+                                    </span>
                                         </fieldset>
                                     </div>
 
@@ -70,7 +89,14 @@
                                                     rows="7"
                                                     name="description_left_en"
                                                     [(ngModel)]="description_leftEN"
-                                                    placeholder="Textarea"></textarea>
+                                                    placeholder="Textarea"
+                                                    required
+                                                    [class.error]="addNew.submitted && DescriptionArRef.invalid"
+                                                    #DescriptionArRef="ngModel"
+                                            ></textarea>
+                                            <span *ngIf="addNew.submitted && DescriptionArRef.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="DescriptionArRef.errors.required">This field is required!</small>
+                                    </span>
                                         </fieldset>
                                     </div>
 
@@ -89,7 +115,13 @@
                                                     rows="7"
                                                     name="description_ar"
                                                     [(ngModel)]="descriptionAR"
-                                                    placeholder="Textarea"></textarea>
+                                                    placeholder="Textarea"required
+                                                    [class.error]="addNew.submitted && descriptionAR_.invalid"
+                                                    #descriptionAR_="ngModel"
+                                            ></textarea>
+                                            <span *ngIf="addNew.submitted && descriptionAR_.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="descriptionAR_.errors.required">This field is required!</small>
+                                    </span>
                                         </fieldset>
                                     </div>
 
@@ -104,7 +136,14 @@
                                                     rows="7"
                                                     name="description_left_ar"
                                                     [(ngModel)]="description_leftAR"
-                                                    placeholder="Textarea"></textarea>
+                                                    placeholder="Textarea"
+                                                    required
+                                                    [class.error]="addNew.submitted && description_leftAR_.invalid"
+                                                    #description_leftAR_="ngModel"
+                                            ></textarea>
+                                            <span *ngIf="addNew.submitted && description_leftAR_.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="description_leftAR_.errors.required">This field is required!</small>
+                                    </span>
                                         </fieldset>
                                     </div>
 
@@ -123,10 +162,13 @@
                                                 class="form-control"
                                                 name="phone_number"
                                                 [(ngModel)]="phone_number"
-                                                
-                                                
-
+                                                required
+                                                [class.error]="addNew.submitted && phone_number_.invalid"
+                                                #phone_number_="ngModel"
                                         />
+                                        <span *ngIf="addNew.submitted && phone_number_.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="phone_number_.errors.required">This field is required!</small>
+                                    </span>
                                         
                                     </div>
 
@@ -140,10 +182,13 @@
                                                 class="form-control"
                                                 name="order"
                                                 [(ngModel)]="order"
-                                                
-                                                
-
+                                                required
+                                                [class.error]="addNew.submitted && order_.invalid"
+                                                #order_="ngModel"
                                         />
+                                        <span *ngIf="addNew.submitted && order_.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="order_.errors.required">This field is required!</small>
+                                    </span>
                                         
                                     </div>
 
@@ -158,10 +203,13 @@
                                                 class="form-control"
                                                 name="bed_number"
                                                 [(ngModel)]="bed_number"
-                                                
-                                                
-
+                                                required
+                                                [class.error]="addNew.submitted && bed_number_.invalid"
+                                                #bed_number_="ngModel"
                                         />
+                                        <span *ngIf="addNew.submitted && bed_number_.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="bed_number_.errors.required">This field is required!</small>
+                                    </span>
                                         
                                     </div>
 
@@ -175,10 +223,13 @@
                                                 class="form-control"
                                                 name="bathroom_number"
                                                 [(ngModel)]="bathroom_number"
-                                                
-                                                
-
+                                                required
+                                                [class.error]="addNew.submitted && bathroom_number_.invalid"
+                                                #bathroom_number_="ngModel"
                                         />
+                                        <span *ngIf="addNew.submitted && bathroom_number_.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="bathroom_number_.errors.required">This field is required!</small>
+                                    </span>
                                         
                                     </div>
 
@@ -192,10 +243,13 @@
                                                 class="form-control"
                                                 name="area"
                                                 [(ngModel)]="area"
-                                                
-                                                
-
+                                                required
+                                                [class.error]="addNew.submitted && area_.invalid"
+                                                #area_="ngModel"
                                         />
+                                        <span *ngIf="addNew.submitted && area_.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="area_.errors.required">This field is required!</small>
+                                    </span>
                                         
                                     </div>
 
@@ -209,8 +263,13 @@
                                                 class="form-control"
                                                 name="price_en"
                                                 [(ngModel)]="price_en"
-
+                                                required
+                                                [class.error]="addNew.submitted && price_.invalid"
+                                                #price_="ngModel"
                                         />
+                                        <span *ngIf="addNew.submitted && price_.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="price_.errors.required">This field is required!</small>
+                                    </span>
                                         
                                     </div>
                                 </div>
@@ -223,8 +282,13 @@
                                                 class="form-control"
                                                 name="price_ar"
                                                 [(ngModel)]="price_ar"
-
+                                                required
+                                                [class.error]="addNew.submitted && priceAR_.invalid"
+                                                #priceAR_="ngModel"
                                         />
+                                        <span *ngIf="addNew.submitted && priceAR_.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="priceAR_.errors.required">This field is required!</small>
+                                    </span>
 
                                     </div>
                                 </div>
@@ -286,10 +350,13 @@
                                                 class="form-control"
                                                 name="location"
                                                 [(ngModel)]="location"
-                                                
-                                                
-
+                                                required
+                                                [class.error]="addNew.submitted && location_.invalid"
+                                                #location_="ngModel"
                                         />
+                                        <span *ngIf="addNew.submitted && location_.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="location_.errors.required">This field is required!</small>
+                                    </span>
                                         
                                     </div>
 
@@ -302,13 +369,18 @@
                                                 id="location_id"
                                                 class="form-control"
                                                 [(ngModel)]="location_id"
-                                                
+                                                required
+                                                [class.error]="addNew.submitted && location_id_.invalid"
+                                                #location_id_="ngModel"
 
                                         >
                                             <option *ngFor="let location of locationList.data" [value]="location.id">
                                                 {{ location.title_en }}
                                             </option>
                                         </select>
+                                        <span *ngIf="addNew.submitted && location_id_.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="location_id_.errors.required">This field is required!</small>
+                                    </span>
                                         
                                     </div>
 
@@ -321,13 +393,17 @@
                                                 id="compound_id"
                                                 class="form-control"
                                                 [(ngModel)]="compound_id"
-                                                
-
+                                                required
+                                                [class.error]="addNew.submitted && compound_id_.invalid"
+                                                #compound_id_="ngModel"
                                         >
                                             <option *ngFor="let compound of compoundList.data" [value]="compound.id">
                                                 {{ compound.title_en }}
                                             </option>
                                         </select>
+                                        <span *ngIf="addNew.submitted && compound_id_.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="compound_id_.errors.required">This field is required!</small>
+                                    </span>
                                         
                                     </div>
 
@@ -340,13 +416,18 @@
                                                 id="type_id"
                                                 class="form-control"
                                                 [(ngModel)]="type_id"
-                                                
+                                                required
+                                                [class.error]="addNew.submitted && type_id_.invalid"
+                                                #type_id_="ngModel"
 
                                         >
                                             <option *ngFor="let type of typeList.data" [value]="type.id">
                                                 {{ type.title_en }}
                                             </option>
                                         </select>
+                                        <span *ngIf="addNew.submitted && type_id_.invalid" class="invalid-form">
+                                      <small class="form-text text-danger" *ngIf="type_id_.errors.required">This field is required!</small>
+                                    </span>
                                         
                                     </div>
 
@@ -406,8 +487,8 @@
                                 <div class="col-12 d-flex flex-sm-row flex-column mt-2">
                                     <button
                                             *ngIf="is_active"
-                                            type="submit"
                                             (click)="submit(addNew)"
+                                            type="submit"
                                             class="btn btn-primary mb-1 mb-sm-0 mr-0 mr-sm-1"
                                             rippleEffect
                                     >

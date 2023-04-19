@@ -125,7 +125,6 @@ export class CreateComponent implements OnInit {
           toastClass: 'toast ngx-toastr',
           closeButton: false
         });
-
       })
     }
   }

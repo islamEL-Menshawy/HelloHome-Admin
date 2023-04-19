@@ -152,10 +152,9 @@ export class EditComponent implements OnInit {
         }
       ]
     };
-    this._activatedRoute.paramMap.pipe(takeUntil(this._unsubscribeAll)).subscribe(params => {
+    this._activatedRoute.paramMap.subscribe(params => {
       this.id = params.get('id');
       this.renderData();
-
     });
 
 
@@ -216,19 +215,23 @@ export class EditComponent implements OnInit {
   }
 
   uploadImage(event){
-      let x = 0;
-      while (event.target.files && event.target.files[x]) {
-        this.images.push(event.target.files[x]);
-        x++;
-      }
-    console.log(this.images);
-      this._modelService.updateImage(this.id, this.images).subscribe((response)=>{
+    // console.log(event.target.files)
+    // for (let file of event.target.files){
+    //
+    // }
+
+      // let x = 0;
+      // while (event.target.files && event.target.files[x]) {
+      //   this.newImages.push(event.target.files[x]);
+      //   // this.images.push(event.target.files[x]);
+      //   x++;
+      // }
+      this._modelService.updateImage(this.id, event.target.files).subscribe((response)=>{
+        console.log(response.data.images);
         this.toastrSuccess("Images Updated", "Images Updated success");
-        // for (const item of response.data.images) {
-        //   this.image_url.push(item);
-        // }
         this.image_url = response.data.images;
-    });
+      });
+      // this.newImages = [];
   }
 
   removeImage(image){
