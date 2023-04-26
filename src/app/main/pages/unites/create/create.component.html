@@ -61,20 +61,21 @@
                                     <div class="form-group">
                                         <fieldset class="form-group">
                                             <label for="description">Description Right EN</label>
-                                            <textarea
-                                                    class="form-control"
-                                                    id="description"
-                                                    rows="7"
-                                                    name="description_en"
-                                                    [(ngModel)]="descriptionEN"
-                                                    placeholder="Textarea"
-                                                    required
-                                                    [class.error]="addNew.submitted && DescriptionEnRef.invalid"
-                                                    #DescriptionEnRef="ngModel"
-                                            ></textarea>
-                                            <span *ngIf="addNew.submitted && DescriptionEnRef.invalid" class="invalid-form">
-                                      <small class="form-text text-danger" *ngIf="DescriptionEnRef.errors.required">This field is required!</small>
-                                    </span>
+                                            <quill-editor id="description" [(ngModel)]="descriptionEN" name="description_en"></quill-editor>
+<!--                                            <textarea-->
+<!--                                                    class="form-control"-->
+<!--                                                    id="description"-->
+<!--                                                    rows="7"-->
+<!--                                                    name="description_en"-->
+<!--                                                    [(ngModel)]="descriptionEN"-->
+<!--                                                    placeholder="Textarea"-->
+<!--                                                    required-->
+<!--                                                    [class.error]="addNew.submitted && DescriptionEnRef.invalid"-->
+<!--                                                    #DescriptionEnRef="ngModel"-->
+<!--                                            ></textarea>-->
+<!--                                            <span *ngIf="addNew.submitted && DescriptionEnRef.invalid" class="invalid-form">-->
+<!--                                      <small class="form-text text-danger" *ngIf="DescriptionEnRef.errors.required">This field is required!</small>-->
+<!--                                    </span>-->
                                         </fieldset>
                                     </div>
 
@@ -83,20 +84,22 @@
                                     <div class="form-group">
                                         <fieldset class="form-group">
                                             <label for="description_left">Description Left EN</label>
-                                            <textarea
-                                                    class="form-control"
-                                                    id="description_left"
-                                                    rows="7"
-                                                    name="description_left_en"
-                                                    [(ngModel)]="description_leftEN"
-                                                    placeholder="Textarea"
-                                                    required
-                                                    [class.error]="addNew.submitted && DescriptionArRef.invalid"
-                                                    #DescriptionArRef="ngModel"
-                                            ></textarea>
-                                            <span *ngIf="addNew.submitted && DescriptionArRef.invalid" class="invalid-form">
-                                      <small class="form-text text-danger" *ngIf="DescriptionArRef.errors.required">This field is required!</small>
-                                    </span>
+                                            <quill-editor id="description_left" [(ngModel)]="description_leftEN" name="description_left_en"></quill-editor>
+
+<!--                                            <textarea-->
+<!--                                                    class="form-control"-->
+<!--                                                    id="description_left"-->
+<!--                                                    rows="7"-->
+<!--                                                    name="description_left_en"-->
+<!--                                                    [(ngModel)]="description_leftEN"-->
+<!--                                                    placeholder="Textarea"-->
+<!--                                                    required-->
+<!--                                                    [class.error]="addNew.submitted && DescriptionArRef.invalid"-->
+<!--                                                    #DescriptionArRef="ngModel"-->
+<!--                                            ></textarea>-->
+<!--                                            <span *ngIf="addNew.submitted && DescriptionArRef.invalid" class="invalid-form">-->
+<!--                                      <small class="form-text text-danger" *ngIf="DescriptionArRef.errors.required">This field is required!</small>-->
+<!--                                    </span>-->
                                         </fieldset>
                                     </div>
 
@@ -109,19 +112,21 @@
                                     <div class="form-group">
                                         <fieldset class="form-group">
                                             <label for="descriptionAR">Description Right AR</label>
-                                            <textarea
-                                                    class="form-control"
-                                                    id="descriptionAR"
-                                                    rows="7"
-                                                    name="description_ar"
-                                                    [(ngModel)]="descriptionAR"
-                                                    placeholder="Textarea"required
-                                                    [class.error]="addNew.submitted && descriptionAR_.invalid"
-                                                    #descriptionAR_="ngModel"
-                                            ></textarea>
-                                            <span *ngIf="addNew.submitted && descriptionAR_.invalid" class="invalid-form">
-                                      <small class="form-text text-danger" *ngIf="descriptionAR_.errors.required">This field is required!</small>
-                                    </span>
+                                            <quill-editor id="descriptionAR" [(ngModel)]="descriptionAR" name="description_ar"></quill-editor>
+
+<!--                                            <textarea-->
+<!--                                                    class="form-control"-->
+<!--                                                    id="descriptionAR"-->
+<!--                                                    rows="7"-->
+<!--                                                    name="description_ar"-->
+<!--                                                    [(ngModel)]="descriptionAR"-->
+<!--                                                    placeholder="Textarea"required-->
+<!--                                                    [class.error]="addNew.submitted && descriptionAR_.invalid"-->
+<!--                                                    #descriptionAR_="ngModel"-->
+<!--                                            ></textarea>-->
+<!--                                            <span *ngIf="addNew.submitted && descriptionAR_.invalid" class="invalid-form">-->
+<!--                                      <small class="form-text text-danger" *ngIf="descriptionAR_.errors.required">This field is required!</small>-->
+<!--                                    </span>-->
                                         </fieldset>
                                     </div>
 
@@ -130,20 +135,21 @@
                                     <div class="form-group">
                                         <fieldset class="form-group">
                                             <label for="description_leftAR">Description Left AR</label>
-                                            <textarea
-                                                    class="form-control"
-                                                    id="description_leftAR"
-                                                    rows="7"
-                                                    name="description_left_ar"
-                                                    [(ngModel)]="description_leftAR"
-                                                    placeholder="Textarea"
-                                                    required
-                                                    [class.error]="addNew.submitted && description_leftAR_.invalid"
-                                                    #description_leftAR_="ngModel"
-                                            ></textarea>
-                                            <span *ngIf="addNew.submitted && description_leftAR_.invalid" class="invalid-form">
-                                      <small class="form-text text-danger" *ngIf="description_leftAR_.errors.required">This field is required!</small>
-                                    </span>
+                                            <quill-editor id="description_leftAR" [(ngModel)]="description_leftAR" name="description_left_ar"></quill-editor>
+<!--                                            <textarea-->
+<!--                                                    class="form-control"-->
+<!--                                                    id="description_leftAR"-->
+<!--                                                    rows="7"-->
+<!--                                                    name="description_left_ar"-->
+<!--                                                    [(ngModel)]="description_leftAR"-->
+<!--                                                    placeholder="Textarea"-->
+<!--                                                    required-->
+<!--                                                    [class.error]="addNew.submitted && description_leftAR_.invalid"-->
+<!--                                                    #description_leftAR_="ngModel"-->
+<!--                                            ></textarea>-->
+<!--                                            <span *ngIf="addNew.submitted && description_leftAR_.invalid" class="invalid-form">-->
+<!--                                      <small class="form-text text-danger" *ngIf="description_leftAR_.errors.required">This field is required!</small>-->
+<!--                                    </span>-->
                                         </fieldset>
                                     </div>
 

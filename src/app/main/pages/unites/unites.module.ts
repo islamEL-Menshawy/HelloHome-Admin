@@ -18,6 +18,7 @@ import {ToastrModule} from "ngx-toastr";
 import {SweetAlert2Module} from "@sweetalert2/ngx-sweetalert2";
 import {BreadcrumbModule} from "../../../layout/components/content-header/breadcrumb/breadcrumb.module";
 import {AuthGuard} from "../../../auth/helpers";
+import {QuillModule} from "ngx-quill";
 
 // Routing
 const routes : Routes = [
@@ -53,21 +54,22 @@ const routes : Routes = [
     CreateComponent,
     EditComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    NgSelectModule,
-    CoreCommonModule,
-    FormsModule,
-    NgbModule,
-    Ng2FlatpickrModule,
-    NgxDatatableModule,
-    CorePipesModule,
-    CoreDirectivesModule,
-    CoreSidebarModule,
-    ToastrModule,
-    SweetAlert2Module.forRoot(),
-    BreadcrumbModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        NgSelectModule,
+        CoreCommonModule,
+        FormsModule,
+        NgbModule,
+        Ng2FlatpickrModule,
+        NgxDatatableModule,
+        CorePipesModule,
+        CoreDirectivesModule,
+        CoreSidebarModule,
+        ToastrModule,
+        SweetAlert2Module.forRoot(),
+        BreadcrumbModule,
+        QuillModule
+    ]
 })
 export class UnitesModule { }
