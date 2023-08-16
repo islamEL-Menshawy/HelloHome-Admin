@@ -33,6 +33,7 @@ export class EditComponent implements OnInit {
   public id;
   public dataToUpdate: UnitRequest;
   public breadcrumbDefault: Breadcrumb;
+  public seoData:any = {};
 
   // public type;
   // public com;
@@ -95,13 +96,14 @@ export class EditComponent implements OnInit {
   submit(form) {
     if (form.valid) {
       this.dataToUpdate = form.value;
+      this.dataToUpdate['seo'] = this.seoData;
       if (this.dataToUpdate.is_youtube){
         this.dataToUpdate.is_youtube = 1;
       }else{
         this.dataToUpdate.is_youtube = 0;
       }
       this.dataToUpdate.aminites = this.aminites;
-      this._modelService.update(this.id, this.dataToUpdate).pipe(takeUntil(this._unsubscribeAll)).subscribe(() => {
+      this._modelService.update(this.id, this.dataToUpdate).subscribe(() => {
         // Success
         this.toastrSuccess(`${this.MODEL_NAME} updated`, `${this.MODEL_NAME}  updated success`);
       });
@@ -116,8 +118,9 @@ export class EditComponent implements OnInit {
   }
 
   renderData() {
-    this._modelService.getById(this.id).pipe(takeUntil(this._unsubscribeAll)).subscribe(response => {
+    this._modelService.getById(this.id).subscribe(response => {
       this.currentRow = response;
+      this.seoData = response['data']['seo'];
       for (const item of response.data.amenities) {
         this.aminites.push(item.id);
       }

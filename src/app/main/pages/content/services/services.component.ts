@@ -14,6 +14,8 @@ export class ServicesComponent implements OnInit {
 
 
   public data:any = {};
+  public seoData:any = {};
+  public seoCollapsed = true;
   public isCollapsed1 = true;
   public isCollapsed2 = true;
   public isCollapsed3 = true;
@@ -52,6 +54,7 @@ export class ServicesComponent implements OnInit {
     this._contentService.getData('service').subscribe(response => {
       if (response.success){
         this.data = response.data;
+        this.seoData = this.data['seo'];
       }else {
         this.router.navigate(['/miscellaneous/error']);
       }
@@ -65,10 +68,13 @@ export class ServicesComponent implements OnInit {
    */
   submit(form) {
     if (form.valid) {
-      this._contentService.update(form.value).subscribe();
-      this.toastr.success("Service Page Updated successfully", "Page updated", {
-        toastClass: 'toast ngx-toastr',
-        closeButton: false
+      this.seoData['page_id'] = this.data['page_id'];
+      form.value['seo'] = this.seoData;
+      this._contentService.update(form.value).subscribe(response =>{
+        this.toastr.success("Service Page Updated successfully", "Page updated", {
+          toastClass: 'toast ngx-toastr',
+          closeButton: false
+        });
       });
     }
   }

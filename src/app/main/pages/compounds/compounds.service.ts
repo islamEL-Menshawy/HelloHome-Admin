@@ -28,13 +28,12 @@ export class CompoundsService {
         }));
   }
 
-  public add(data: CompoundRequest): Observable<CompoundResponse> {
+  public add(data: any): Observable<any> {
     const formData: any = new FormData();
     for (let key of Object.keys(data)) {
       formData.append(key, data[key]);
     }
-    return this._httpClient.post<CompoundResponse>(`${this.API_URL}`, formData)
-        .pipe(tap(() => this.fetch().subscribe()));
+    return this._httpClient.post<any>(`${this.API_URL}`, formData);
   }
 
   public delete(id: number): Observable<void> {
@@ -48,7 +47,7 @@ export class CompoundsService {
     return this._httpClient.get<CompoundResponse>(url);
   }
 
-  public update(id, data: CompoundRequest): Observable<CompoundResponse> {
+  public update(id, data: any): Observable<CompoundResponse> {
     let url = `${this.API_URL}/${id}`;
     return this._httpClient.put<CompoundResponse>(url, data);
   }

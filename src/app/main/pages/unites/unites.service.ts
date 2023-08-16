@@ -50,7 +50,7 @@ export class UnitesService {
         return this._httpClient.get<UnitResponse>(url);
     }
 
-    public update(id, unit: UnitRequest): Observable<UnitResponse> {
+    public update(id, unit: any): Observable<UnitResponse> {
         let url = `${this.API_URL}/${id}`;
         return this._httpClient.put<UnitResponse>(url, unit);
     }

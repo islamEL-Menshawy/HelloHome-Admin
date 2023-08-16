@@ -13,10 +13,11 @@ import {ToastrService} from "ngx-toastr";
 export class ContactComponent implements OnInit {
 
   public data:any = {};
+  public seoData:any = {};
+  public seoCollapsed = true;
   public isCollapsed1 = true;
   public isCollapsed2 = true;
   public isCollapsed3 = true;
-  public isCollapsed4 = true;
   public breadcrumbDefault: Breadcrumb = {
     links: [
       {
@@ -44,6 +45,7 @@ export class ContactComponent implements OnInit {
     this._contentService.getData('Contact Us').subscribe(response => {
       if (response.success){
         this.data = response.data;
+        this.seoData = this.data['seo'];
       }else {
         this.router.navigate(['/miscellaneous/error']);
       }
@@ -57,6 +59,8 @@ export class ContactComponent implements OnInit {
    */
   submit(form) {
     if (form.valid) {
+      this.seoData['page_id'] = this.data['page_id'];
+      form.value['seo'] = this.seoData;
       this._contentService.update(form.value).subscribe();
       this.toastr.success("Contact Page Updated successfully", "Page updated", {
         toastClass: 'toast ngx-toastr',

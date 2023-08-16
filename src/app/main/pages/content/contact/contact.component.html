@@ -73,6 +73,30 @@
                                                                             (change)="updateImage($event, 'main_image')"
                                                                     />
                                                                 </label>
+                                                                <div class="row">
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="main_image_alter_en">Alter text EN</label>
+                                                                            <input type="text"
+                                                                                   id="main_image_alter_en"
+                                                                                   class="form-control"
+                                                                                   name="main_image_alter_en"
+                                                                                   [(ngModel)]="data['main_image_alter_en']"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <div class="form-group">
+                                                                            <label for="main_image_alter_ar">Alter text ar</label>
+                                                                            <input type="text"
+                                                                                   id="main_image_alter_ar"
+                                                                                   class="form-control"
+                                                                                   name="main_image_alter_ar"
+                                                                                   [(ngModel)]="data['main_image_alter_ar']"
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -255,6 +279,96 @@
                                                                             />
                                                                         </div>
 
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div (click)="seoCollapsed = !seoCollapsed"
+                                                     [attr.aria-expanded]="!seoCollapsed"
+                                                     aria-controls="seo" class="card-header collapse-title"
+                                                     data-toggle="collapse">
+                                                    Page SEO Section
+                                                </div>
+                                                <div id="seo" [ngbCollapse]="seoCollapsed">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="keywords_en">Page Keywords EN</label>
+                                                                        <input type="text"
+                                                                               id="keywords_en"
+                                                                               class="form-control"
+                                                                               name="keywords_en"
+                                                                               [(ngModel)]="seoData['keywords_en']"
+                                                                        />
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="keywords_ar">Page Keywords AR</label>
+                                                                        <input
+                                                                                type="text"
+                                                                                id="keywords_ar"
+                                                                                class="form-control"
+                                                                                name="keywords_ar"
+                                                                                [(ngModel)]="seoData['keywords_ar']"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="page_type">Page type</label>
+                                                                        <input
+                                                                                type="text"
+                                                                                id="page_type"
+                                                                                class="form-control"
+                                                                                name="page_type"
+                                                                                [(ngModel)]="seoData['page_type']"
+                                                                        />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="robots">Page robots</label>
+                                                                        <input
+                                                                                type="text"
+                                                                                id="robots"
+                                                                                class="form-control"
+                                                                                name="robots"
+                                                                                [(ngModel)]="seoData['robots']"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="description_en">Page Description EN</label>
+                                                                        <fieldset class="form-group">
+                                                                            <textarea
+                                                                                    class="form-control"
+                                                                                    id="description_en"
+                                                                                    rows="7"
+                                                                                    name="description_en"
+                                                                                    [(ngModel)]="seoData['description_en']"
+                                                                                    placeholder="Textarea"></textarea>
+                                                                        </fieldset>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group">
+                                                                        <label for="description_ar">Page Description AR</label>
+                                                                        <fieldset class="form-group">
+                                                                            <textarea
+                                                                                    class="form-control"
+                                                                                    id="description_ar"
+                                                                                    rows="7"
+                                                                                    name="description_ar"
+                                                                                    [(ngModel)]="seoData['description_ar']"
+                                                                                    placeholder="Textarea"></textarea>
+                                                                        </fieldset>
                                                                     </div>
                                                                 </div>
                                                             </div>

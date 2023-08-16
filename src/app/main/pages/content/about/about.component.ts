@@ -13,9 +13,10 @@ import {ToastrService} from "ngx-toastr";
 export class AboutComponent implements OnInit {
 
   public data:any = {};
+  public seoData:any = {};
   public isCollapsed1 = true;
   public isCollapsed2 = true;
-  public isCollapsed3 = true;
+  public seoCollapsed = true;
   public isCollapsed4 = true;
   public isCollapsed5 = true;
   public isCollapsed6 = true;
@@ -47,6 +48,7 @@ export class AboutComponent implements OnInit {
     this._contentService.getData('About us').subscribe(response => {
       if (response.success){
         this.data = response.data;
+        this.seoData = this.data['seo'];
       }else {
         this.router.navigate(['/miscellaneous/error']);
       }
@@ -60,11 +62,15 @@ export class AboutComponent implements OnInit {
    */
   submit(form) {
     if (form.valid) {
-      this._contentService.update(form.value).subscribe();
-      this.toastr.success("About Page Updated successfully", "Page updated", {
-        toastClass: 'toast ngx-toastr',
-        closeButton: false
+      this.seoData['page_id'] = this.data['page_id'];
+      form.value['seo'] = this.seoData;
+      this._contentService.update(form.value).subscribe(response =>{
+        this.toastr.success("About Page Updated successfully", "Page updated", {
+          toastClass: 'toast ngx-toastr',
+          closeButton: false
+        });
       });
+
     }
   }
 

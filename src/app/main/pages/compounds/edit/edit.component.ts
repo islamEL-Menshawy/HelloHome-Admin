@@ -19,6 +19,7 @@ export class EditComponent implements OnInit {
 // Public
   public rows;
   public currentRow: CompoundResponse;
+  public seoData:any = {};
   public id;
   public dataToUpdate: CompoundRequest;
   public breadcrumbDefault: Breadcrumb;
@@ -54,7 +55,8 @@ export class EditComponent implements OnInit {
   submit(form) {
     if (form.valid) {
       this.dataToUpdate = form.value;
-      this._modelService.update(this.id, this.dataToUpdate).pipe(takeUntil(this._unsubscribeAll)).subscribe(() => {
+      this.dataToUpdate['seo'] = this.seoData;
+      this._modelService.update(this.id, this.dataToUpdate).subscribe(() => {
         // Success
         this.toastrSuccess(`${this.MODEL_NAME} updated`, `${this.MODEL_NAME} ${this.dataToUpdate.title_en}  updated success`);
       });
@@ -72,6 +74,7 @@ export class EditComponent implements OnInit {
   renderData() {
     this._modelService.getById(this.id).pipe(takeUntil(this._unsubscribeAll)).subscribe(response => {
       this.currentRow = response;
+      this.seoData = response['data']['seo'];
     });
   }
 

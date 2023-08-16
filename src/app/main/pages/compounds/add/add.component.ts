@@ -18,7 +18,7 @@ export class AddComponent implements OnInit {
 
   public breadcrumbDefault: Breadcrumb;
   private readonly MODEL_NAME = 'Compound';
-
+  public seoData:any = {};
   public amenityTitleEN = "";
   public amenityTitleAR = "";
   public website = "";
@@ -56,6 +56,7 @@ export class AddComponent implements OnInit {
   submit(form) {
     if (form.valid){
       this.amenityRequest = form.value;
+      this.amenityRequest['seo'] = this.seoData;
       this.amenityRequest.compound_image = this.newCompoundForm.get('compoundImage').value;
       this._modelService.add(this.amenityRequest).subscribe(()=>{
         this.toastrSuccess(`Add new ${this.MODEL_NAME}`, `New ${this.MODEL_NAME} added successfully`)
