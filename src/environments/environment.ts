@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   hmr: false,
-  // apiUrl: 'https://hhegypt.com/api'
-  apiUrl: 'http://hhegypt.local/api'
+  apiUrl: 'https://hhegypt.com/api'
+  // apiUrl: 'http://hhegypt.local/api'
 
 };
 
